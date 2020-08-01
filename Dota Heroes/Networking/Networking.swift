@@ -18,8 +18,8 @@ class Networking {
     public init() {}
     
     func getRequestData<T: Decodable>(urlRequest: String,
-                                      headers: [String: String] = [:],
-                                      parameters: [String: String] = [:],
+                                      headers: [String: String]?,
+                                      parameters: [String: String]?,
                                       successHandler: @escaping (T) -> Void,
                                       errorHandler: @escaping ErrorHandler) {
         
@@ -48,14 +48,20 @@ class Networking {
             return errorHandler("Unable to create URL from given string")
         }
 
-        components.queryItems = parameters.map {(key, value) in
-            URLQueryItem(name: key, value: value)
+        if let param = parameters {
+            components.queryItems = param.map {(key, value) in
+                URLQueryItem(name: key, value: value)
+            }
         }
+        
         components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
         
         var request = URLRequest(url: components.url!)
         request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
+        
+        if let header = headers {
+            request.allHTTPHeaderFields = header
+        }
         
         URLSession.shared.dataTask(with: request, completionHandler: completionHandler).resume()
     }

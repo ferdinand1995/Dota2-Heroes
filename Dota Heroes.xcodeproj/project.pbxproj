@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B15457D524D5AC180047214B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15457D424D5AC180047214B /* ViewModel.swift */; };
 		B17FFB7324D461870028EC3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FFB7224D461870028EC3C /* AppDelegate.swift */; };
 		B17FFB7524D461870028EC3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FFB7424D461870028EC3C /* SceneDelegate.swift */; };
 		B17FFB7724D461870028EC3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FFB7624D461870028EC3C /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B15457D424D5AC180047214B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		B17FFB6F24D461870028EC3C /* Dota Heroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dota Heroes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17FFB7224D461870028EC3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B17FFB7424D461870028EC3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				B17FFB7624D461870028EC3C /* ViewController.swift */,
+				B15457D424D5AC180047214B /* ViewModel.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				B17FFB7D24D461870028EC3C /* Dota_Heroes.xcdatamodeld in Sources */,
 				B17FFB7324D461870028EC3C /* AppDelegate.swift in Sources */,
 				B17FFB7524D461870028EC3C /* SceneDelegate.swift in Sources */,
+				B15457D524D5AC180047214B /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
