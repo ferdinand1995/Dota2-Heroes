@@ -12,37 +12,12 @@ class FilterRoleCollectionViewCell: UICollectionViewCell, UICollectionViewDelega
     
     let cellIdentifier = "roleHeroCell"
     
+    var selectedItem: Int?
+    
     var viewModelDelegate: ViewModel? {
         didSet {
             collectionViewFilter.reloadData()
         }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModelDelegate?.roles.count ?? 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! RolesCollectionViewCell
-        
-        cell.labelRole.text = viewModelDelegate?.roles[indexPath.item].hero_roles
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 96, height: collectionView.frame.size.height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
     }
     
     @IBOutlet weak var collectionViewFilter: UICollectionView!
@@ -63,4 +38,54 @@ class FilterRoleCollectionViewCell: UICollectionViewCell, UICollectionViewDelega
         collectionViewFilter.showsHorizontalScrollIndicator = false
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        var itemsInSection = Int()
+        
+        viewModelDelegate?.roles.bind(listener: { (roles) in
+            itemsInSection = roles.count
+        })
+        return itemsInSection
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! RolesCollectionViewCell
+        
+        viewModelDelegate?.roles.bind(listener: { (roles) in
+            DispatchQueue.main.async {
+                cell.labelRole.text = roles[indexPath.item]
+            }
+        })
+                
+        if selectedItem == indexPath.item {
+            cell.didSelect(select: true)
+        }else {
+            cell.didSelect(select: false)
+        }
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 128, height: collectionView.frame.size.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        selectedItem = indexPath.item
+        collectionView.reloadItems(at: [indexPath])
+        
+    }
 }

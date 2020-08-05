@@ -27,4 +27,15 @@ class RolesCollectionViewCell: UICollectionViewCell {
         viewBackground.layer.shadowRadius = 3
         viewBackground.layer.shadowOffset = CGSize(width: 3, height: 3)
     }
+    
+    func didSelect(select: Bool) {
+        if select {
+            viewBackground.backgroundColor = UIColor.black
+            labelRole.textColor = UIColor.white
+        }else {
+            viewBackground.backgroundColor = UIColor.systemGroupedBackground
+            labelRole.textColor = UIColor.black
+        }
+    }
+    
 }

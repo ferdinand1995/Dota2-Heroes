@@ -18,10 +18,10 @@ class ListHeroesCollectionViewCell: UICollectionViewCell, UICollectionViewDelega
             collectionViewHero.reloadData()
         }
     }
-
+    
     let spacingOfItemPerRow: CGFloat = 0
     let numberOfItemPerRow: CGFloat = 3.0
-
+    
     @IBOutlet weak var collectionViewHero: UICollectionView!
     
     override func awakeFromNib() {
@@ -37,30 +37,39 @@ class ListHeroesCollectionViewCell: UICollectionViewCell, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModelDelegate?.listOfHeroes ?? 0
+        
+        var itemsInSection = Int()
+        viewModelDelegate?.heroStat.bind(listener: { (heroStat) in
+            itemsInSection = heroStat.list_heroes?.count ?? 0
+        })
+        return itemsInSection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! HeroCollectionViewCell
         
-        if let heroes = viewModelDelegate?.heroes.list_heroes {
-            cell.labelNameHero.text = heroes[indexPath.item].localized_name
-            if let img = heroes[indexPath.item].img {
-                let url = URL(string: "\(ApiConstant.BASE_URL)\(img)")
+        viewModelDelegate?.heroStat.bind(listener: { (heroStat) in
+            DispatchQueue.main.async {
+                cell.labelNameHero.text = heroStat.list_heroes?[indexPath.item].localized_name
+                
+                let urlImage = heroStat.list_heroes?[indexPath.item].img
+                let url = URL(string: "\(ApiConstant.BASE_URL)\(urlImage ?? "")")
                 cell.imageViewHero.kf.setImage(with: url, options: [.transition(.fade(0.3))])
             }
-            cell.imageViewHero.kf.indicatorType = .activity
-        }
+        })
+        
+        cell.imageViewHero.kf.indicatorType = .activity
+        
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let screenRect = self.collectionViewHero.safeAreaLayoutGuide.layoutFrame
         let spaceBetweenGrid = numberOfItemPerRow + 1
         let width = screenRect.width - spacingOfItemPerRow * spaceBetweenGrid
         let height = width / numberOfItemPerRow
-            
+        
         return CGSize(width: floor(height), height: height)
     }
     
@@ -75,5 +84,5 @@ class ListHeroesCollectionViewCell: UICollectionViewCell, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return spacingOfItemPerRow
     }
-        
+    
 }

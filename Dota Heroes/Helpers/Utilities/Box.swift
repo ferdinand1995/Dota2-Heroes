@@ -8,23 +8,23 @@
 
 import Foundation
 
-final class Ref<T> {
-  var val : T
-  init(_ v : T) {val = v}
-}
-
-struct Box<T> {
-    var ref : Ref<T>
-    init(_ x : T) { ref = Ref(x) }
-
-    var value: T {
-        get { return ref.val }
-        set {
-          if (!isKnownUniquelyReferenced(&ref)) {
-            ref = Ref(newValue)
-            return
-          }
-          ref.val = newValue
-        }
+final class Box<T> {
+ 
+  typealias Listener = (T) -> Void
+  var listener: Listener?
+  
+  var value: T {
+    didSet {
+      listener?(value)
     }
+  }
+    
+  init(_ value: T) {
+    self.value = value
+  }
+    
+  func bind(listener: Listener?) {
+    self.listener = listener
+    listener?(value)
+  }
 }

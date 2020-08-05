@@ -18,14 +18,17 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     let cellFilterIdentifier = "filterCell"
     let headerIdentifier = "headerCellId"
    
-    
     //MARK: Initialize View
         
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        viewModel.fetchListHeroStat()
+    
+        viewModel.fetchListHeroStat(completion: {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        })
         
         let layout =  StretchyHeaderViewFlowLayout()
         self.collectionView.collectionViewLayout = layout
@@ -83,7 +86,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if indexPath.item == 0 {
-            return CGSize(width: view.safeAreaLayoutGuide.layoutFrame.width, height: 80)
+            return CGSize(width: view.safeAreaLayoutGuide.layoutFrame.width, height: 96)
         }else {
             return CGSize(width: collectionView.frame.size.width, height: collectionView.safeAreaLayoutGuide.layoutFrame.size.height)
         }
