@@ -8,14 +8,19 @@
 
 import Foundation
 
-struct Hero: Codable {
+struct HeroesResponse: Codable {
     
-    let hero_id: Int?
-    let name: String?
-    let localized_name: String?
-    let roles: [String]?
-    let img: String?
-    let icon: String?
+    var hero_id: Int?
+    var name: String?
+    var localized_name: String?
+    var primary_attr: String?
+    var attack_type: String?
+    var roles: [String]?
+    var img: String?
+    var icon: String?
+    var base_health: Int?
+    var base_attack_max: Int?
+    var move_speed: Int?
     
     enum CodingKeys: String, CodingKey {
         case hero_id = "id"

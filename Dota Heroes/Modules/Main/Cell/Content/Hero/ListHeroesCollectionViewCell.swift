@@ -39,8 +39,8 @@ class ListHeroesCollectionViewCell: UICollectionViewCell, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         var itemsInSection = Int()
-        viewModelDelegate?.heroStat.bind(listener: { (heroStat) in
-            itemsInSection = heroStat.list_heroes?.count ?? 0
+        viewModelDelegate?.heroesResponse.bind(listener: { (heroStat) in
+            itemsInSection = heroStat.count
         })
         return itemsInSection
     }
@@ -48,11 +48,11 @@ class ListHeroesCollectionViewCell: UICollectionViewCell, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! HeroCollectionViewCell
         
-        viewModelDelegate?.heroStat.bind(listener: { (heroStat) in
+        viewModelDelegate?.heroesResponse.bind(listener: { (heroStat) in
             DispatchQueue.main.async {
-                cell.labelNameHero.text = heroStat.list_heroes?[indexPath.item].localized_name
+                cell.labelNameHero.text = heroStat[indexPath.item].localized_name
                 
-                let urlImage = heroStat.list_heroes?[indexPath.item].img
+                let urlImage = heroStat[indexPath.item].img
                 let url = URL(string: "\(ApiConstant.BASE_URL)\(urlImage ?? "")")
                 cell.imageViewHero.kf.setImage(with: url, options: [.transition(.fade(0.3))])
             }
