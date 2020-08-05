@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="HeaderCollectionReusableView" customModule="Dota_Heroes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sOs-Ni-map">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_header_background" translatesAutoresizingMaskIntoConstraints="NO" id="H2K-8m-rSM">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="H2K-8m-rSM" secondAttribute="bottom" id="9Yt-Ee-BN8"/>
+                        <constraint firstAttribute="trailing" secondItem="H2K-8m-rSM" secondAttribute="trailing" id="Ipm-m7-PuV"/>
+                        <constraint firstItem="H2K-8m-rSM" firstAttribute="leading" secondItem="sOs-Ni-map" secondAttribute="leading" id="dIa-W7-IDO"/>
+                        <constraint firstItem="H2K-8m-rSM" firstAttribute="top" secondItem="sOs-Ni-map" secondAttribute="top" id="uPf-1P-bgp"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="sOs-Ni-map" secondAttribute="bottom" id="Ur3-2t-9XH"/>
+                <constraint firstItem="sOs-Ni-map" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="aOG-lq-LFC"/>
+                <constraint firstItem="sOs-Ni-map" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="tc5-mG-nx0"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="sOs-Ni-map" secondAttribute="trailing" id="vWA-Bz-4WP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="imageViewBackground" destination="H2K-8m-rSM" id="DXG-TD-FcW"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="44.866071428571423"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="ic_header_background" width="1280" height="720"/>
+    </resources>
+</document>

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B104E15C24D81E7900499213 /* StretchyHeaderViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104E15B24D81E7900499213 /* StretchyHeaderViewFlowLayout.swift */; };
+		B147E8DC24D6BC2600B83617 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147E8DA24D6BC2600B83617 /* HeaderCollectionReusableView.swift */; };
+		B147E8DD24D6BC2600B83617 /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B147E8DB24D6BC2600B83617 /* HeaderCollectionReusableView.xib */; };
+		B147E8E624D6CDB500B83617 /* RolesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147E8E424D6CDB500B83617 /* RolesCollectionViewCell.swift */; };
+		B147E8E724D6CDB500B83617 /* RolesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B147E8E524D6CDB500B83617 /* RolesCollectionViewCell.xib */; };
 		B15457D524D5AC180047214B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15457D424D5AC180047214B /* ViewModel.swift */; };
 		B15457D824D5B6090047214B /* HeroStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15457D724D5B6090047214B /* HeroStats.swift */; };
 		B15457DA24D5B6450047214B /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15457D924D5B6450047214B /* Hero.swift */; };
@@ -25,6 +30,20 @@
 		B17FFBA024D46F570028EC3C /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FFB9F24D46F570028EC3C /* Networking.swift */; };
 		B17FFBA224D470110028EC3C /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FFBA124D470110028EC3C /* APIConstant.swift */; };
 		B17FFBA424D470D80028EC3C /* example_contract.json in Resources */ = {isa = PBXBuildFile; fileRef = B17FFBA324D470D80028EC3C /* example_contract.json */; };
+		B1C7342B24D5FADA0043ECE8 /* Roles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C7342A24D5FADA0043ECE8 /* Roles.swift */; };
+		B1C7342E24D6035F0043ECE8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B1C7342D24D6035F0043ECE8 /* Kingfisher */; };
+		B1C7343024D60D2E0043ECE8 /* ExtensionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C7342F24D60D2E0043ECE8 /* ExtensionArray.swift */; };
+		B1FEBD3924D9532100ACD47A /* FilterRoleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD3724D9532000ACD47A /* FilterRoleCollectionViewCell.swift */; };
+		B1FEBD3A24D9532100ACD47A /* FilterRoleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1FEBD3824D9532000ACD47A /* FilterRoleCollectionViewCell.xib */; };
+		B1FEBD3C24D95C2E00ACD47A /* DialogTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD3B24D95C2E00ACD47A /* DialogTransitioningDelegate.swift */; };
+		B1FEBD4524D986DC00ACD47A /* InformationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD4324D986DC00ACD47A /* InformationDialog.swift */; };
+		B1FEBD4624D986DC00ACD47A /* InformationDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1FEBD4424D986DC00ACD47A /* InformationDialog.xib */; };
+		B1FEBD4824D9975F00ACD47A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD4724D9975F00ACD47A /* Coordinator.swift */; };
+		B1FEBD4D24D9985F00ACD47A /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD4C24D9985F00ACD47A /* Storyboarded.swift */; };
+		B1FEBD4F24D999AF00ACD47A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD4E24D999AF00ACD47A /* MainCoordinator.swift */; };
+		B1FEBD5124D99BD700ACD47A /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD5024D99BD700ACD47A /* DetailsViewController.swift */; };
+		B1FEBD5724D9A28100ACD47A /* ListHeroesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD5524D9A28100ACD47A /* ListHeroesCollectionViewCell.swift */; };
+		B1FEBD5824D9A28100ACD47A /* ListHeroesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1FEBD5624D9A28100ACD47A /* ListHeroesCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +57,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B104E15B24D81E7900499213 /* StretchyHeaderViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderViewFlowLayout.swift; sourceTree = "<group>"; };
+		B147E8DA24D6BC2600B83617 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		B147E8DB24D6BC2600B83617 /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		B147E8E424D6CDB500B83617 /* RolesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolesCollectionViewCell.swift; sourceTree = "<group>"; };
+		B147E8E524D6CDB500B83617 /* RolesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RolesCollectionViewCell.xib; sourceTree = "<group>"; };
 		B15457D424D5AC180047214B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		B15457D724D5B6090047214B /* HeroStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroStats.swift; sourceTree = "<group>"; };
 		B15457D924D5B6450047214B /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
@@ -59,6 +83,19 @@
 		B17FFB9F24D46F570028EC3C /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		B17FFBA124D470110028EC3C /* APIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
 		B17FFBA324D470D80028EC3C /* example_contract.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = example_contract.json; sourceTree = "<group>"; };
+		B1C7342A24D5FADA0043ECE8 /* Roles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roles.swift; sourceTree = "<group>"; };
+		B1C7342F24D60D2E0043ECE8 /* ExtensionArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionArray.swift; sourceTree = "<group>"; };
+		B1FEBD3724D9532000ACD47A /* FilterRoleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRoleCollectionViewCell.swift; sourceTree = "<group>"; };
+		B1FEBD3824D9532000ACD47A /* FilterRoleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterRoleCollectionViewCell.xib; sourceTree = "<group>"; };
+		B1FEBD3B24D95C2E00ACD47A /* DialogTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogTransitioningDelegate.swift; sourceTree = "<group>"; };
+		B1FEBD4324D986DC00ACD47A /* InformationDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationDialog.swift; sourceTree = "<group>"; };
+		B1FEBD4424D986DC00ACD47A /* InformationDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationDialog.xib; sourceTree = "<group>"; };
+		B1FEBD4724D9975F00ACD47A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B1FEBD4C24D9985F00ACD47A /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		B1FEBD4E24D999AF00ACD47A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		B1FEBD5024D99BD700ACD47A /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		B1FEBD5524D9A28100ACD47A /* ListHeroesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeroesCollectionViewCell.swift; sourceTree = "<group>"; };
+		B1FEBD5624D9A28100ACD47A /* ListHeroesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListHeroesCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1C7342E24D6035F0043ECE8 /* Kingfisher in Frameworks */,
 				B17FFB9D24D46EB50028EC3C /* Reachability in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,30 +118,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B147E8DE24D6BC2D00B83617 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				B1FEBD5924D9A83200ACD47A /* Hero */,
+				B1FEBD5A24D9A83900ACD47A /* Filter */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		B147E8DF24D6BC3400B83617 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				B147E8DA24D6BC2600B83617 /* HeaderCollectionReusableView.swift */,
+				B147E8DB24D6BC2600B83617 /* HeaderCollectionReusableView.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		B15457D624D5B5F60047214B /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				B15457D724D5B6090047214B /* HeroStats.swift */,
 				B15457D924D5B6450047214B /* Hero.swift */,
+				B1C7342A24D5FADA0043ECE8 /* Roles.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		B15457DB24D5BE4D0047214B /* Main View */ = {
+		B15457DB24D5BE4D0047214B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B1FEBD4E24D999AF00ACD47A /* MainCoordinator.swift */,
 				B15457DC24D5BF2C0047214B /* Cell */,
 				B17FFB7624D461870028EC3C /* ViewController.swift */,
 				B15457D424D5AC180047214B /* ViewModel.swift */,
 			);
-			path = "Main View";
+			path = Main;
 			sourceTree = "<group>";
 		};
 		B15457DC24D5BF2C0047214B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				B15457DD24D5BF480047214B /* HeroCollectionViewCell.swift */,
-				B15457DE24D5BF480047214B /* HeroCollectionViewCell.xib */,
+				B147E8DE24D6BC2D00B83617 /* Content */,
+				B147E8DF24D6BC3400B83617 /* Header */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -172,7 +230,8 @@
 		B17FFB9924D46AB80028EC3C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				B15457DB24D5BE4D0047214B /* Main View */,
+				B15457DB24D5BE4D0047214B /* Main */,
+				B1FEBD5224D99BF200ACD47A /* Details */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -181,7 +240,10 @@
 			isa = PBXGroup;
 			children = (
 				B17FFB7B24D461870028EC3C /* Dota_Heroes.xcdatamodeld */,
-				B15457E124D5C4120047214B /* Box.swift */,
+				B1FEBD4924D9976B00ACD47A /* Extension */,
+				B1FEBD4A24D9978400ACD47A /* UI */,
+				B1C7343124D60D350043ECE8 /* Utilities */,
+				B1FEBD4B24D9979000ACD47A /* Coordinators */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -193,6 +255,72 @@
 				B17FFBA124D470110028EC3C /* APIConstant.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		B1C7343124D60D350043ECE8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B15457E124D5C4120047214B /* Box.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B1FEBD4924D9976B00ACD47A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B1C7342F24D60D2E0043ECE8 /* ExtensionArray.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		B1FEBD4A24D9978400ACD47A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B104E15B24D81E7900499213 /* StretchyHeaderViewFlowLayout.swift */,
+				B1FEBD3B24D95C2E00ACD47A /* DialogTransitioningDelegate.swift */,
+				B1FEBD4324D986DC00ACD47A /* InformationDialog.swift */,
+				B1FEBD4424D986DC00ACD47A /* InformationDialog.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B1FEBD4B24D9979000ACD47A /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				B1FEBD4724D9975F00ACD47A /* Coordinator.swift */,
+				B1FEBD4C24D9985F00ACD47A /* Storyboarded.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		B1FEBD5224D99BF200ACD47A /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				B1FEBD5024D99BD700ACD47A /* DetailsViewController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		B1FEBD5924D9A83200ACD47A /* Hero */ = {
+			isa = PBXGroup;
+			children = (
+				B1FEBD5524D9A28100ACD47A /* ListHeroesCollectionViewCell.swift */,
+				B1FEBD5624D9A28100ACD47A /* ListHeroesCollectionViewCell.xib */,
+				B15457DD24D5BF480047214B /* HeroCollectionViewCell.swift */,
+				B15457DE24D5BF480047214B /* HeroCollectionViewCell.xib */,
+			);
+			path = Hero;
+			sourceTree = "<group>";
+		};
+		B1FEBD5A24D9A83900ACD47A /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				B1FEBD3724D9532000ACD47A /* FilterRoleCollectionViewCell.swift */,
+				B1FEBD3824D9532000ACD47A /* FilterRoleCollectionViewCell.xib */,
+				B147E8E424D6CDB500B83617 /* RolesCollectionViewCell.swift */,
+				B147E8E524D6CDB500B83617 /* RolesCollectionViewCell.xib */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +341,7 @@
 			name = "Dota Heroes";
 			packageProductDependencies = (
 				B17FFB9C24D46EB50028EC3C /* Reachability */,
+				B1C7342D24D6035F0043ECE8 /* Kingfisher */,
 			);
 			productName = "Dota Heroes";
 			productReference = B17FFB6F24D461870028EC3C /* Dota Heroes.app */;
@@ -266,6 +395,7 @@
 			mainGroup = B17FFB6624D461870028EC3C;
 			packageReferences = (
 				B17FFB9B24D46EB50028EC3C /* XCRemoteSwiftPackageReference "Reachability" */,
+				B1C7342C24D6035F0043ECE8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = B17FFB7024D461870028EC3C /* Products */;
 			projectDirPath = "";
@@ -282,8 +412,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1FEBD3A24D9532100ACD47A /* FilterRoleCollectionViewCell.xib in Resources */,
+				B1FEBD4624D986DC00ACD47A /* InformationDialog.xib in Resources */,
 				B17FFB8224D461890028EC3C /* LaunchScreen.storyboard in Resources */,
 				B17FFBA424D470D80028EC3C /* example_contract.json in Resources */,
+				B1FEBD5824D9A28100ACD47A /* ListHeroesCollectionViewCell.xib in Resources */,
+				B147E8E724D6CDB500B83617 /* RolesCollectionViewCell.xib in Resources */,
+				B147E8DD24D6BC2600B83617 /* HeaderCollectionReusableView.xib in Resources */,
 				B17FFB7F24D461890028EC3C /* Assets.xcassets in Resources */,
 				B15457E024D5BF480047214B /* HeroCollectionViewCell.xib in Resources */,
 				B17FFB7A24D461870028EC3C /* Main.storyboard in Resources */,
@@ -304,16 +439,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B147E8DC24D6BC2600B83617 /* HeaderCollectionReusableView.swift in Sources */,
+				B1FEBD4F24D999AF00ACD47A /* MainCoordinator.swift in Sources */,
 				B15457DF24D5BF480047214B /* HeroCollectionViewCell.swift in Sources */,
 				B17FFB7724D461870028EC3C /* ViewController.swift in Sources */,
+				B1FEBD3C24D95C2E00ACD47A /* DialogTransitioningDelegate.swift in Sources */,
 				B17FFBA024D46F570028EC3C /* Networking.swift in Sources */,
+				B1FEBD4824D9975F00ACD47A /* Coordinator.swift in Sources */,
 				B15457DA24D5B6450047214B /* Hero.swift in Sources */,
 				B17FFBA224D470110028EC3C /* APIConstant.swift in Sources */,
 				B15457E224D5C4120047214B /* Box.swift in Sources */,
 				B17FFB7D24D461870028EC3C /* Dota_Heroes.xcdatamodeld in Sources */,
+				B1FEBD3924D9532100ACD47A /* FilterRoleCollectionViewCell.swift in Sources */,
+				B1C7343024D60D2E0043ECE8 /* ExtensionArray.swift in Sources */,
+				B1FEBD5724D9A28100ACD47A /* ListHeroesCollectionViewCell.swift in Sources */,
+				B147E8E624D6CDB500B83617 /* RolesCollectionViewCell.swift in Sources */,
+				B1FEBD4D24D9985F00ACD47A /* Storyboarded.swift in Sources */,
 				B17FFB7324D461870028EC3C /* AppDelegate.swift in Sources */,
+				B1FEBD4524D986DC00ACD47A /* InformationDialog.swift in Sources */,
 				B17FFB7524D461870028EC3C /* SceneDelegate.swift in Sources */,
+				B1FEBD5124D99BD700ACD47A /* DetailsViewController.swift in Sources */,
 				B15457D524D5AC180047214B /* ViewModel.swift in Sources */,
+				B1C7342B24D5FADA0043ECE8 /* Roles.swift in Sources */,
+				B104E15C24D81E7900499213 /* StretchyHeaderViewFlowLayout.swift in Sources */,
 				B15457D824D5B6090047214B /* HeroStats.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,7 +632,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tiket.mobile.Dota-Heroes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -502,7 +650,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tiket.mobile.Dota-Heroes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -591,6 +739,14 @@
 				version = 5.0.0;
 			};
 		};
+		B1C7342C24D6035F0043ECE8 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -598,6 +754,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B17FFB9B24D46EB50028EC3C /* XCRemoteSwiftPackageReference "Reachability" */;
 			productName = Reachability;
+		};
+		B1C7342D24D6035F0043ECE8 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1C7342C24D6035F0043ECE8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 

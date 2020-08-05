@@ -15,17 +15,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dota Heroes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSJ-4U-5P2">
-                                <rect key="frame" x="134.5" y="433" width="145" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_splash_dota" translatesAutoresizingMaskIntoConstraints="NO" id="qCE-rX-P6J">
+                                <rect key="frame" x="16" y="340.5" width="382" height="215"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qCE-rX-P6J" secondAttribute="height" multiplier="16:9" id="twU-H8-ych"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="vSJ-4U-5P2" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="QpL-oT-7gb"/>
-                            <constraint firstItem="vSJ-4U-5P2" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="w4L-jd-ObE"/>
+                            <constraint firstItem="qCE-rX-P6J" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="HE5-PB-ouW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qCE-rX-P6J" secondAttribute="trailing" constant="16" id="HqT-8J-YI7"/>
+                            <constraint firstItem="qCE-rX-P6J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="pTj-oc-2cB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -35,4 +36,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_splash_dota" width="853.33331298828125" height="853.33331298828125"/>
+    </resources>
 </document>

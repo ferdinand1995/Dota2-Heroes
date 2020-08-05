@@ -17,6 +17,17 @@ class HeroCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        viewBackground.layer.borderColor = UIColor.lightGray.cgColor
+        viewBackground.layer.borderWidth = 0.9
+        viewBackground.layer.masksToBounds = true
+        viewBackground.layer.cornerRadius = 6
+
+        self.contentView.layer.shadowColor = UIColor.black.cgColor
+        self.contentView.layer.shadowOpacity = 0.6
+        self.contentView.layer.shadowRadius = 3
+        self.contentView.layer.shadowOffset = CGSize(width: 3, height: 3)
+
     }
 
 }
