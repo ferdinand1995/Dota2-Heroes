@@ -121,7 +121,9 @@ class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout, 
 
                 let urlImage = heroStat[indexPath.item].img
                 let url = URL(string: "\(ApiConstant.BASE_URL)\(urlImage ?? "")")
-                cell.imageViewHero.kf.setImage(with: url, options: [.transition(.fade(0.3))])
+                cell.imageViewHero.kf.setImage(with: url, options: [.transition(.fade(0.3))]) { _ in
+                    cell.labelNameHero.fadeIn()
+                }
             }
         }
 

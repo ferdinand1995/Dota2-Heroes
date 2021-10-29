@@ -21,27 +21,23 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kr6-pE-2dl">
                         <rect key="frame" x="8" y="8" width="624" height="624"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="v5p-n0-cjh">
-                                <rect key="frame" x="0.0" y="0.0" width="624" height="351"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="v5p-n0-cjh" secondAttribute="height" multiplier="16:9" id="pCl-n0-2Ma"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="v5p-n0-cjh">
+                                <rect key="frame" x="0.0" y="0.0" width="624" height="624"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eSG-kp-nmf">
-                                <rect key="frame" x="16" y="359" width="592" height="265"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="293.5" y="591" width="37.5" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="eSG-kp-nmf" secondAttribute="bottom" id="MEK-2A-Kuk"/>
+                            <constraint firstAttribute="bottom" secondItem="v5p-n0-cjh" secondAttribute="bottom" id="0hf-55-TJO"/>
+                            <constraint firstAttribute="bottom" secondItem="eSG-kp-nmf" secondAttribute="bottom" constant="16" id="MEK-2A-Kuk"/>
                             <constraint firstAttribute="trailing" secondItem="v5p-n0-cjh" secondAttribute="trailing" id="Pnc-7V-Q1p"/>
                             <constraint firstItem="v5p-n0-cjh" firstAttribute="leading" secondItem="kr6-pE-2dl" secondAttribute="leading" id="Qun-dj-h11"/>
-                            <constraint firstItem="eSG-kp-nmf" firstAttribute="leading" secondItem="kr6-pE-2dl" secondAttribute="leading" constant="16" id="UaR-zY-kiP"/>
-                            <constraint firstAttribute="trailing" secondItem="eSG-kp-nmf" secondAttribute="trailing" constant="16" id="cCn-Dm-neG"/>
-                            <constraint firstItem="eSG-kp-nmf" firstAttribute="top" secondItem="v5p-n0-cjh" secondAttribute="bottom" constant="8" id="t2k-fv-S9C"/>
+                            <constraint firstItem="eSG-kp-nmf" firstAttribute="centerX" secondItem="kr6-pE-2dl" secondAttribute="centerX" id="e3Q-Vm-h2P"/>
                             <constraint firstItem="v5p-n0-cjh" firstAttribute="top" secondItem="kr6-pE-2dl" secondAttribute="top" id="xcN-DJ-Jx8"/>
                         </constraints>
                     </view>

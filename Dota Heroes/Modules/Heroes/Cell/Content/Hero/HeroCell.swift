@@ -16,6 +16,13 @@ class HeroCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        viewBackground.roundViewCorner(cornerRadius: 8, borderWidth: 1, borderColor: .lightGray)
+                
+        labelNameHero.alpha = 0
+        DispatchQueue.main.async {
+            self.viewBackground.dropShadow(shadowCell: 0.25, shadowRadius: 3, offsetHeight: 2)
+            self.labelNameHero.dropShadow(shadowCell: 0.6, shadowRadius: 3, offsetHeight: 2)
+        }
+        viewBackground.roundViewCorner(cornerRadius: 8, borderWidth: 0, borderColor: .clear)
+        imageViewHero.roundViewCorner(cornerRadius: 8, borderWidth: 0, borderColor: .clear)
     }
 }
