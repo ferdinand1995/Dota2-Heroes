@@ -12,9 +12,10 @@ import CoreData
 class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout, Storyboarded {
 
     weak var coordinator: MainCoordinator?
+    private let viewModel = HeroesVM()
     let spacingOfItemPerRow: CGFloat = 0
     let numberOfItemPerRow: CGFloat = 3
-    private let viewModel = HeroesVM()
+    private var previousStatusBarHidden = false
 
     //MARK: LifeCycle
     override func viewDidLoad() {
@@ -125,6 +126,30 @@ class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout, 
         }
 
         return cell
+    }
 
+    //MARK: - Scroll View Delegate
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if previousStatusBarHidden != shouldHideStatusBar {
+
+            UIView.animate(withDuration: 0.3, animations: {
+                self.setNeedsStatusBarAppearanceUpdate()
+            })
+
+            previousStatusBarHidden = shouldHideStatusBar
+        }
+    }
+
+    //MARK: - Status Bar Appearance
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .slide
+    }
+
+    override var prefersStatusBarHidden: Bool {
+        return shouldHideStatusBar
+    }
+
+    private var shouldHideStatusBar: Bool {
+        return collectionView.contentOffset.y > view.safeAreaInsets.top
     }
 }
