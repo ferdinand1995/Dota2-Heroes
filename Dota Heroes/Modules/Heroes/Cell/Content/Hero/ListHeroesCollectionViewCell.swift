@@ -31,7 +31,7 @@ class ListHeroesCollectionViewCell: UICollectionViewCell, UICollectionViewDelega
         collectionViewHero.dataSource = self
         collectionViewHero.delegate = self
         
-        collectionViewHero.register(UINib.init(nibName: "HeroCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
+        collectionViewHero.register(UINib.init(nibName: "HeroCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
         
         collectionViewHero.showsVerticalScrollIndicator = false
     }
@@ -46,7 +46,7 @@ class ListHeroesCollectionViewCell: UICollectionViewCell, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! HeroCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! HeroCell
         
         viewModelDelegate?.heroesResponse.bind({ heroStat in
             DispatchQueue.main.async {

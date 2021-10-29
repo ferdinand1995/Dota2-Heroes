@@ -9,14 +9,11 @@ import UIKit
 
 extension UIView {
 
-    func setDefaultCellUI(_ isRounded: Bool = true) {
+    func setDefaultUI(_ isRounded: Bool = true) {
         if isRounded {
             self.roundViewCorner(cornerRadius: 8, borderWidth: 0, borderColor: .clear)
         }
         self.dropShadow(shadowOpacity: 0.1, shadowRadius: 3, offsetHeight: 2)
-        DispatchQueue.main.async {
-            self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-        }
     }
 
     func addShadowNavigationBar() {
@@ -77,6 +74,15 @@ extension UIView {
 
         self.layer.rasterizationScale = UIScreen.main.scale
         self.layer.shouldRasterize = true
+    }
+    
+    func dropShadow(shadowCell shadowOpacity: Float, shadowRadius: CGFloat, offsetHeight: CGFloat, color: UIColor = .black) {
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowOpacity = shadowOpacity
+        self.layer.shadowOffset = CGSize(width: 0, height: offsetHeight)
+        self.layer.shadowRadius = shadowRadius
+        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
     }
 
     func setGradientBackground(startColor: UIColor, endColor: UIColor) {

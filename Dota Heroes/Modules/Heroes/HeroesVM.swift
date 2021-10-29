@@ -19,14 +19,17 @@ public class HeroesVM: ParentViewModel {
     var heroesResponse: Observable<[HeroesResponse]> = Observable([])
     
     func fetchHeroesAPI() {
+        self.isLoadingStated(true)
         networkLayer.getRequestData(urlRequest: ApiConstant.API_HERO_STATS, headers: nil, parameters: nil, successHandler: { (heroes: [HeroesResponse]) in
+            self.isLoadingStated(false)
             self.heroesResponse.value = heroes
         }) { error in
+            self.isLoadingStated(false)
             self.onErrorBlock?(error)
         }
     }
     
-    func sortRoles(_ listOfHeroes: [HeroesResponse]) {
+    private func sortRoles(_ listOfHeroes: [HeroesResponse]) {
         self.heroesResponse.value = listOfHeroes
         
         roles.value.append("All")
@@ -37,6 +40,10 @@ public class HeroesVM: ParentViewModel {
             }
         }
         self.roles.value = roles.value.removeDuplicates()
+    }
+    
+    func itemInHeroesCount() -> Int {
+        return heroesResponse.value.count
     }
     
     func addResponseToCoreData(_ managedContext: NSManagedObjectContext) {

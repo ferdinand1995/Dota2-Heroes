@@ -14,8 +14,8 @@
 		B147E8E724D6CDB500B83617 /* RolesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B147E8E524D6CDB500B83617 /* RolesCollectionViewCell.xib */; };
 		B15457D524D5AC180047214B /* HeroesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15457D424D5AC180047214B /* HeroesVM.swift */; };
 		B15457DA24D5B6450047214B /* HeroesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15457D924D5B6450047214B /* HeroesResponse.swift */; };
-		B15457DF24D5BF480047214B /* HeroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15457DD24D5BF480047214B /* HeroCollectionViewCell.swift */; };
-		B15457E024D5BF480047214B /* HeroCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B15457DE24D5BF480047214B /* HeroCollectionViewCell.xib */; };
+		B15457DF24D5BF480047214B /* HeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15457DD24D5BF480047214B /* HeroCell.swift */; };
+		B15457E024D5BF480047214B /* HeroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B15457DE24D5BF480047214B /* HeroCell.xib */; };
 		B17FFB7324D461870028EC3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FFB7224D461870028EC3C /* AppDelegate.swift */; };
 		B17FFB7524D461870028EC3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FFB7424D461870028EC3C /* SceneDelegate.swift */; };
 		B17FFB7724D461870028EC3C /* HeroesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FFB7624D461870028EC3C /* HeroesVC.swift */; };
@@ -59,6 +59,7 @@
 		B1A1DFA6272BAA6800A4AB5C /* UITextField+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1DF93272BAA6700A4AB5C /* UITextField+Utility.swift */; };
 		B1A1DFA7272BAA6800A4AB5C /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1DF94272BAA6700A4AB5C /* UIViewController+Utility.swift */; };
 		B1A1DFA8272BAA6800A4AB5C /* Date+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1DF96272BAA6800A4AB5C /* Date+Utility.swift */; };
+		B1A1DFB0272BF68200A4AB5C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B1A1DFAF272BF68200A4AB5C /* Alamofire */; };
 		B1C7342E24D6035F0043ECE8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B1C7342D24D6035F0043ECE8 /* Kingfisher */; };
 		B1C7343024D60D2E0043ECE8 /* Array+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C7342F24D60D2E0043ECE8 /* Array+Utility.swift */; };
 		B1FEBD3924D9532100ACD47A /* FilterRoleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD3724D9532000ACD47A /* FilterRoleCollectionViewCell.swift */; };
@@ -92,8 +93,8 @@
 		B147E8E524D6CDB500B83617 /* RolesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RolesCollectionViewCell.xib; sourceTree = "<group>"; };
 		B15457D424D5AC180047214B /* HeroesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesVM.swift; sourceTree = "<group>"; };
 		B15457D924D5B6450047214B /* HeroesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesResponse.swift; sourceTree = "<group>"; };
-		B15457DD24D5BF480047214B /* HeroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollectionViewCell.swift; sourceTree = "<group>"; };
-		B15457DE24D5BF480047214B /* HeroCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroCollectionViewCell.xib; sourceTree = "<group>"; };
+		B15457DD24D5BF480047214B /* HeroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCell.swift; sourceTree = "<group>"; };
+		B15457DE24D5BF480047214B /* HeroCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroCell.xib; sourceTree = "<group>"; };
 		B17FFB6F24D461870028EC3C /* Dota Heroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dota Heroes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17FFB7224D461870028EC3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B17FFB7424D461870028EC3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1A1DFB0272BF68200A4AB5C /* Alamofire in Frameworks */,
 				B1A1DF24272ABC1F00A4AB5C /* PromisesTestHelpers in Frameworks */,
 				B1C7342E24D6035F0043ECE8 /* Kingfisher in Frameworks */,
 				B1A1DF26272ABC1F00A4AB5C /* Promises in Frameworks */,
@@ -460,8 +462,8 @@
 			children = (
 				B1FEBD5524D9A28100ACD47A /* ListHeroesCollectionViewCell.swift */,
 				B1FEBD5624D9A28100ACD47A /* ListHeroesCollectionViewCell.xib */,
-				B15457DD24D5BF480047214B /* HeroCollectionViewCell.swift */,
-				B15457DE24D5BF480047214B /* HeroCollectionViewCell.xib */,
+				B15457DD24D5BF480047214B /* HeroCell.swift */,
+				B15457DE24D5BF480047214B /* HeroCell.xib */,
 			);
 			path = Hero;
 			sourceTree = "<group>";
@@ -498,6 +500,7 @@
 				B1A1DF20272ABB1000A4AB5C /* Hyperconnectivity */,
 				B1A1DF23272ABC1F00A4AB5C /* PromisesTestHelpers */,
 				B1A1DF25272ABC1F00A4AB5C /* Promises */,
+				B1A1DFAF272BF68200A4AB5C /* Alamofire */,
 			);
 			productName = "Dota Heroes";
 			productReference = B17FFB6F24D461870028EC3C /* Dota Heroes.app */;
@@ -553,6 +556,7 @@
 				B1C7342C24D6035F0043ECE8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				B1A1DF1F272ABB1000A4AB5C /* XCRemoteSwiftPackageReference "hyperconnectivity" */,
 				B1A1DF22272ABC1F00A4AB5C /* XCRemoteSwiftPackageReference "promises" */,
+				B1A1DFAE272BF68100A4AB5C /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = B17FFB7024D461870028EC3C /* Products */;
 			projectDirPath = "";
@@ -580,7 +584,7 @@
 				B147E8E724D6CDB500B83617 /* RolesCollectionViewCell.xib in Resources */,
 				B147E8DD24D6BC2600B83617 /* HeaderCollectionReusableView.xib in Resources */,
 				B17FFB7F24D461890028EC3C /* Assets.xcassets in Resources */,
-				B15457E024D5BF480047214B /* HeroCollectionViewCell.xib in Resources */,
+				B15457E024D5BF480047214B /* HeroCell.xib in Resources */,
 				B17FFB7A24D461870028EC3C /* Main.storyboard in Resources */,
 				B1A1DF6F272BA81100A4AB5C /* SeparatorTableViewCell.xib in Resources */,
 			);
@@ -607,7 +611,7 @@
 				B1A1DF97272BAA6800A4AB5C /* String+Utility.swift in Sources */,
 				B1FEBD4F24D999AF00ACD47A /* MainCoordinator.swift in Sources */,
 				B1A1DF67272BA81100A4AB5C /* ContentSizedTableView.swift in Sources */,
-				B15457DF24D5BF480047214B /* HeroCollectionViewCell.swift in Sources */,
+				B15457DF24D5BF480047214B /* HeroCell.swift in Sources */,
 				B1A1DF9E272BAA6800A4AB5C /* UINavigationController+Utility.swift in Sources */,
 				B1A1DFA3272BAA6800A4AB5C /* UICollectionView+Utility.swift in Sources */,
 				B1A1DF69272BA81100A4AB5C /* RecordNotFoundView.swift in Sources */,
@@ -932,6 +936,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		B1A1DFAE272BF68100A4AB5C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.4;
+			};
+		};
 		B1C7342C24D6035F0043ECE8 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -957,6 +969,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B1A1DF22272ABC1F00A4AB5C /* XCRemoteSwiftPackageReference "promises" */;
 			productName = Promises;
+		};
+		B1A1DFAF272BF68200A4AB5C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1A1DFAE272BF68100A4AB5C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 		B1C7342D24D6035F0043ECE8 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
