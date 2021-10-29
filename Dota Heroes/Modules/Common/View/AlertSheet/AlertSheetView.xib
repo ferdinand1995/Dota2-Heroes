@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlertSheetView" customModule="Diabetic_Educator" customModuleProvider="target">
+            <connections>
+                <outlet property="alertBackgroundView" destination="VVP-xQ-0Qb" id="XMm-Pg-laY"/>
+                <outlet property="messageLabel" destination="TQw-re-e6J" id="J4k-EY-Xh5"/>
+                <outlet property="sheetView" destination="9tR-mz-10I" id="rel-p0-0OZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVP-xQ-0Qb">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.32000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tR-mz-10I">
+                    <rect key="frame" x="0.0" y="738" width="414" height="158"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Silakan hubungi admin untuk mengubah kata sandi akun Anda." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQw-re-e6J">
+                            <rect key="frame" x="24" y="40" width="366" height="44"/>
+                            <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="TQw-re-e6J" firstAttribute="top" secondItem="9tR-mz-10I" secondAttribute="top" constant="40" id="6oW-bw-A5Q"/>
+                        <constraint firstItem="TQw-re-e6J" firstAttribute="leading" secondItem="9tR-mz-10I" secondAttribute="leading" constant="24" id="f0F-3w-qVN"/>
+                        <constraint firstAttribute="trailing" secondItem="TQw-re-e6J" secondAttribute="trailing" constant="24" id="noj-sw-Jdn"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="VVP-xQ-0Qb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1eK-2Z-xtK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="VVP-xQ-0Qb" secondAttribute="trailing" id="7tV-fh-5m5"/>
+                <constraint firstItem="VVP-xQ-0Qb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BGB-Jq-Zye"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="TQw-re-e6J" secondAttribute="bottom" constant="40" id="GOX-KA-NI5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9tR-mz-10I" secondAttribute="trailing" id="KEB-cM-xqR"/>
+                <constraint firstAttribute="bottom" secondItem="VVP-xQ-0Qb" secondAttribute="bottom" id="NIv-Bj-T00"/>
+                <constraint firstAttribute="bottom" secondItem="9tR-mz-10I" secondAttribute="bottom" id="PHU-cp-Dij"/>
+                <constraint firstItem="9tR-mz-10I" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="e5R-ZL-TTh"/>
+            </constraints>
+            <point key="canvasLocation" x="44.927536231884062" y="85.714285714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

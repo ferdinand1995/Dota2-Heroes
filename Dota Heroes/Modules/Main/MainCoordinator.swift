@@ -17,13 +17,13 @@ class MainCoordinator: Coordinator {
     }
     
     func mainView() {
-        let viewController = ViewController.instantiate()
+        let viewController = HeroesVC.instantiate()
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: false)
     }
     
     func detailDescription() {
-        let detailsViewController = DetailsViewController.instantiate()
+        let detailsViewController = HeroDetailsVC.instantiate()
         detailsViewController.coordinator = self
         navigationController.pushViewController(detailsViewController, animated: true)
     }

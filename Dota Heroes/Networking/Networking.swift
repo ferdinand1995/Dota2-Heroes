@@ -9,7 +9,7 @@
 import Foundation
 
 typealias NetworkCompletionHandler = (Data?, URLResponse?, Error?) -> Void
-typealias ErrorHandler = (String) -> Void
+typealias ErrorHandler = (_ error: (code: Int?, msg: String)) -> Void
 
 class Networking {
     
@@ -26,14 +26,15 @@ class Networking {
         let completionHandler: NetworkCompletionHandler = { (data, urlResponse, error) in
             if let error = error {
                 print(error.localizedDescription)
-                errorHandler("Network Error: \(Networking.genericError)")
+                errorHandler((code: 500, msg: Networking.genericError))
                 return
             }
             
             if self.isSuccessCode(urlResponse) {
                 guard let data = data else {
                     print("Unable to parse the response in given type \(T.self)")
-                    return errorHandler(Networking.genericError)
+                    return errorHandler((code: 500, msg: Networking.genericError))
+
                 }
                 
                 if let responseObject = try? JSONDecoder().decode(T.self, from: data) {
@@ -41,11 +42,11 @@ class Networking {
                 }
             }
             
-            errorHandler("Parsing Error: \(Networking.genericError)")
+            errorHandler((code: 500, msg: Networking.genericError))
         }
         
         guard var components = URLComponents(string: urlRequest) else {
-            return errorHandler("Unable to create URL from given string")
+            return errorHandler((code: 500, msg: "Unable to create URL from given string"))
         }
 
         if let param = parameters {
@@ -74,15 +75,14 @@ class Networking {
         
         let completionHandler: NetworkCompletionHandler = { (data, urlResponse, error) in
             if let error = error {
-                errorHandler(error.localizedDescription)
-                return
+                return errorHandler((code: 500, msg: error.localizedDescription))
             }
             
             if self.isSuccessCode(urlResponse) {
                 
                 guard let data = data else {
                     print("Unable to parse the response in given type \(U.self)")
-                    return errorHandler(Networking.genericError)
+                    return errorHandler((code: 500, msg: Networking.genericError))
                 }
                 
                 if let responseObject = try? JSONDecoder().decode(U.self, from: data) {
@@ -90,11 +90,11 @@ class Networking {
                 }
             }
             
-            errorHandler(Networking.genericError)
+            errorHandler((code: 500, msg: Networking.genericError))
         }
         
         guard let url = URL(string: urlString) else {
-            return errorHandler("Unable to create URL from given string")
+            return errorHandler((code: 500, msg: "Unable to create URL from given string"))
         }
         var request = URLRequest(url: url)
         request.timeoutInterval = 90
@@ -102,7 +102,7 @@ class Networking {
         request.allHTTPHeaderFields = headers
         request.allHTTPHeaderFields?["Content-Type"] = "application/json"
         guard let data = try? JSONEncoder().encode(body) else {
-            return errorHandler("Cannot encode given object into Data")
+            return errorHandler((code: 500, msg: "Cannot encode given object into Data"))
         }
         print(String(data: data, encoding: .utf8)!)
         request.httpBody = data

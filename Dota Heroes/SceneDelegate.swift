@@ -7,31 +7,22 @@
 //
 
 import UIKit
-import Reachability
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var coordinator: Coordinator?
-    
-    let reachability = try! Reachability()
-    
+        
     private var dialogTransitioningDelegate: DialogTransitioningDelegate?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
         let navigationController = UINavigationController()
         coordinator = MainCoordinator(navigationController: navigationController)
-        
         coordinator?.mainView()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        
-        setupReachability()
-
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
@@ -68,7 +59,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
-
+/*
 extension SceneDelegate {
     
     func setupReachability(){
@@ -102,5 +93,5 @@ extension SceneDelegate {
             }
         }
     }
-}
+}*/
 

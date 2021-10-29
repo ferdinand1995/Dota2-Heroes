@@ -10,6 +10,8 @@ import UIKit
 
 protocol Storyboarded {
     static func instantiate() -> Self
+    func initUI()
+    func initViewModel()
 }
 
 extension Storyboarded where Self: UIViewController {

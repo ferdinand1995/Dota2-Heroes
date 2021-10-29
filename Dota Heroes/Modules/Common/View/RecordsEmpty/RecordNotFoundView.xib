@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecordNotFoundView">
+            <connections>
+                <outlet property="actionButton" destination="7is-ID-VHK" id="fsd-Qf-47V"/>
+                <outlet property="descriptionLabel" destination="YVd-3o-0Ga" id="t3N-5m-uyG"/>
+                <outlet property="noRecordImageView" destination="CDV-6W-hCN" id="MXL-Sg-4ys"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8an-6Y-yCa">
+                    <rect key="frame" x="40" y="366.5" width="334" height="163.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVd-3o-0Ga">
+                            <rect key="frame" x="8" y="80" width="318" height="19.5"/>
+                            <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
+                            <color key="textColor" red="0.54117647058823526" green="0.55294117647058827" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7is-ID-VHK">
+                            <rect key="frame" x="138.5" y="123.5" width="57" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="7is-ID-VHK" secondAttribute="height" multiplier="16:9" id="KXi-bH-IeQ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="14"/>
+                            <state key="normal" title="Button"/>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_med_report_error" translatesAutoresizingMaskIntoConstraints="NO" id="CDV-6W-hCN">
+                            <rect key="frame" x="135" y="8" width="64" height="64"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="CDV-6W-hCN" secondAttribute="height" multiplier="1:1" id="8nb-Ng-2OK"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="CDV-6W-hCN" firstAttribute="centerX" secondItem="8an-6Y-yCa" secondAttribute="centerX" id="QBa-SN-LGq"/>
+                        <constraint firstAttribute="trailing" secondItem="YVd-3o-0Ga" secondAttribute="trailing" constant="8" id="T7H-cf-drz"/>
+                        <constraint firstItem="7is-ID-VHK" firstAttribute="top" secondItem="YVd-3o-0Ga" secondAttribute="bottom" constant="24" id="WIb-CU-CCa"/>
+                        <constraint firstItem="7is-ID-VHK" firstAttribute="centerX" secondItem="8an-6Y-yCa" secondAttribute="centerX" id="fe5-h5-LFE"/>
+                        <constraint firstAttribute="bottom" secondItem="7is-ID-VHK" secondAttribute="bottom" constant="8" id="kwi-sr-pp8"/>
+                        <constraint firstItem="YVd-3o-0Ga" firstAttribute="leading" secondItem="8an-6Y-yCa" secondAttribute="leading" constant="8" id="ls9-5f-4Bs"/>
+                        <constraint firstItem="YVd-3o-0Ga" firstAttribute="top" secondItem="CDV-6W-hCN" secondAttribute="bottom" constant="8" id="si3-Rx-8O7"/>
+                        <constraint firstItem="CDV-6W-hCN" firstAttribute="top" secondItem="8an-6Y-yCa" secondAttribute="top" constant="8" id="ugc-VZ-37c"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="8an-6Y-yCa" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="QFf-Vs-eUZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8an-6Y-yCa" secondAttribute="trailing" constant="40" id="fT3-7Q-aA5"/>
+                <constraint firstItem="8an-6Y-yCa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lwu-O5-MCj"/>
+                <constraint firstItem="8an-6Y-yCa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="sOf-BN-b7g"/>
+            </constraints>
+            <point key="canvasLocation" x="34.782608695652179" y="90.401785714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_med_report_error" width="64" height="64"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
