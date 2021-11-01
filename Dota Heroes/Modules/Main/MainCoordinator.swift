@@ -22,10 +22,12 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(viewController, animated: false)
     }
     
-    func detailDescription() {
-        let detailsViewController = HeroDetailsVC.instantiate()
-        detailsViewController.coordinator = self
-        navigationController.pushViewController(detailsViewController, animated: true)
-    }
-
+    /** TODO: Version 2 Release
+     
+     func detailDescription() {
+     let detailsViewController = HeroDetailsVC.instantiate()
+     detailsViewController.coordinator = self
+     navigationController.pushViewController(detailsViewController, animated: true)
+     }
+     */
 }

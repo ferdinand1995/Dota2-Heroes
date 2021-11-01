@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import CoreData
+import Kingfisher
 
-class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout, Storyboarded {
+class HeroesVC: UICollectionViewController, Storyboarded {
 
     weak var coordinator: MainCoordinator?
     private let viewModel = HeroesVM()
@@ -38,6 +38,7 @@ class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout, 
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
+    // MARK: Initialize
     func initUI() {
         collectionView.register(nibWithCellClass: HeroCell.self)
         collectionView.register(nib: UINib(nibName: String(describing: HeaderCollectionReusableView.self), bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withClass: HeaderCollectionReusableView.self)
@@ -70,13 +71,9 @@ class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout, 
         viewModel.fetchHeroesAPI()
     }
 
+    // MARK: CollectionView Delegate
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.itemInHeroesCount()
-    }
-
-    /// - NOTE: Header Size
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return .init(width: view.safeAreaLayoutGuide.layoutFrame.width, height: 240)
     }
 
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -86,44 +83,19 @@ class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout, 
         return header
     }
 
-    /// - NOTE: Content Size
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        let screenRect = collectionView.safeAreaLayoutGuide.layoutFrame
-        let spaceBetweenGrid = numberOfItemPerRow + 1
-        let width = screenRect.width - spacingOfItemPerRow * spaceBetweenGrid
-        let height = width / numberOfItemPerRow
-
-        return CGSize(width: floor(height), height: height)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: spacingOfItemPerRow, bottom: 0, right: spacingOfItemPerRow)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return spacingOfItemPerRow
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return spacingOfItemPerRow
-    }
-
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withClass: HeroCell.self, for: indexPath)
 
         cell.heroImageView.kf.indicatorType = .activity
         viewModel.heroesResponse.bind { heroStat in
-//            DispatchQueue.main.async {
-            cell.heroNameLabel.text = heroStat[indexPath.item].localized_name
 
+            cell.heroNameLabel.text = heroStat[indexPath.item].localized_name
             let urlImage = heroStat[indexPath.item].img
             let url = URL(string: "\(ApiConstant.BASE_URL)\(urlImage ?? "")")
             cell.heroImageView.kf.setImage(with: url, options: [.transition(.fade(0.3))]) { _ in
                 cell.heroNameLabel.fadeIn()
             }
-//            }
         }
         return cell
     }
@@ -151,5 +123,35 @@ class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout, 
 
     private var shouldHideStatusBar: Bool {
         return collectionView.contentOffset.y > view.safeAreaInsets.top
+    }
+}
+
+// MARK: CollectionView Delegate Flow
+extension HeroesVC: UICollectionViewDelegateFlowLayout {
+    /// - NOTE: Header Size
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return .init(width: view.safeAreaLayoutGuide.layoutFrame.width, height: 240)
+    }
+
+    /// - NOTE: Content Size
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let screenRect = collectionView.safeAreaLayoutGuide.layoutFrame
+        let spaceBetweenGrid = numberOfItemPerRow + 1
+        let width = screenRect.width - spacingOfItemPerRow * spaceBetweenGrid
+        let height = width / numberOfItemPerRow
+        return CGSize(width: floor(height), height: height)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: spacingOfItemPerRow, bottom: 0, right: spacingOfItemPerRow)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return spacingOfItemPerRow
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return spacingOfItemPerRow
     }
 }

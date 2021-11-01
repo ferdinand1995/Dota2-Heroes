@@ -139,90 +139,9 @@ extension ParentViewController {
         }
     }
 
-    func showToastMessage(_ view: UIView, msg: String) {
-        /*hud = MBProgressHUD.showAdded(to: view, animated: true)
-        hud.mode = MBProgressHUDMode.text
-        hud.label.text = msg
-        hud.margin = 10.0
-        hud.offset.y = 350.0
-        hud.removeFromSuperViewOnHide = true
-        hud.hide(animated: true, afterDelay: 3)*/
-    }
-
-    func showMsg(title: String, _ msg: String) {
-        let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        isShowingMsg = true
-        self.present(alert, animated: true) { () -> Void in
-            self.isShowingMsg = false
-        }
-    }
-
-    func showErrorSomethingWrong(_ text: String = "") {
-        /** Use to debug
-        if TheAppDelegate.isStaging {}*/
-        if text != "" {
-            print("ERROR SOMETHING WRONG, ", text)
-            showError("theres_something_wrong".localized() + "\n\n\(text) \n(Error reason only shown on staging)")
-            return
-        }
-        showError("theres_something_wrong".localized())
-    }
-
-    func showError(_ error: String) {
-        if(error == "Failed to get" || error == "") {
-
-        } else if error == "Token required." || error == "Token expired." {
-            handleTokenExpired(error)
-        } else {
-            let alert = UIAlertController(title: "label_error".localized(), message: error == "" ? "server_not_available".localized() : error, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {
-                (action: UIAlertAction!) in
-            }))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
 }
 
-//MARK: Logout & Clear data
-extension ParentViewController {
-    func handleTokenExpired(_ error: String) {
-        let maintenanceStatus = UserDefaults.standard.bool(forKey: "isMaintenance")
-        if maintenanceStatus { return }
-
-        let alert = UIAlertController(title: "label_error".localized(), message: "token_expired".localized(), preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {
-            (action: UIAlertAction!) in
-            self.logoutAndClearData()
-        }))
-        self.present(alert, animated: true, completion: nil)
-    }
-
-    private func cleanApplicationData() {
-
-        /* FIXME: cleanApplicationData
-        TheEncryptionManager.removeKey()
-        TheSessionManager.clearAllData()
-        TheAppDelegate.globalTabBarController.reloadAllTabs()
-        TheAppDelegate.globalTabBarController.selectTab(index: 0)*/
-    }
-
-    func logoutAndClearData() {
-        /* FIXME: logoutAndClearData
-        TheOneSignalManager.unsubscribeOneSignal {
-            self.cleanApplicationData()
-        } errorBlock: { (error) in
-            //HARDCODED WORDING (Do not change unless necessary)
-            if error.msg == "User not found." && error.code == 400 {
-                self.cleanApplicationData()
-            } else {
-                self.showError(error)
-            }
-        }*/
-    }
-}
-
-//MARK: Textfield & Labels
+//MARK: Labels
 extension ParentViewController {
 
     func setLabelNoData(tableView: UITableView) {
