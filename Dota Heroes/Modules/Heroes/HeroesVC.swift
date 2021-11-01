@@ -47,24 +47,23 @@ class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout, 
     }
 
     func initViewModel() {
-
         viewModel.isLoadingStated = { isLoading in
             DispatchQueue.main.async {
                 if isLoading {
                     self.view.makeToastActivity(.center)
                 } else {
                     self.view.hideToastActivity()
+                    self.collectionView.reloadData()
                 }
             }
         }
 
         viewModel.onErrorBlock = { error in
-            print(error)
-        }
-
-        viewModel.heroesResponse.bind { _ in
             DispatchQueue.main.async {
-                self.collectionView.reloadData()
+                self.view.hideToastActivity()
+                let alertController = UIAlertController(title: "Loading error", message: "There was a problem loading the feed: \(error.msg)", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: .default))
+                self.present(alertController, animated: true)
             }
         }
 
@@ -114,19 +113,18 @@ class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout, 
 
         let cell = collectionView.dequeueReusableCell(withClass: HeroCell.self, for: indexPath)
 
-        cell.imageViewHero.kf.indicatorType = .activity
+        cell.heroImageView.kf.indicatorType = .activity
         viewModel.heroesResponse.bind { heroStat in
-            DispatchQueue.main.async {
-                cell.labelNameHero.text = heroStat[indexPath.item].localized_name
+//            DispatchQueue.main.async {
+            cell.heroNameLabel.text = heroStat[indexPath.item].localized_name
 
-                let urlImage = heroStat[indexPath.item].img
-                let url = URL(string: "\(ApiConstant.BASE_URL)\(urlImage ?? "")")
-                cell.imageViewHero.kf.setImage(with: url, options: [.transition(.fade(0.3))]) { _ in
-                    cell.labelNameHero.fadeIn()
-                }
+            let urlImage = heroStat[indexPath.item].img
+            let url = URL(string: "\(ApiConstant.BASE_URL)\(urlImage ?? "")")
+            cell.heroImageView.kf.setImage(with: url, options: [.transition(.fade(0.3))]) { _ in
+                cell.heroNameLabel.fadeIn()
             }
+//            }
         }
-
         return cell
     }
 

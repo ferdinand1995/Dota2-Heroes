@@ -21,10 +21,6 @@ class ParentViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
         self.tabBarController?.tabBar.isHidden = true
-        var style = ToastStyle()
-        style.activityBackgroundColor = .hexStringToUIColor("#CED0DF")
-        style.activityIndicatorColor = .MAIN_BLACK_COLOR
-        ToastManager.shared.style = style
     }
 
     init() {
@@ -47,28 +43,6 @@ class ParentViewController: UIViewController {
     @IBAction func dismissTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-
-    func navigateToAppSettings() {
-        guard let url = URL(string: UIApplication.openSettingsURLString) else {
-            return
-        }
-
-        if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:])
-        }
-    }
-    //MARK: - Navigation [END]
-
-
-
-    //MARK: - Subview
-    func setSubView(contentView: UIView, scrollView: UIScrollView) {
-        contentView.frame.size.width = UIScreen.main.bounds.width
-        scrollView.addSubview(contentView)
-        scrollView.contentSize = contentView.frame.size
-    }
-    //MARK: - Subview [END]
-
 
     //MARK: - Loading
     func showLoading(_ view: UIView, views: [UIView] = [UIView](), _ text: String = "") {

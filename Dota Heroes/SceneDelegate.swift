@@ -23,8 +23,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         coordinator?.mainView()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        guard let _ = (scene as? UIWindowScene) else { return }
-    }
+        
+        /// - NOTE: Activity Indicator Style
+        var style = ToastStyle()
+        style.activityBackgroundColor = .hexStringToUIColor("#CED0DF")
+        style.activityIndicatorColor = .MAIN_BLACK_COLOR
+        ToastManager.shared.style = style    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

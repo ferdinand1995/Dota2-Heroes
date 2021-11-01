@@ -50,15 +50,15 @@ class ListHeroesCollectionViewCell: UICollectionViewCell, UICollectionViewDelega
         
         viewModelDelegate?.heroesResponse.bind({ heroStat in
             DispatchQueue.main.async {
-                cell.labelNameHero.text = heroStat[indexPath.item].localized_name
+                cell.heroNameLabel.text = heroStat[indexPath.item].localized_name
                 
                 let urlImage = heroStat[indexPath.item].img
                 let url = URL(string: "\(ApiConstant.BASE_URL)\(urlImage ?? "")")
-                cell.imageViewHero.kf.setImage(with: url, options: [.transition(.fade(0.3))])
+                cell.heroImageView.kf.setImage(with: url, options: [.transition(.fade(0.3))])
             }
         })
         
-        cell.imageViewHero.kf.indicatorType = .activity
+        cell.heroImageView.kf.indicatorType = .activity
         
         return cell
     }

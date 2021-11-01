@@ -24,8 +24,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="v5p-n0-cjh">
                                 <rect key="frame" x="0.0" y="0.0" width="624" height="624"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eSG-kp-nmf">
-                                <rect key="frame" x="293.5" y="591" width="37.5" height="17"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4s-Bh-g5p">
+                                <rect key="frame" x="0.0" y="543" width="624" height="81"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSG-kp-nmf">
+                                <rect key="frame" x="8" y="591" width="608" height="17"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -33,12 +37,17 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="v5p-n0-cjh" secondAttribute="bottom" id="0hf-55-TJO"/>
-                            <constraint firstAttribute="bottom" secondItem="eSG-kp-nmf" secondAttribute="bottom" constant="16" id="MEK-2A-Kuk"/>
-                            <constraint firstAttribute="trailing" secondItem="v5p-n0-cjh" secondAttribute="trailing" id="Pnc-7V-Q1p"/>
-                            <constraint firstItem="v5p-n0-cjh" firstAttribute="leading" secondItem="kr6-pE-2dl" secondAttribute="leading" id="Qun-dj-h11"/>
-                            <constraint firstItem="eSG-kp-nmf" firstAttribute="centerX" secondItem="kr6-pE-2dl" secondAttribute="centerX" id="e3Q-Vm-h2P"/>
-                            <constraint firstItem="v5p-n0-cjh" firstAttribute="top" secondItem="kr6-pE-2dl" secondAttribute="top" id="xcN-DJ-Jx8"/>
+                            <constraint firstAttribute="bottom" secondItem="eSG-kp-nmf" secondAttribute="bottom" constant="16" id="Mpq-0P-I2U"/>
+                            <constraint firstAttribute="bottom" secondItem="h4s-Bh-g5p" secondAttribute="bottom" id="N5H-Yg-63B"/>
+                            <constraint firstItem="eSG-kp-nmf" firstAttribute="leading" secondItem="kr6-pE-2dl" secondAttribute="leading" constant="8" id="Z71-1z-kf2"/>
+                            <constraint firstItem="v5p-n0-cjh" firstAttribute="top" secondItem="kr6-pE-2dl" secondAttribute="top" id="aBM-ZV-Wi8"/>
+                            <constraint firstItem="v5p-n0-cjh" firstAttribute="leading" secondItem="kr6-pE-2dl" secondAttribute="leading" id="fI0-Yf-fZR"/>
+                            <constraint firstAttribute="trailing" secondItem="eSG-kp-nmf" secondAttribute="trailing" constant="8" id="fKs-zJ-B0L"/>
+                            <constraint firstAttribute="trailing" secondItem="v5p-n0-cjh" secondAttribute="trailing" id="hez-Re-gVi"/>
+                            <constraint firstAttribute="trailing" secondItem="h4s-Bh-g5p" secondAttribute="trailing" id="kat-6A-U89"/>
+                            <constraint firstAttribute="bottom" secondItem="v5p-n0-cjh" secondAttribute="bottom" id="sfY-nB-H6f"/>
+                            <constraint firstItem="h4s-Bh-g5p" firstAttribute="leading" secondItem="kr6-pE-2dl" secondAttribute="leading" id="xH2-YM-Pyb"/>
+                            <constraint firstItem="eSG-kp-nmf" firstAttribute="top" secondItem="h4s-Bh-g5p" secondAttribute="top" constant="48" id="z0E-I9-hKt"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -51,11 +60,12 @@
                 <constraint firstAttribute="bottom" secondItem="kr6-pE-2dl" secondAttribute="bottom" constant="8" id="fxh-II-mE0"/>
             </constraints>
             <connections>
-                <outlet property="imageViewHero" destination="v5p-n0-cjh" id="hrP-B3-u02"/>
-                <outlet property="labelNameHero" destination="eSG-kp-nmf" id="rSh-zI-0dz"/>
-                <outlet property="viewBackground" destination="kr6-pE-2dl" id="Xb5-t6-ndS"/>
+                <outlet property="backgroundCellView" destination="kr6-pE-2dl" id="pF3-Up-aK8"/>
+                <outlet property="heroImageView" destination="v5p-n0-cjh" id="hrP-B3-u02"/>
+                <outlet property="heroNameLabel" destination="eSG-kp-nmf" id="rSh-zI-0dz"/>
+                <outlet property="titleBackgroundView" destination="h4s-Bh-g5p" id="Fkv-53-PDR"/>
             </connections>
-            <point key="canvasLocation" x="139" y="113"/>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </collectionViewCell>
     </objects>
     <resources>
