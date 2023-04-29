@@ -8,9 +8,30 @@
 
 import UIKit
 
-protocol Coordinator {
+protocol Coordinator: AnyObject {
     var childCoordinators: [Coordinator] { get set }
-    var navigationController: UINavigationController { get set }
+    func start()
+}
+
+extension Coordinator {
+
+    /// store new coordinators to application stack
+    func store(coordinator: Coordinator) {
+        childCoordinators.append(coordinator)
+    }
+
+    /// remove page when the flow has been completed
+    func free(coordinator: Coordinator) {
+        childCoordinators = childCoordinators.filter { $0 !== coordinator }
+    }
+}
+
+class BaseCoordinator: Coordinator {
     
-    func mainView()
+    var childCoordinators: [Coordinator] = []
+    var isCompleted: (() -> ())?
+
+    func start() {
+        fatalError("Children should implement `start`.")
+    }
 }
