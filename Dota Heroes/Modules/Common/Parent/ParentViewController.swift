@@ -221,34 +221,3 @@ extension ParentViewController {
         }*/
     }
 }
-
-//MARK: Textfield & Labels
-extension ParentViewController {
-
-    func setLabelNoData(tableView: UITableView) {
-        label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.contentSize.width, height: tableView.contentSize.height))
-        label.text = "no_data".localized()
-        label.font = UIFont(name: "Nunito-Bold", size: 13.0)!
-        label.textColor = .DARK_GRAY_COLOR
-        label.textAlignment = .center
-        label.sizeToFit()
-        label.isHidden = false
-        tableView.backgroundView = label
-        tableView.separatorStyle = .none
-    }
-
-    func hideLabelNoData() {
-        /// hide label used to show table/collection view has no data
-        label.isHidden = true
-    }
-
-    func attributedText(withString string: String, boldString: String, font: UIFont) -> NSAttributedString {
-        let attributedString = NSMutableAttributedString(string: string,
-            attributes: [NSAttributedString.Key.font: font])
-        let boldFontAttribute: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: font.pointSize)]
-        let range = (string as NSString).range(of: boldString)
-        attributedString.addAttributes(boldFontAttribute, range: range)
-        return attributedString
-    }
-}
-

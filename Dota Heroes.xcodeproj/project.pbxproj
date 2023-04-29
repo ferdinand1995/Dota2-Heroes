@@ -69,10 +69,11 @@
 		B1FEBD4624D986DC00ACD47A /* InformationDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1FEBD4424D986DC00ACD47A /* InformationDialog.xib */; };
 		B1FEBD4824D9975F00ACD47A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD4724D9975F00ACD47A /* Coordinator.swift */; };
 		B1FEBD4D24D9985F00ACD47A /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD4C24D9985F00ACD47A /* Storyboarded.swift */; };
-		B1FEBD4F24D999AF00ACD47A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD4E24D999AF00ACD47A /* MainCoordinator.swift */; };
 		B1FEBD5124D99BD700ACD47A /* HeroDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD5024D99BD700ACD47A /* HeroDetailsVC.swift */; };
 		B1FEBD5724D9A28100ACD47A /* ListHeroesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD5524D9A28100ACD47A /* ListHeroesCollectionViewCell.swift */; };
 		B1FEBD5824D9A28100ACD47A /* ListHeroesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1FEBD5624D9A28100ACD47A /* ListHeroesCollectionViewCell.xib */; };
+		E4CF81B729FD6436007EA1D5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CF81B629FD6436007EA1D5 /* AppCoordinator.swift */; };
+		E4CF81B929FD6520007EA1D5 /* HeroesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CF81B829FD6520007EA1D5 /* HeroesCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +153,8 @@
 		B1FEBD5524D9A28100ACD47A /* ListHeroesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeroesCollectionViewCell.swift; sourceTree = "<group>"; };
 		B1FEBD5624D9A28100ACD47A /* ListHeroesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListHeroesCollectionViewCell.xib; sourceTree = "<group>"; };
 		E44806C129FBBDE9002DE8E1 /* HeroesDetail */ = {isa = PBXFileReference; lastKnownFileType = text; path = HeroesDetail; sourceTree = SOURCE_ROOT; };
+		E4CF81B629FD6436007EA1D5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		E4CF81B829FD6520007EA1D5 /* HeroesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +244,7 @@
 		B17FFB7124D461870028EC3C /* Dota Heroes */ = {
 			isa = PBXGroup;
 			children = (
+				E4CF81B529FD641B007EA1D5 /* Application */,
 				E44806C129FBBDE9002DE8E1 /* HeroesDetail */,
 				B15457D624D5B5F60047214B /* Models */,
 				B17FFB9E24D46F470028EC3C /* Networking */,
@@ -248,8 +252,6 @@
 				B17FFB9924D46AB80028EC3C /* Modules */,
 				B17FFB9824D46A710028EC3C /* Resources */,
 				B17FFB9724D46A5C0028EC3C /* Supporting Files */,
-				B17FFB7224D461870028EC3C /* AppDelegate.swift */,
-				B17FFB7424D461870028EC3C /* SceneDelegate.swift */,
 			);
 			path = "Dota Heroes";
 			sourceTree = "<group>";
@@ -428,6 +430,7 @@
 				B15457DC24D5BF2C0047214B /* Cell */,
 				B17FFB7624D461870028EC3C /* HeroesVC.swift */,
 				B15457D424D5AC180047214B /* HeroesVM.swift */,
+				E4CF81B829FD6520007EA1D5 /* HeroesCoordinator.swift */,
 			);
 			path = Heroes;
 			sourceTree = "<group>";
@@ -479,6 +482,16 @@
 				B147E8E524D6CDB500B83617 /* RolesCollectionViewCell.xib */,
 			);
 			path = Filter;
+			sourceTree = "<group>";
+		};
+		E4CF81B529FD641B007EA1D5 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B17FFB7224D461870028EC3C /* AppDelegate.swift */,
+				B17FFB7424D461870028EC3C /* SceneDelegate.swift */,
+				E4CF81B629FD6436007EA1D5 /* AppCoordinator.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -612,7 +625,6 @@
 				B1A1DFA5272BAA6800A4AB5C /* UILabel+Utility.swift in Sources */,
 				B1A1DF62272BA81100A4AB5C /* ParentViewController.swift in Sources */,
 				B1A1DF97272BAA6800A4AB5C /* String+Utility.swift in Sources */,
-				B1FEBD4F24D999AF00ACD47A /* MainCoordinator.swift in Sources */,
 				B1A1DF67272BA81100A4AB5C /* ContentSizedTableView.swift in Sources */,
 				B15457DF24D5BF480047214B /* HeroCell.swift in Sources */,
 				B1A1DF9E272BAA6800A4AB5C /* UINavigationController+Utility.swift in Sources */,
@@ -623,6 +635,7 @@
 				B1A1DF74272BA81100A4AB5C /* AlertSheetView.swift in Sources */,
 				B1A1DF9C272BAA6800A4AB5C /* UIScrollView+Utility.swift in Sources */,
 				B1A1DF9D272BAA6800A4AB5C /* UITableViewCell+Utility.swift in Sources */,
+				E4CF81B729FD6436007EA1D5 /* AppCoordinator.swift in Sources */,
 				B1A1DFA8272BAA6800A4AB5C /* Date+Utility.swift in Sources */,
 				B1A1DF9A272BAA6800A4AB5C /* UIButton+Utility.swift in Sources */,
 				B1A1DF66272BA81100A4AB5C /* MenuTableView.swift in Sources */,
@@ -640,6 +653,7 @@
 				B1C7343024D60D2E0043ECE8 /* Array+Utility.swift in Sources */,
 				B1A1DFA4272BAA6800A4AB5C /* UIWindow+Utility.swift in Sources */,
 				B1A1DFA1272BAA6800A4AB5C /* UIFont+Utility.swift in Sources */,
+				E4CF81B929FD6520007EA1D5 /* HeroesCoordinator.swift in Sources */,
 				B1A1DF63272BA81100A4AB5C /* ParentViewModel.swift in Sources */,
 				B1A1DFA6272BAA6800A4AB5C /* UITextField+Utility.swift in Sources */,
 				B1FEBD5724D9A28100ACD47A /* ListHeroesCollectionViewCell.swift in Sources */,

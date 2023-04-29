@@ -16,6 +16,8 @@ public class HeroesVM: ParentViewModel {
     
     // MARK: Binding View
     var roles: Observable<[String]> = Observable([])
+    var didTapBack: (() -> Void)?
+    var didSelect: (() -> Void)?
     var heroesResponse: Observable<[HeroesResponse]> = Observable([])
     
     func fetchHeroesAPI() {

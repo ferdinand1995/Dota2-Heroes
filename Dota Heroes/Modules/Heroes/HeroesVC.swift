@@ -11,7 +11,6 @@ import CoreData
 
 class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout, Storyboarded {
 
-    weak var coordinator: MainCoordinator?
     private let viewModel = HeroesVM()
     let spacingOfItemPerRow: CGFloat = 0
     let numberOfItemPerRow: CGFloat = 3

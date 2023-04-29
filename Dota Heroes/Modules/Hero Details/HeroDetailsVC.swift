@@ -12,20 +12,18 @@ class HeroDetailsVC: UIViewController, Storyboarded {
     func initUI() {
         print("a")
     }
-    
+
     func initViewModel() {
         print("a")
     }
-    
-    
-    weak var coordinator: MainCoordinator?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
+
 
     /*
     // MARK: - Navigation
