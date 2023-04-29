@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -151,6 +151,7 @@
 		B1FEBD5024D99BD700ACD47A /* HeroDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailsVC.swift; sourceTree = "<group>"; };
 		B1FEBD5524D9A28100ACD47A /* ListHeroesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeroesCollectionViewCell.swift; sourceTree = "<group>"; };
 		B1FEBD5624D9A28100ACD47A /* ListHeroesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListHeroesCollectionViewCell.xib; sourceTree = "<group>"; };
+		E44806C129FBBDE9002DE8E1 /* HeroesDetail */ = {isa = PBXFileReference; lastKnownFileType = text; path = HeroesDetail; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +241,7 @@
 		B17FFB7124D461870028EC3C /* Dota Heroes */ = {
 			isa = PBXGroup;
 			children = (
+				E44806C129FBBDE9002DE8E1 /* HeroesDetail */,
 				B15457D624D5B5F60047214B /* Models */,
 				B17FFB9E24D46F470028EC3C /* Networking */,
 				B17FFB9A24D46ACF0028EC3C /* Helpers */,
@@ -295,7 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				B17FFB7B24D461870028EC3C /* Dota_Heroes.xcdatamodeld */,
-				B1FEBD4924D9976B00ACD47A /* Extensions */,
+				B1FEBD4924D9976B00ACD47A /* Ext */,
 				B1FEBD4B24D9979000ACD47A /* Coordinators */,
 			);
 			path = Helpers;
@@ -430,14 +432,14 @@
 			path = Heroes;
 			sourceTree = "<group>";
 		};
-		B1FEBD4924D9976B00ACD47A /* Extensions */ = {
+		B1FEBD4924D9976B00ACD47A /* Ext */ = {
 			isa = PBXGroup;
 			children = (
 				B1A1DF95272BAA6800A4AB5C /* Foundation */,
 				B1A1DF82272BAA6700A4AB5C /* Stdlib */,
 				B1A1DF85272BAA6700A4AB5C /* UIKit */,
 			);
-			path = Extensions;
+			path = Ext;
 			sourceTree = "<group>";
 		};
 		B1FEBD4B24D9979000ACD47A /* Coordinators */ = {
@@ -530,8 +532,9 @@
 		B17FFB6724D461870028EC3C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = Tiket.com;
 				TargetAttributes = {
 					B17FFB6E24D461870028EC3C = {

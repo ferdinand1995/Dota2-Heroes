@@ -30,6 +30,13 @@ Developer has an expectation with the [Swift Package Manager](https://swift.org/
 
 * [Kingfisher 7+](https://github.com/onevcat/Kingfisher/)
 
-## Contribute (Structure)
+## Project Roadmap
 
-`Coming Soon`
+### Architecture
+
+ * [x] [MVVM](https://benoitpasquier.com/ios-swift-mvvm-pattern/)
+ * [ ] [Unit Testing](https://benoitpasquier.com/unit-test-swift-mvvm-pattern/)
+ * [ ] [Error Handling](https://benoitpasquier.com/error-handling-swift-mvvm/)
+ * [ ] [Coordinator Pattern](https://benoitpasquier.com/coordinator-pattern-swift/)
+ * [ ] Protocol-Oriented Programming
+ 
