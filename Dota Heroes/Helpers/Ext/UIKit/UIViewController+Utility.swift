@@ -8,14 +8,7 @@
 
 import UIKit.UIViewController
 
-protocol Drawable {
-    var viewController: UIViewController? { get }
-}
-
-extension UIViewController: Drawable {
-    
-    var viewController: UIViewController? { return self }
-    
+extension UIViewController {
 
     func add(_ child: UIViewController, frame: CGRect? = nil) {
         addChild(child)

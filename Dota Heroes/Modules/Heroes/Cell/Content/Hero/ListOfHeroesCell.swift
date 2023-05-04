@@ -1,5 +1,5 @@
 //
-//  ListHeroesCollectionViewCell.swift
+//  ListOfHeroesCell.swift
 //  Dota Heroes
 //
 //  Created by Ferdinand on 04/08/20.
@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class ListHeroesCollectionViewCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ListOfHeroesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     let cellIdentifier = "heroesCell"
     

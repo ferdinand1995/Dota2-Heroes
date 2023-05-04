@@ -32,6 +32,10 @@ Developer has an expectation with the [Swift Package Manager](https://swift.org/
 
 ## Project Roadmap
 
+### Refactor History
+
+ * [x] April, 2023
+
 ### Architecture
 
  * [x] [MVVM](https://benoitpasquier.com/ios-swift-mvvm-pattern/)

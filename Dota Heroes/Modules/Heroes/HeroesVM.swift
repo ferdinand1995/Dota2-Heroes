@@ -9,53 +9,64 @@
 import Foundation
 import UIKit.UIImage
 import CoreData
+import NavigationKit
+import Combine
 
-public class HeroesVM: ParentViewModel {
-    
+class HeroesCellVM {
+    let name: String
+    let imageURL: URL?
+
+    init(name: String?, imageURL: String?) {
+        self.name = name ?? "...."
+        let url: String = ApiConstant.BASE_URL + (imageURL ?? "")
+        self.imageURL = URL(string: url)
+    }
+}
+
+public class HeroesVM: BaseViewModel {
+
     private let networkLayer = Networking()
-    
+
     // MARK: Binding View
-    var roles: Observable<[String]> = Observable([])
-    var didTapBack: (() -> Void)?
-    var didSelect: (() -> Void)?
-    var heroesResponse: Observable<[HeroesResponse]> = Observable([])
-    
+    @Published private(set) var roles = [String]()
+    @Published private(set) var heroesResponse = [HeroesResponse]()
+
     func fetchHeroesAPI() {
         self.isLoadingStated(true)
         networkLayer.getRequestData(urlRequest: ApiConstant.API_HERO_STATS, headers: nil, parameters: nil, successHandler: { (heroes: [HeroesResponse]) in
             self.isLoadingStated(false)
-            self.heroesResponse.value = heroes
+            self.heroesResponse = heroes
         }) { error in
             self.isLoadingStated(false)
             self.onErrorBlock?(error)
         }
     }
-    
+
     private func sortRoles(_ listOfHeroes: [HeroesResponse]) {
-        self.heroesResponse.value = listOfHeroes
-        
-        roles.value.append("All")
+        self.heroesResponse = listOfHeroes
+
+        roles.append("All")
         for obj in listOfHeroes {
             guard let roles = obj.roles else { return }
             for objRole in roles {
-                self.roles.value.append(objRole)
+                self.roles.append(objRole)
             }
         }
-        self.roles.value = roles.value.removeDuplicates()
+        self.roles = roles.removeDuplicates()
     }
-    
+
     func itemInHeroesCount() -> Int {
-        return heroesResponse.value.count
+        return heroesResponse.count
     }
-    
+
     func addResponseToCoreData(_ managedContext: NSManagedObjectContext) {
-        
+
         do {
             let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Hero")
             let deleteALL = NSBatchDeleteRequest(fetchRequest: deleteFetch)
-            
+
             try managedContext.execute(deleteALL)
-            
+
             do {
                 try managedContext.save()
                 print("Success")
@@ -65,11 +76,11 @@ public class HeroesVM: ParentViewModel {
         } catch {
             print ("There is an error in deleting records")
         }
-        
-        for hero in self.heroesResponse.value {
+
+        for hero in heroesResponse {
             let entity = NSEntityDescription.entity(forEntityName: "Hero", in: managedContext)
             let newHeroes = NSManagedObject(entity: entity!, insertInto: managedContext)
-            
+
             guard let heroId = hero.hero_id else { return }
             newHeroes.setValue(String(heroId), forKey: "hero_id")
             newHeroes.setValue(hero.name, forKey: "name")
@@ -86,7 +97,7 @@ public class HeroesVM: ParentViewModel {
             guard let moveSpeed = hero.move_speed else { return }
             newHeroes.setValue(String(moveSpeed), forKey: "move_speed")
         }
-        
+
         do {
             try managedContext.save()
             print("Success")
@@ -94,13 +105,13 @@ public class HeroesVM: ParentViewModel {
             print("Could not save. \(error), \(error.userInfo)")
         }
     }
-    
-    
+
+
     func fetchCoreData(_ managedContext: NSManagedObjectContext, completion: @escaping (() -> Void)) {
-        
+
         let all = NSFetchRequest<Hero>(entityName: "Hero")
         var listOfHeroes = [Hero]()
-        
+
         do {
             let fetched = try managedContext.fetch(all)
             listOfHeroes = fetched
@@ -109,27 +120,27 @@ public class HeroesVM: ParentViewModel {
             //TODO: Handle Error
             print(nserror.description)
         }
-        
+
         var tempHeroesResponse = [HeroesResponse]()
         for obj in listOfHeroes {
-            
+
             let stringAsData = obj.roles?.data(using: String.Encoding.utf16)
             let arrayRole: [String] = try! JSONDecoder().decode([String].self, from: stringAsData!)
-            
-            let id:Int? = Int(obj.hero_id ?? "")
-            let health:Int? = Int(obj.base_health ?? "")
-            let attack:Int? = Int(obj.base_attack_max ?? "")
-            let speed:Int? = Int(obj.move_speed ?? "")
+
+            let id: Int? = Int(obj.hero_id ?? "")
+            let health: Int? = Int(obj.base_health ?? "")
+            let attack: Int? = Int(obj.base_attack_max ?? "")
+            let speed: Int? = Int(obj.move_speed ?? "")
 
             let hero = HeroesResponse(hero_id: id, name: obj.name, localized_name: obj.localized_name, primary_attr: obj.primary_attr, attack_type: obj.attack_type, roles: arrayRole, img: obj.img, icon: obj.icon, base_health: health, base_attack_max: attack, move_speed: speed)
-            
+
             tempHeroesResponse.append(hero)
         }
-        
+
         self.sortRoles(tempHeroesResponse)
         completion()
     }
-    
+
     func convertToJSONArray(moArray: [NSManagedObject]) -> Any {
         var jsonArray: [[String: Any]] = []
         for item in moArray {
@@ -144,5 +155,5 @@ public class HeroesVM: ParentViewModel {
         }
         return jsonArray
     }
-    
+
 }

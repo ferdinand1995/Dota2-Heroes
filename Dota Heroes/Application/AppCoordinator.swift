@@ -1,37 +1,33 @@
 //
 //  AppCoordinator.swift
-//  Dota Heroes
+//  CoordinatorSample
 //
-//  Created by Tedjakusuma, Ferdinand on 29/04/23.
-//  Copyright © 2023 Tiket.com. All rights reserved.
+//  Created by Benoit Pasquier on 9/6/20.
+//  Copyright © 2020 Benoit Pasquier. All rights reserved.
 //
 
+import Foundation
 import UIKit
+import NavigationKit
 
 class AppCoordinator: BaseCoordinator {
 
     let window: UIWindow
 
-    init(_ window: UIWindow) {
+    init(window: UIWindow) {
         self.window = window
         super.init()
     }
 
     override func start() {
-        /// preparing root view
-        let navigationController = UINavigationController()
-        let heroesCoordinator = HeroesCoordinator(navigationController: navigationController)
+        // preparing root view
+        let router = Router(navigationController: UINavigationController())
+        let myCoordinator = HeroesCoordinator(router: router)
 
-        /// store child coordinator
-        self.store(coordinator: heroesCoordinator)
-        heroesCoordinator.start()
+        // store child coordinator
+        self.start(coordinator: myCoordinator)
 
-        window.rootViewController = navigationController
+        window.rootViewController = router.navigationController
         window.makeKeyAndVisible()
-
-        /// detect when free it
-        heroesCoordinator.isCompleted = { [weak self] in
-            self?.free(coordinator: heroesCoordinator)
-        }
     }
 }

@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HeroCell: UICollectionViewCell {
-    
-    @IBOutlet weak var backgroundCellView: UIView!
-    @IBOutlet weak var heroImageView: UIImageView!
-    @IBOutlet weak var titleBackgroundView: UIView!
-    @IBOutlet weak var heroNameLabel: UILabel!
-    
+
+    @IBOutlet private weak var shadowView: UIView!
+    @IBOutlet private weak var backgroundCellView: UIView!
+    @IBOutlet private weak var heroImageView: UIImageView!
+    @IBOutlet private weak var titleBackgroundView: UIView!
+    @IBOutlet private weak var heroNameLabel: UILabel!
+
     let gradientLayer = CAGradientLayer()
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         gradientLayer.type = .axial
@@ -26,13 +28,32 @@ class HeroCell: UICollectionViewCell {
         gradientLayer.zPosition = 1
         gradientLayer.opacity = 0.6
         titleBackgroundView.layer.addSublayer(gradientLayer)
+//        shadowView.dropShadow(color: .black, opacity: 0.1, offSet: CGSize(width: 0, height: 0.1), radius: 0.8)
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         backgroundCellView.roundViewCorner(cornerRadius: 8, borderWidth: 0, borderColor: .clear)
         gradientLayer.frame = titleBackgroundView.bounds
         titleBackgroundView.clipsToBounds = true
         heroImageView.clipsToBounds = true
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        heroImageView.kf.cancelDownloadTask()
+    }
+
+    public func configCell(with viewModel: HeroesCellVM) {
+        heroImageView.kf.indicatorType = .activity
+        heroNameLabel.text = viewModel.name
+        heroImageView.kf.setImage(with: viewModel.imageURL, options: [
+                .transition(.fade(0.3)),
+                .processor(DownsamplingImageProcessor(size: heroImageView.bounds.size)),
+                .scaleFactor(UIScreen.main.scale),
+                .cacheOriginalImage
+        ]) { _ in
+            self.heroNameLabel.fadeIn()
+        }
     }
 }

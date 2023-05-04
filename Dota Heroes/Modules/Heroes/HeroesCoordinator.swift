@@ -7,34 +7,36 @@
 //
 
 import UIKit
+import NavigationKit
+import HeroesDetail
 
 class HeroesCoordinator: BaseCoordinator {
 
-    var navigationController: UINavigationController?
+    let router: RouterProtocol
 
-    init(navigationController: UINavigationController?) {
-        self.navigationController = navigationController
+    init(router: RouterProtocol) {
+        self.router = router
     }
 
     override func start() {
 
+        let heroesVC = HeroesVC()
         let viewModel = HeroesVM()
-        let viewController = HeroesVC()
-        viewController.view.backgroundColor = .red
+        heroesVC.viewModel = viewModel
+
         viewModel.didSelect = { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.showDetail(strongSelf.navigationController)
+            strongSelf.showDetail(strongSelf.router)
         }
 
         viewModel.didTapBack = { [weak self] in
             self?.isCompleted?()
         }
-
-        navigationController?.pushViewController(viewController, animated: true)
+        router.push(heroesVC, isAnimated: true, onNavigateBack: isCompleted)
     }
 
-    func showDetail(_ navigationController: UINavigationController?) {
-//        let newCoordinator = NewCoordinator(product: product, navigationController: navigationController)
-//        self.store(coordinator: newCoordinator)
+    func showDetail(_ router: RouterProtocol) {
+        let heroDetailCoordinator = HeroDetailCoordinator(router)
+        self.start(coordinator: heroDetailCoordinator)
     }
 }

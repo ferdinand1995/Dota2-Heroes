@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,6 +18,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="640" height="640"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NjN-h0-fSk">
+                        <rect key="frame" x="8" y="8" width="624" height="624"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kr6-pE-2dl">
                         <rect key="frame" x="8" y="8" width="624" height="624"/>
                         <subviews>
@@ -25,11 +29,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="624" height="624"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4s-Bh-g5p">
-                                <rect key="frame" x="0.0" y="543" width="624" height="81"/>
+                                <rect key="frame" x="0.0" y="551" width="624" height="73"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSG-kp-nmf">
-                                <rect key="frame" x="8" y="591" width="608" height="17"/>
+                                <rect key="frame" x="8" y="599" width="608" height="17"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -37,7 +41,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="eSG-kp-nmf" secondAttribute="bottom" constant="16" id="Mpq-0P-I2U"/>
+                            <constraint firstAttribute="bottom" secondItem="eSG-kp-nmf" secondAttribute="bottom" constant="8" id="Mpq-0P-I2U"/>
                             <constraint firstAttribute="bottom" secondItem="h4s-Bh-g5p" secondAttribute="bottom" id="N5H-Yg-63B"/>
                             <constraint firstItem="eSG-kp-nmf" firstAttribute="leading" secondItem="kr6-pE-2dl" secondAttribute="leading" constant="8" id="Z71-1z-kf2"/>
                             <constraint firstItem="v5p-n0-cjh" firstAttribute="top" secondItem="kr6-pE-2dl" secondAttribute="top" id="aBM-ZV-Wi8"/>
@@ -54,15 +58,20 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="NjN-h0-fSk" firstAttribute="trailing" secondItem="kr6-pE-2dl" secondAttribute="trailing" id="8Bu-Y9-ey7"/>
                 <constraint firstItem="kr6-pE-2dl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="F1m-Is-zJg"/>
+                <constraint firstItem="NjN-h0-fSk" firstAttribute="leading" secondItem="kr6-pE-2dl" secondAttribute="leading" id="Ix5-L0-yYU"/>
                 <constraint firstAttribute="trailing" secondItem="kr6-pE-2dl" secondAttribute="trailing" constant="8" id="NnT-7Q-6IE"/>
                 <constraint firstItem="kr6-pE-2dl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="dqx-RT-kiX"/>
                 <constraint firstAttribute="bottom" secondItem="kr6-pE-2dl" secondAttribute="bottom" constant="8" id="fxh-II-mE0"/>
+                <constraint firstItem="NjN-h0-fSk" firstAttribute="top" secondItem="kr6-pE-2dl" secondAttribute="top" id="loP-0s-D6v"/>
+                <constraint firstItem="NjN-h0-fSk" firstAttribute="bottom" secondItem="kr6-pE-2dl" secondAttribute="bottom" id="vj5-dc-tce"/>
             </constraints>
             <connections>
                 <outlet property="backgroundCellView" destination="kr6-pE-2dl" id="pF3-Up-aK8"/>
                 <outlet property="heroImageView" destination="v5p-n0-cjh" id="hrP-B3-u02"/>
                 <outlet property="heroNameLabel" destination="eSG-kp-nmf" id="rSh-zI-0dz"/>
+                <outlet property="shadowView" destination="NjN-h0-fSk" id="tN4-GQ-Oi5"/>
                 <outlet property="titleBackgroundView" destination="h4s-Bh-g5p" id="Fkv-53-PDR"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
@@ -70,6 +79,9 @@
     </objects>
     <resources>
         <image name="ic_placeholder" width="600" height="250"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

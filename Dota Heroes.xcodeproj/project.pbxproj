@@ -10,8 +10,7 @@
 		B104E15C24D81E7900499213 /* StretchyHeaderViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104E15B24D81E7900499213 /* StretchyHeaderViewFlowLayout.swift */; };
 		B147E8DC24D6BC2600B83617 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147E8DA24D6BC2600B83617 /* HeaderCollectionReusableView.swift */; };
 		B147E8DD24D6BC2600B83617 /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B147E8DB24D6BC2600B83617 /* HeaderCollectionReusableView.xib */; };
-		B147E8E624D6CDB500B83617 /* RolesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147E8E424D6CDB500B83617 /* RolesCollectionViewCell.swift */; };
-		B147E8E724D6CDB500B83617 /* RolesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B147E8E524D6CDB500B83617 /* RolesCollectionViewCell.xib */; };
+		B147E8E624D6CDB500B83617 /* RolesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147E8E424D6CDB500B83617 /* RolesCell.swift */; };
 		B15457D524D5AC180047214B /* HeroesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15457D424D5AC180047214B /* HeroesVM.swift */; };
 		B15457DA24D5B6450047214B /* HeroesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15457D924D5B6450047214B /* HeroesResponse.swift */; };
 		B15457DF24D5BF480047214B /* HeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15457DD24D5BF480047214B /* HeroCell.swift */; };
@@ -27,8 +26,6 @@
 		B17FFBA224D470110028EC3C /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FFBA124D470110028EC3C /* APIConstant.swift */; };
 		B17FFBA424D470D80028EC3C /* example_contract.json in Resources */ = {isa = PBXBuildFile; fileRef = B17FFBA324D470D80028EC3C /* example_contract.json */; };
 		B1A1DF21272ABB1000A4AB5C /* Hyperconnectivity in Frameworks */ = {isa = PBXBuildFile; productRef = B1A1DF20272ABB1000A4AB5C /* Hyperconnectivity */; };
-		B1A1DF62272BA81100A4AB5C /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1DF32272BA81000A4AB5C /* ParentViewController.swift */; };
-		B1A1DF63272BA81100A4AB5C /* ParentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1DF33272BA81000A4AB5C /* ParentViewModel.swift */; };
 		B1A1DF66272BA81100A4AB5C /* MenuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1DF39272BA81000A4AB5C /* MenuTableView.swift */; };
 		B1A1DF67272BA81100A4AB5C /* ContentSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1DF3A272BA81000A4AB5C /* ContentSizedTableView.swift */; };
 		B1A1DF68272BA81100A4AB5C /* MenuTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1A1DF3B272BA81000A4AB5C /* MenuTableView.xib */; };
@@ -59,17 +56,18 @@
 		B1A1DFB0272BF68200A4AB5C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B1A1DFAF272BF68200A4AB5C /* Alamofire */; };
 		B1C7342E24D6035F0043ECE8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B1C7342D24D6035F0043ECE8 /* Kingfisher */; };
 		B1C7343024D60D2E0043ECE8 /* Array+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C7342F24D60D2E0043ECE8 /* Array+Utility.swift */; };
-		B1FEBD3924D9532100ACD47A /* FilterRoleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD3724D9532000ACD47A /* FilterRoleCollectionViewCell.swift */; };
-		B1FEBD3A24D9532100ACD47A /* FilterRoleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1FEBD3824D9532000ACD47A /* FilterRoleCollectionViewCell.xib */; };
 		B1FEBD3C24D95C2E00ACD47A /* DialogTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD3B24D95C2E00ACD47A /* DialogTransitioningDelegate.swift */; };
 		B1FEBD4524D986DC00ACD47A /* InformationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD4324D986DC00ACD47A /* InformationDialog.swift */; };
 		B1FEBD4624D986DC00ACD47A /* InformationDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1FEBD4424D986DC00ACD47A /* InformationDialog.xib */; };
-		B1FEBD4824D9975F00ACD47A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD4724D9975F00ACD47A /* Coordinator.swift */; };
-		B1FEBD5124D99BD700ACD47A /* HeroDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD5024D99BD700ACD47A /* HeroDetailsVC.swift */; };
-		B1FEBD5724D9A28100ACD47A /* ListHeroesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD5524D9A28100ACD47A /* ListHeroesCollectionViewCell.swift */; };
-		B1FEBD5824D9A28100ACD47A /* ListHeroesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1FEBD5624D9A28100ACD47A /* ListHeroesCollectionViewCell.xib */; };
+		E497D2322A03A2F8001A113F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E497D2312A03A2F8001A113F /* Repository.swift */; };
+		E497D2382A03CC7E001A113F /* ListOfRolesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E497D2372A03CC7E001A113F /* ListOfRolesCell.swift */; };
+		E497D2392A03D20A001A113F /* ListOfHeroesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD5524D9A28100ACD47A /* ListOfHeroesCell.swift */; };
+		E497D23A2A03D20A001A113F /* ListOfHeroesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1FEBD5624D9A28100ACD47A /* ListOfHeroesCell.xib */; };
 		E4CF81B729FD6436007EA1D5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CF81B629FD6436007EA1D5 /* AppCoordinator.swift */; };
 		E4CF81B929FD6520007EA1D5 /* HeroesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CF81B829FD6520007EA1D5 /* HeroesCoordinator.swift */; };
+		E4CF81C32A025E90007EA1D5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CF81C22A025E90007EA1D5 /* BaseViewController.swift */; };
+		E4CF81CC2A02859D007EA1D5 /* NavigationKit in Frameworks */ = {isa = PBXBuildFile; productRef = E4CF81CB2A02859D007EA1D5 /* NavigationKit */; };
+		E4CF81CE2A0285A2007EA1D5 /* HeroesDetail in Frameworks */ = {isa = PBXBuildFile; productRef = E4CF81CD2A0285A2007EA1D5 /* HeroesDetail */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,8 +84,7 @@
 		B104E15B24D81E7900499213 /* StretchyHeaderViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderViewFlowLayout.swift; sourceTree = "<group>"; };
 		B147E8DA24D6BC2600B83617 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		B147E8DB24D6BC2600B83617 /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
-		B147E8E424D6CDB500B83617 /* RolesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolesCollectionViewCell.swift; sourceTree = "<group>"; };
-		B147E8E524D6CDB500B83617 /* RolesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RolesCollectionViewCell.xib; sourceTree = "<group>"; };
+		B147E8E424D6CDB500B83617 /* RolesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolesCell.swift; sourceTree = "<group>"; };
 		B15457D424D5AC180047214B /* HeroesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesVM.swift; sourceTree = "<group>"; };
 		B15457D924D5B6450047214B /* HeroesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesResponse.swift; sourceTree = "<group>"; };
 		B15457DD24D5BF480047214B /* HeroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCell.swift; sourceTree = "<group>"; };
@@ -106,8 +103,6 @@
 		B17FFB9F24D46F570028EC3C /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		B17FFBA124D470110028EC3C /* APIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
 		B17FFBA324D470D80028EC3C /* example_contract.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = example_contract.json; sourceTree = "<group>"; };
-		B1A1DF32272BA81000A4AB5C /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
-		B1A1DF33272BA81000A4AB5C /* ParentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewModel.swift; sourceTree = "<group>"; };
 		B1A1DF39272BA81000A4AB5C /* MenuTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableView.swift; sourceTree = "<group>"; };
 		B1A1DF3A272BA81000A4AB5C /* ContentSizedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentSizedTableView.swift; sourceTree = "<group>"; };
 		B1A1DF3B272BA81000A4AB5C /* MenuTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuTableView.xib; sourceTree = "<group>"; };
@@ -136,18 +131,18 @@
 		B1A1DF94272BAA6700A4AB5C /* UIViewController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		B1A1DF96272BAA6800A4AB5C /* Date+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Utility.swift"; sourceTree = "<group>"; };
 		B1C7342F24D60D2E0043ECE8 /* Array+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utility.swift"; sourceTree = "<group>"; };
-		B1FEBD3724D9532000ACD47A /* FilterRoleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRoleCollectionViewCell.swift; sourceTree = "<group>"; };
-		B1FEBD3824D9532000ACD47A /* FilterRoleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterRoleCollectionViewCell.xib; sourceTree = "<group>"; };
 		B1FEBD3B24D95C2E00ACD47A /* DialogTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogTransitioningDelegate.swift; sourceTree = "<group>"; };
 		B1FEBD4324D986DC00ACD47A /* InformationDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationDialog.swift; sourceTree = "<group>"; };
 		B1FEBD4424D986DC00ACD47A /* InformationDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationDialog.xib; sourceTree = "<group>"; };
-		B1FEBD4724D9975F00ACD47A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		B1FEBD4E24D999AF00ACD47A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		B1FEBD5024D99BD700ACD47A /* HeroDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailsVC.swift; sourceTree = "<group>"; };
-		B1FEBD5524D9A28100ACD47A /* ListHeroesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeroesCollectionViewCell.swift; sourceTree = "<group>"; };
-		B1FEBD5624D9A28100ACD47A /* ListHeroesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListHeroesCollectionViewCell.xib; sourceTree = "<group>"; };
+		B1FEBD5524D9A28100ACD47A /* ListOfHeroesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfHeroesCell.swift; sourceTree = "<group>"; };
+		B1FEBD5624D9A28100ACD47A /* ListOfHeroesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListOfHeroesCell.xib; sourceTree = "<group>"; };
+		E497D2312A03A2F8001A113F /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		E497D2372A03CC7E001A113F /* ListOfRolesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfRolesCell.swift; sourceTree = "<group>"; };
+		E4BA4B772A038BBC004501BB /* HeroesDetail */ = {isa = PBXFileReference; lastKnownFileType = text; path = HeroesDetail; sourceTree = SOURCE_ROOT; };
 		E4CF81B629FD6436007EA1D5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E4CF81B829FD6520007EA1D5 /* HeroesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCoordinator.swift; sourceTree = "<group>"; };
+		E4CF81BA2A0134AF007EA1D5 /* NavigationKit */ = {isa = PBXFileReference; lastKnownFileType = text; path = NavigationKit; sourceTree = SOURCE_ROOT; };
+		E4CF81C22A025E90007EA1D5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +151,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1A1DFB0272BF68200A4AB5C /* Alamofire in Frameworks */,
+				E4CF81CC2A02859D007EA1D5 /* NavigationKit in Frameworks */,
+				E4CF81CE2A0285A2007EA1D5 /* HeroesDetail in Frameworks */,
 				B1C7342E24D6035F0043ECE8 /* Kingfisher in Frameworks */,
 				B1A1DF21272ABB1000A4AB5C /* Hyperconnectivity in Frameworks */,
 			);
@@ -175,7 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				B1FEBD5924D9A83200ACD47A /* Hero */,
-				B1FEBD5A24D9A83900ACD47A /* Filter */,
+				B1FEBD5A24D9A83900ACD47A /* Roles */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -197,14 +194,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		B15457DB24D5BE4D0047214B /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				B1FEBD4E24D999AF00ACD47A /* MainCoordinator.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
 		B15457DC24D5BF2C0047214B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +209,7 @@
 				B17FFB7124D461870028EC3C /* Dota Heroes */,
 				B17FFB8B24D461890028EC3C /* Dota HeroesTests */,
 				B17FFB7024D461870028EC3C /* Products */,
+				E4CF81BB2A013592007EA1D5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,6 +225,8 @@
 		B17FFB7124D461870028EC3C /* Dota Heroes */ = {
 			isa = PBXGroup;
 			children = (
+				E4BA4B772A038BBC004501BB /* HeroesDetail */,
+				E4CF81BA2A0134AF007EA1D5 /* NavigationKit */,
 				E4CF81B529FD641B007EA1D5 /* Application */,
 				B15457D624D5B5F60047214B /* Models */,
 				B17FFB9E24D46F470028EC3C /* Networking */,
@@ -276,10 +268,7 @@
 		B17FFB9924D46AB80028EC3C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				B1A1DF2C272BA81000A4AB5C /* Common */,
-				B1FEBD5224D99BF200ACD47A /* Hero Details */,
 				B1A1DFA9272BD63700A4AB5C /* Heroes */,
-				B15457DB24D5BE4D0047214B /* Main */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -287,9 +276,11 @@
 		B17FFB9A24D46ACF0028EC3C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E497D22F2A03A0DC001A113F /* Data */,
+				E4CF81C22A025E90007EA1D5 /* BaseViewController.swift */,
+				E4CF81C12A025884007EA1D5 /* Components */,
 				B17FFB7B24D461870028EC3C /* Dota_Heroes.xcdatamodeld */,
 				B1FEBD4924D9976B00ACD47A /* Ext */,
-				B1FEBD4B24D9979000ACD47A /* Coordinators */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -301,39 +292,6 @@
 				B17FFBA124D470110028EC3C /* APIConstant.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		B1A1DF2C272BA81000A4AB5C /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				B1A1DF31272BA81000A4AB5C /* Parent */,
-				B1A1DF37272BA81000A4AB5C /* View */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		B1A1DF31272BA81000A4AB5C /* Parent */ = {
-			isa = PBXGroup;
-			children = (
-				B1A1DF32272BA81000A4AB5C /* ParentViewController.swift */,
-				B1A1DF33272BA81000A4AB5C /* ParentViewModel.swift */,
-			);
-			path = Parent;
-			sourceTree = "<group>";
-		};
-		B1A1DF37272BA81000A4AB5C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B104E15B24D81E7900499213 /* StretchyHeaderViewFlowLayout.swift */,
-				B1FEBD3B24D95C2E00ACD47A /* DialogTransitioningDelegate.swift */,
-				B1FEBD4324D986DC00ACD47A /* InformationDialog.swift */,
-				B1FEBD4424D986DC00ACD47A /* InformationDialog.xib */,
-				B1A1DF38272BA81000A4AB5C /* TableView */,
-				B1A1DF3C272BA81000A4AB5C /* RecordsEmpty */,
-				B1A1DF45272BA81000A4AB5C /* SeparatorCell */,
-				B1A1DF4B272BA81100A4AB5C /* AlertSheet */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		B1A1DF38272BA81000A4AB5C /* TableView */ = {
@@ -434,42 +392,32 @@
 			path = Ext;
 			sourceTree = "<group>";
 		};
-		B1FEBD4B24D9979000ACD47A /* Coordinators */ = {
-			isa = PBXGroup;
-			children = (
-				B1FEBD4724D9975F00ACD47A /* Coordinator.swift */,
-			);
-			path = Coordinators;
-			sourceTree = "<group>";
-		};
-		B1FEBD5224D99BF200ACD47A /* Hero Details */ = {
-			isa = PBXGroup;
-			children = (
-				B1FEBD5024D99BD700ACD47A /* HeroDetailsVC.swift */,
-			);
-			path = "Hero Details";
-			sourceTree = "<group>";
-		};
 		B1FEBD5924D9A83200ACD47A /* Hero */ = {
 			isa = PBXGroup;
 			children = (
-				B1FEBD5524D9A28100ACD47A /* ListHeroesCollectionViewCell.swift */,
-				B1FEBD5624D9A28100ACD47A /* ListHeroesCollectionViewCell.xib */,
+				B1FEBD5524D9A28100ACD47A /* ListOfHeroesCell.swift */,
+				B1FEBD5624D9A28100ACD47A /* ListOfHeroesCell.xib */,
 				B15457DD24D5BF480047214B /* HeroCell.swift */,
 				B15457DE24D5BF480047214B /* HeroCell.xib */,
 			);
 			path = Hero;
 			sourceTree = "<group>";
 		};
-		B1FEBD5A24D9A83900ACD47A /* Filter */ = {
+		B1FEBD5A24D9A83900ACD47A /* Roles */ = {
 			isa = PBXGroup;
 			children = (
-				B1FEBD3724D9532000ACD47A /* FilterRoleCollectionViewCell.swift */,
-				B1FEBD3824D9532000ACD47A /* FilterRoleCollectionViewCell.xib */,
-				B147E8E424D6CDB500B83617 /* RolesCollectionViewCell.swift */,
-				B147E8E524D6CDB500B83617 /* RolesCollectionViewCell.xib */,
+				B147E8E424D6CDB500B83617 /* RolesCell.swift */,
+				E497D2372A03CC7E001A113F /* ListOfRolesCell.swift */,
 			);
-			path = Filter;
+			path = Roles;
+			sourceTree = "<group>";
+		};
+		E497D22F2A03A0DC001A113F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E497D2312A03A2F8001A113F /* Repository.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		E4CF81B529FD641B007EA1D5 /* Application */ = {
@@ -480,6 +428,28 @@
 				E4CF81B629FD6436007EA1D5 /* AppCoordinator.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		E4CF81BB2A013592007EA1D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4CF81C12A025884007EA1D5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B104E15B24D81E7900499213 /* StretchyHeaderViewFlowLayout.swift */,
+				B1FEBD3B24D95C2E00ACD47A /* DialogTransitioningDelegate.swift */,
+				B1FEBD4324D986DC00ACD47A /* InformationDialog.swift */,
+				B1FEBD4424D986DC00ACD47A /* InformationDialog.xib */,
+				B1A1DF38272BA81000A4AB5C /* TableView */,
+				B1A1DF3C272BA81000A4AB5C /* RecordsEmpty */,
+				B1A1DF45272BA81000A4AB5C /* SeparatorCell */,
+				B1A1DF4B272BA81100A4AB5C /* AlertSheet */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -502,6 +472,8 @@
 				B1C7342D24D6035F0043ECE8 /* Kingfisher */,
 				B1A1DF20272ABB1000A4AB5C /* Hyperconnectivity */,
 				B1A1DFAF272BF68200A4AB5C /* Alamofire */,
+				E4CF81CB2A02859D007EA1D5 /* NavigationKit */,
+				E4CF81CD2A0285A2007EA1D5 /* HeroesDetail */,
 			);
 			productName = "Dota Heroes";
 			productReference = B17FFB6F24D461870028EC3C /* Dota Heroes.app */;
@@ -574,17 +546,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1FEBD3A24D9532100ACD47A /* FilterRoleCollectionViewCell.xib in Resources */,
 				B1FEBD4624D986DC00ACD47A /* InformationDialog.xib in Resources */,
 				B17FFB8224D461890028EC3C /* LaunchScreen.storyboard in Resources */,
 				B17FFBA424D470D80028EC3C /* example_contract.json in Resources */,
 				B1A1DF6A272BA81100A4AB5C /* RecordNotFoundView.xib in Resources */,
 				B1A1DF73272BA81100A4AB5C /* AlertSheetView.xib in Resources */,
-				B1FEBD5824D9A28100ACD47A /* ListHeroesCollectionViewCell.xib in Resources */,
 				B1A1DF68272BA81100A4AB5C /* MenuTableView.xib in Resources */,
-				B147E8E724D6CDB500B83617 /* RolesCollectionViewCell.xib in Resources */,
 				B147E8DD24D6BC2600B83617 /* HeaderCollectionReusableView.xib in Resources */,
 				B17FFB7F24D461890028EC3C /* Assets.xcassets in Resources */,
+				E497D23A2A03D20A001A113F /* ListOfHeroesCell.xib in Resources */,
 				B15457E024D5BF480047214B /* HeroCell.xib in Resources */,
 				B1A1DF6F272BA81100A4AB5C /* SeparatorTableViewCell.xib in Resources */,
 			);
@@ -607,17 +577,19 @@
 				B1A1DFA2272BAA6800A4AB5C /* UIImage+Utility.swift in Sources */,
 				B147E8DC24D6BC2600B83617 /* HeaderCollectionReusableView.swift in Sources */,
 				B1A1DFA5272BAA6800A4AB5C /* UILabel+Utility.swift in Sources */,
-				B1A1DF62272BA81100A4AB5C /* ParentViewController.swift in Sources */,
 				B1A1DF97272BAA6800A4AB5C /* String+Utility.swift in Sources */,
 				B1A1DF67272BA81100A4AB5C /* ContentSizedTableView.swift in Sources */,
+				E497D2382A03CC7E001A113F /* ListOfRolesCell.swift in Sources */,
 				B15457DF24D5BF480047214B /* HeroCell.swift in Sources */,
 				B1A1DF9E272BAA6800A4AB5C /* UINavigationController+Utility.swift in Sources */,
 				B1A1DFA3272BAA6800A4AB5C /* UICollectionView+Utility.swift in Sources */,
 				B1A1DF69272BA81100A4AB5C /* RecordNotFoundView.swift in Sources */,
 				B17FFB7724D461870028EC3C /* HeroesVC.swift in Sources */,
 				B1A1DF98272BAA6800A4AB5C /* CoreNumeric.swift in Sources */,
+				E497D2392A03D20A001A113F /* ListOfHeroesCell.swift in Sources */,
 				B1A1DF74272BA81100A4AB5C /* AlertSheetView.swift in Sources */,
 				B1A1DF9C272BAA6800A4AB5C /* UIScrollView+Utility.swift in Sources */,
+				E4CF81C32A025E90007EA1D5 /* BaseViewController.swift in Sources */,
 				B1A1DF9D272BAA6800A4AB5C /* UITableViewCell+Utility.swift in Sources */,
 				E4CF81B729FD6436007EA1D5 /* AppCoordinator.swift in Sources */,
 				B1A1DFA8272BAA6800A4AB5C /* Date+Utility.swift in Sources */,
@@ -627,27 +599,23 @@
 				B1FEBD3C24D95C2E00ACD47A /* DialogTransitioningDelegate.swift in Sources */,
 				B17FFBA024D46F570028EC3C /* Networking.swift in Sources */,
 				B1A1DF9B272BAA6800A4AB5C /* UIColor+Utility.swift in Sources */,
-				B1FEBD4824D9975F00ACD47A /* Coordinator.swift in Sources */,
 				B15457DA24D5B6450047214B /* HeroesResponse.swift in Sources */,
 				B1A1DFA7272BAA6800A4AB5C /* UIViewController+Utility.swift in Sources */,
 				B17FFBA224D470110028EC3C /* APIConstant.swift in Sources */,
 				B17FFB7D24D461870028EC3C /* Dota_Heroes.xcdatamodeld in Sources */,
 				B1A1DF70272BA81100A4AB5C /* SeparatorTableViewCell.swift in Sources */,
-				B1FEBD3924D9532100ACD47A /* FilterRoleCollectionViewCell.swift in Sources */,
 				B1C7343024D60D2E0043ECE8 /* Array+Utility.swift in Sources */,
 				B1A1DFA4272BAA6800A4AB5C /* UIWindow+Utility.swift in Sources */,
 				B1A1DFA1272BAA6800A4AB5C /* UIFont+Utility.swift in Sources */,
 				E4CF81B929FD6520007EA1D5 /* HeroesCoordinator.swift in Sources */,
-				B1A1DF63272BA81100A4AB5C /* ParentViewModel.swift in Sources */,
 				B1A1DFA6272BAA6800A4AB5C /* UITextField+Utility.swift in Sources */,
-				B1FEBD5724D9A28100ACD47A /* ListHeroesCollectionViewCell.swift in Sources */,
-				B147E8E624D6CDB500B83617 /* RolesCollectionViewCell.swift in Sources */,
+				B147E8E624D6CDB500B83617 /* RolesCell.swift in Sources */,
 				B17FFB7324D461870028EC3C /* AppDelegate.swift in Sources */,
+				E497D2322A03A2F8001A113F /* Repository.swift in Sources */,
 				B1FEBD4524D986DC00ACD47A /* InformationDialog.swift in Sources */,
 				B1A1DFA0272BAA6800A4AB5C /* UITableView+Utility.swift in Sources */,
 				B17FFB7524D461870028EC3C /* SceneDelegate.swift in Sources */,
 				B1A1DF9F272BAA6800A4AB5C /* UIView+Utility.swift in Sources */,
-				B1FEBD5124D99BD700ACD47A /* HeroDetailsVC.swift in Sources */,
 				B15457D524D5AC180047214B /* HeroesVM.swift in Sources */,
 				B104E15C24D81E7900499213 /* StretchyHeaderViewFlowLayout.swift in Sources */,
 			);
@@ -741,6 +709,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -795,6 +764,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -953,6 +923,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B1C7342C24D6035F0043ECE8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		E4CF81CB2A02859D007EA1D5 /* NavigationKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NavigationKit;
+		};
+		E4CF81CD2A0285A2007EA1D5 /* HeroesDetail */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HeroesDetail;
 		};
 /* End XCSwiftPackageProductDependency section */
 

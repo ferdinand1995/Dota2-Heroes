@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ParentViewController: UIViewController {
+class BaseViewController: UIViewController {
 
     var isShowingAlert = false
     var isShowingMsg = false
@@ -60,7 +60,7 @@ class ParentViewController: UIViewController {
 
     //MARK: - Keyboard
     func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ParentViewController.dismissKeyboard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(BaseViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
 
@@ -121,7 +121,7 @@ class ParentViewController: UIViewController {
 }
 
 //MARK: Error/Message
-extension ParentViewController {
+extension BaseViewController {
 
     func showBottomSheetAlert(view: UIView, msg: String) {
         let alertSheetView = AlertSheetView(frame: view.bounds)
@@ -185,7 +185,7 @@ extension ParentViewController {
 }
 
 //MARK: Logout & Clear data
-extension ParentViewController {
+extension BaseViewController {
     func handleTokenExpired(_ error: String) {
         let maintenanceStatus = UserDefaults.standard.bool(forKey: "isMaintenance")
         if maintenanceStatus { return }
