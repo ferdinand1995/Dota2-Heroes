@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeroDetailsVC: UIViewController, Storyboarded {
+class HeroDetailsVC: UIViewController {
     func initUI() {
         print("a")
     }

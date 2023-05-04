@@ -19,8 +19,8 @@ class HeroesCoordinator: BaseCoordinator {
     override func start() {
 
         let viewModel = HeroesVM()
-        let viewController = HeroesVC.instantiate()
-
+        let viewController = HeroesVC()
+        viewController.view.backgroundColor = .red
         viewModel.didSelect = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.showDetail(strongSelf.navigationController)

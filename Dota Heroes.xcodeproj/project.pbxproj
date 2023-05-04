@@ -19,7 +19,6 @@
 		B17FFB7324D461870028EC3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FFB7224D461870028EC3C /* AppDelegate.swift */; };
 		B17FFB7524D461870028EC3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FFB7424D461870028EC3C /* SceneDelegate.swift */; };
 		B17FFB7724D461870028EC3C /* HeroesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FFB7624D461870028EC3C /* HeroesVC.swift */; };
-		B17FFB7A24D461870028EC3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B17FFB7824D461870028EC3C /* Main.storyboard */; };
 		B17FFB7D24D461870028EC3C /* Dota_Heroes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B17FFB7B24D461870028EC3C /* Dota_Heroes.xcdatamodeld */; };
 		B17FFB7F24D461890028EC3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B17FFB7E24D461890028EC3C /* Assets.xcassets */; };
 		B17FFB8224D461890028EC3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B17FFB8024D461890028EC3C /* LaunchScreen.storyboard */; };
@@ -28,8 +27,6 @@
 		B17FFBA224D470110028EC3C /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FFBA124D470110028EC3C /* APIConstant.swift */; };
 		B17FFBA424D470D80028EC3C /* example_contract.json in Resources */ = {isa = PBXBuildFile; fileRef = B17FFBA324D470D80028EC3C /* example_contract.json */; };
 		B1A1DF21272ABB1000A4AB5C /* Hyperconnectivity in Frameworks */ = {isa = PBXBuildFile; productRef = B1A1DF20272ABB1000A4AB5C /* Hyperconnectivity */; };
-		B1A1DF24272ABC1F00A4AB5C /* PromisesTestHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = B1A1DF23272ABC1F00A4AB5C /* PromisesTestHelpers */; };
-		B1A1DF26272ABC1F00A4AB5C /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = B1A1DF25272ABC1F00A4AB5C /* Promises */; };
 		B1A1DF62272BA81100A4AB5C /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1DF32272BA81000A4AB5C /* ParentViewController.swift */; };
 		B1A1DF63272BA81100A4AB5C /* ParentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1DF33272BA81000A4AB5C /* ParentViewModel.swift */; };
 		B1A1DF66272BA81100A4AB5C /* MenuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1DF39272BA81000A4AB5C /* MenuTableView.swift */; };
@@ -68,7 +65,6 @@
 		B1FEBD4524D986DC00ACD47A /* InformationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD4324D986DC00ACD47A /* InformationDialog.swift */; };
 		B1FEBD4624D986DC00ACD47A /* InformationDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1FEBD4424D986DC00ACD47A /* InformationDialog.xib */; };
 		B1FEBD4824D9975F00ACD47A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD4724D9975F00ACD47A /* Coordinator.swift */; };
-		B1FEBD4D24D9985F00ACD47A /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD4C24D9985F00ACD47A /* Storyboarded.swift */; };
 		B1FEBD5124D99BD700ACD47A /* HeroDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD5024D99BD700ACD47A /* HeroDetailsVC.swift */; };
 		B1FEBD5724D9A28100ACD47A /* ListHeroesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD5524D9A28100ACD47A /* ListHeroesCollectionViewCell.swift */; };
 		B1FEBD5824D9A28100ACD47A /* ListHeroesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1FEBD5624D9A28100ACD47A /* ListHeroesCollectionViewCell.xib */; };
@@ -100,7 +96,6 @@
 		B17FFB7224D461870028EC3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B17FFB7424D461870028EC3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B17FFB7624D461870028EC3C /* HeroesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesVC.swift; sourceTree = "<group>"; };
-		B17FFB7924D461870028EC3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B17FFB7C24D461870028EC3C /* Dota_Heroes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dota_Heroes.xcdatamodel; sourceTree = "<group>"; };
 		B17FFB7E24D461890028EC3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B17FFB8124D461890028EC3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -147,12 +142,10 @@
 		B1FEBD4324D986DC00ACD47A /* InformationDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationDialog.swift; sourceTree = "<group>"; };
 		B1FEBD4424D986DC00ACD47A /* InformationDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationDialog.xib; sourceTree = "<group>"; };
 		B1FEBD4724D9975F00ACD47A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		B1FEBD4C24D9985F00ACD47A /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		B1FEBD4E24D999AF00ACD47A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		B1FEBD5024D99BD700ACD47A /* HeroDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailsVC.swift; sourceTree = "<group>"; };
 		B1FEBD5524D9A28100ACD47A /* ListHeroesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeroesCollectionViewCell.swift; sourceTree = "<group>"; };
 		B1FEBD5624D9A28100ACD47A /* ListHeroesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListHeroesCollectionViewCell.xib; sourceTree = "<group>"; };
-		E44806C129FBBDE9002DE8E1 /* HeroesDetail */ = {isa = PBXFileReference; lastKnownFileType = text; path = HeroesDetail; sourceTree = SOURCE_ROOT; };
 		E4CF81B629FD6436007EA1D5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E4CF81B829FD6520007EA1D5 /* HeroesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,9 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1A1DFB0272BF68200A4AB5C /* Alamofire in Frameworks */,
-				B1A1DF24272ABC1F00A4AB5C /* PromisesTestHelpers in Frameworks */,
 				B1C7342E24D6035F0043ECE8 /* Kingfisher in Frameworks */,
-				B1A1DF26272ABC1F00A4AB5C /* Promises in Frameworks */,
 				B1A1DF21272ABB1000A4AB5C /* Hyperconnectivity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,7 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				E4CF81B529FD641B007EA1D5 /* Application */,
-				E44806C129FBBDE9002DE8E1 /* HeroesDetail */,
 				B15457D624D5B5F60047214B /* Models */,
 				B17FFB9E24D46F470028EC3C /* Networking */,
 				B17FFB9A24D46ACF0028EC3C /* Helpers */,
@@ -277,7 +267,6 @@
 			isa = PBXGroup;
 			children = (
 				B17FFBA324D470D80028EC3C /* example_contract.json */,
-				B17FFB7824D461870028EC3C /* Main.storyboard */,
 				B17FFB7E24D461890028EC3C /* Assets.xcassets */,
 				B17FFB8024D461890028EC3C /* LaunchScreen.storyboard */,
 			);
@@ -449,7 +438,6 @@
 			isa = PBXGroup;
 			children = (
 				B1FEBD4724D9975F00ACD47A /* Coordinator.swift */,
-				B1FEBD4C24D9985F00ACD47A /* Storyboarded.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -513,8 +501,6 @@
 			packageProductDependencies = (
 				B1C7342D24D6035F0043ECE8 /* Kingfisher */,
 				B1A1DF20272ABB1000A4AB5C /* Hyperconnectivity */,
-				B1A1DF23272ABC1F00A4AB5C /* PromisesTestHelpers */,
-				B1A1DF25272ABC1F00A4AB5C /* Promises */,
 				B1A1DFAF272BF68200A4AB5C /* Alamofire */,
 			);
 			productName = "Dota Heroes";
@@ -571,7 +557,6 @@
 			packageReferences = (
 				B1C7342C24D6035F0043ECE8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				B1A1DF1F272ABB1000A4AB5C /* XCRemoteSwiftPackageReference "hyperconnectivity" */,
-				B1A1DF22272ABC1F00A4AB5C /* XCRemoteSwiftPackageReference "promises" */,
 				B1A1DFAE272BF68100A4AB5C /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = B17FFB7024D461870028EC3C /* Products */;
@@ -601,7 +586,6 @@
 				B147E8DD24D6BC2600B83617 /* HeaderCollectionReusableView.xib in Resources */,
 				B17FFB7F24D461890028EC3C /* Assets.xcassets in Resources */,
 				B15457E024D5BF480047214B /* HeroCell.xib in Resources */,
-				B17FFB7A24D461870028EC3C /* Main.storyboard in Resources */,
 				B1A1DF6F272BA81100A4AB5C /* SeparatorTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,7 +642,6 @@
 				B1A1DFA6272BAA6800A4AB5C /* UITextField+Utility.swift in Sources */,
 				B1FEBD5724D9A28100ACD47A /* ListHeroesCollectionViewCell.swift in Sources */,
 				B147E8E624D6CDB500B83617 /* RolesCollectionViewCell.swift in Sources */,
-				B1FEBD4D24D9985F00ACD47A /* Storyboarded.swift in Sources */,
 				B17FFB7324D461870028EC3C /* AppDelegate.swift in Sources */,
 				B1FEBD4524D986DC00ACD47A /* InformationDialog.swift in Sources */,
 				B1A1DFA0272BAA6800A4AB5C /* UITableView+Utility.swift in Sources */,
@@ -689,14 +672,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B17FFB7824D461870028EC3C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B17FFB7924D461870028EC3C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B17FFB8024D461890028EC3C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -945,14 +920,6 @@
 				minimumVersion = 1.1.0;
 			};
 		};
-		B1A1DF22272ABC1F00A4AB5C /* XCRemoteSwiftPackageReference "promises" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/google/promises.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 		B1A1DFAE272BF68100A4AB5C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -976,16 +943,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B1A1DF1F272ABB1000A4AB5C /* XCRemoteSwiftPackageReference "hyperconnectivity" */;
 			productName = Hyperconnectivity;
-		};
-		B1A1DF23272ABC1F00A4AB5C /* PromisesTestHelpers */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B1A1DF22272ABC1F00A4AB5C /* XCRemoteSwiftPackageReference "promises" */;
-			productName = PromisesTestHelpers;
-		};
-		B1A1DF25272ABC1F00A4AB5C /* Promises */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B1A1DF22272ABC1F00A4AB5C /* XCRemoteSwiftPackageReference "promises" */;
-			productName = Promises;
 		};
 		B1A1DFAF272BF68200A4AB5C /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

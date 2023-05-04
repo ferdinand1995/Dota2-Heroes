@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout, Storyboarded {
+class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     private let viewModel = HeroesVM()
     let spacingOfItemPerRow: CGFloat = 0
@@ -19,6 +19,8 @@ class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout, 
     //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
         initUI()
         initViewModel()
     }
