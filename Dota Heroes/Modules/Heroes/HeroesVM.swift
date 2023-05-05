@@ -30,7 +30,7 @@ public class HeroesVM: BaseViewModel {
 
     // MARK: Binding View
     private(set) var roles = [HeroesRole]()
-    @Published private(set) var heroesResponse = [HeroesResponse]()
+    @Published private(set) var heroesResponse = [HeroesResponse](repeating: HeroesResponse(), count: 16)
 
     func fetchHeroesAPI() {
         self.isLoadingStated(true)
@@ -139,17 +139,17 @@ public class HeroesVM: BaseViewModel {
         var tempHeroesResponse = [HeroesResponse]()
         for obj in listOfHeroes {
 
-            let stringAsData = obj.roles?.data(using: String.Encoding.utf16)
-            let arrayRole: [String] = try! JSONDecoder().decode([String].self, from: stringAsData!)
+//            let stringAsData = obj.roles?.data(using: String.Encoding.utf16)
+//            let arrayRole: [String] = try! JSONDecoder().decode([String].self, from: stringAsData!)
 
-            let id: Int? = Int(obj.hero_id ?? "")
+//            let id: Int? = Int(obj.hero_id ?? "")
             let health: Int? = Int(obj.base_health ?? "")
             let attack: Int? = Int(obj.base_attack_max ?? "")
             let speed: Int? = Int(obj.move_speed ?? "")
 
-            let hero = HeroesResponse(hero_id: id, name: obj.name, localized_name: obj.localized_name, primary_attr: obj.primary_attr, attack_type: obj.attack_type, roles: arrayRole, img: obj.img, icon: obj.icon, base_health: health, base_attack_max: attack, move_speed: speed)
+//            let hero = HeroesResponse(hero_id: id, name: obj.name, localized_name: obj.localized_name, primary_attr: obj.primary_attr, attack_type: obj.attack_type, roles: arrayRole, img: obj.img, icon: obj.icon, base_health: health, base_attack_max: attack, move_speed: speed)
 
-            tempHeroesResponse.append(hero)
+//            tempHeroesResponse.append(hero)
         }
 
 //        self.sortRoles(tempHeroesResponse)
