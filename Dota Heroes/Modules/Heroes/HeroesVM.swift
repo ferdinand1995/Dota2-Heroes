@@ -23,36 +23,31 @@ class HeroesCellVM {
     }
 }
 
+public enum HeroesPageType {
+    case roles
+    case heroes
+}
+
 public class HeroesVM: BaseViewModel {
 
     private let networkLayer = Networking()
+    let heroesPageType: [HeroesPageType] = [.roles, .heroes]
 
     // MARK: Binding View
-    @Published private(set) var roles = [String]()
+    private(set) var roles = [String]()
     @Published private(set) var heroesResponse = [HeroesResponse]()
 
     func fetchHeroesAPI() {
         self.isLoadingStated(true)
         networkLayer.getRequestData(urlRequest: ApiConstant.API_HERO_STATS, headers: nil, parameters: nil, successHandler: { (heroes: [HeroesResponse]) in
             self.isLoadingStated(false)
+            self.roles = Array(Set(heroes.compactMap({ $0.roles?.first })))
+            self.roles.insert("All", at: 0)
             self.heroesResponse = heroes
         }) { error in
             self.isLoadingStated(false)
             self.onErrorBlock?(error)
         }
-    }
-
-    private func sortRoles(_ listOfHeroes: [HeroesResponse]) {
-        self.heroesResponse = listOfHeroes
-
-        roles.append("All")
-        for obj in listOfHeroes {
-            guard let roles = obj.roles else { return }
-            for objRole in roles {
-                self.roles.append(objRole)
-            }
-        }
-        self.roles = roles.removeDuplicates()
     }
 
     func itemInHeroesCount() -> Int {
@@ -137,7 +132,7 @@ public class HeroesVM: BaseViewModel {
             tempHeroesResponse.append(hero)
         }
 
-        self.sortRoles(tempHeroesResponse)
+//        self.sortRoles(tempHeroesResponse)
         completion()
     }
 

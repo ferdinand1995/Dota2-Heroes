@@ -3,4 +3,86 @@
    uuid = "04DC3C00-5737-404C-BC57-C50981F22019"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "080F6020-BCB6-4134-82B5-488A29964DF3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dota Heroes/Modules/Heroes/HeroesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "initViewModel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1FD6EAA4-0E0E-4919-AAFF-898836EF36AB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dota Heroes/Modules/Heroes/HeroesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "initViewModel()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1FD6EAA4-0E0E-4919-AAFF-898836EF36AB - 222aea806430334d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Dota_Heroes.HeroesVC.initViewModel() -&gt; ()"
+                  moduleName = "Dota Heroes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ftedjakusuma/Documents/source_code/github/dota2-heroes/Dota%20Heroes/Modules/Heroes/HeroesVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "799">
+               </Location>
+               <Location
+                  uuid = "1FD6EAA4-0E0E-4919-AAFF-898836EF36AB - 72cc553541f9744a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swift.Array&lt;Dota_Heroes.HeroesResponse&gt;) -&gt; () in Dota_Heroes.HeroesVC.initViewModel() -&gt; ()"
+                  moduleName = "Dota Heroes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ftedjakusuma/Documents/source_code/github/dota2-heroes/Dota%20Heroes/Modules/Heroes/HeroesVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "358">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F16661B-BAFF-468B-9C36-8C1764CE6789"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dota Heroes/Modules/Heroes/HeroesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "initViewModel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

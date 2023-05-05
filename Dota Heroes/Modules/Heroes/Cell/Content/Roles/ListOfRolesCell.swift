@@ -13,10 +13,10 @@ import SnapKit
 class ListOfRolesCell: UICollectionViewCell {
 
     var cellWidth: CGFloat = 0
-//    var data: [String] = []
+    private var data = [String]()
     var selectedCellIndexPath: IndexPath?
 
-    lazy var collectionView: UICollectionView = {
+    lazy private var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
@@ -27,29 +27,43 @@ class ListOfRolesCell: UICollectionViewCell {
         return collectionView
     }()
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    // MARK: - Init
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initUI()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
+
+    private func initUI() {
+        cellWidth = self.frame.width / 4
+        addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.leading.equalToSuperview().offset(8)
+            make.trailing.equalToSuperview().offset(-8)
+        }
+    }
+
+    public func configCell(with viewModel: HeroesVM) {
+        self.data = viewModel.roles
+        self.collectionView.reloadData()
     }
 }
 
 // MARK: Data Source
 extension ListOfRolesCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-//        var itemsInSection = Int()
-//        viewModelDelegate?.heroesResponse.bind({ heroStat in
-//            itemsInSection = heroStat.count
-//        })
-        return 0
+        return data.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: RolesCell.self), for: indexPath) as? RolesCell else { return UICollectionViewCell() }
 
         cell.backgroundColor = indexPath.item % 2 == 0 ? .blue : .red
-//        cell.configure(with: data[indexPath.row])
-
+        cell.configure(with: data[indexPath.row])
         return cell
     }
 }

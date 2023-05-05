@@ -14,8 +14,6 @@ import Kingfisher
 class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var viewModel: HeroesVM?
-    let spacingOfItemPerRow: CGFloat = 0
-    let numberOfItemPerRow: CGFloat = 3
     private var previousStatusBarHidden: Bool = false
     private var bindings = Set<AnyCancellable>()
 
@@ -49,7 +47,8 @@ class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     }
 
     func initUI() {
-        collectionView.register(nibWithCellClass: HeroCell.self)
+        collectionView.register(cellWithClass: ListOfRolesCell.self)
+        collectionView.register(nibWithCellClass: ListOfHeroesCell.self)
         collectionView.register(nib: UINib(nibName: String(describing: HeaderCollectionReusableView.self), bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withClass: HeaderCollectionReusableView.self)
         collectionView.showsVerticalScrollIndicator = false
         let layout = StretchyHeaderViewFlowLayout()
@@ -78,12 +77,16 @@ class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
             }
         }
 
+        viewModel.$heroesResponse.receive(on: DispatchQueue.main).sink { [weak self] _ in
+            self?.collectionView.reloadData()
+        }.store(in: &bindings)
+
         viewModel.fetchHeroesAPI()
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let viewModel = viewModel else { return 0 }
-        return viewModel.itemInHeroesCount()
+        return viewModel.heroesPageType.count
     }
 
     /// - NOTE: Header Size
@@ -92,45 +95,37 @@ class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     }
 
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withClass: HeaderCollectionReusableView.self, for: indexPath)
-
-        return header
+        return collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withClass: HeaderCollectionReusableView.self, for: indexPath)
     }
 
     /// - NOTE: Content Size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        let screenRect = collectionView.safeAreaLayoutGuide.layoutFrame
-        let spaceBetweenGrid = numberOfItemPerRow + 1
-        let width = screenRect.width - spacingOfItemPerRow * spaceBetweenGrid
-        let height = width / numberOfItemPerRow
-
-        return CGSize(width: floor(height), height: height)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: spacingOfItemPerRow, bottom: 0, right: spacingOfItemPerRow)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return spacingOfItemPerRow
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return spacingOfItemPerRow
+        let type = viewModel?.heroesPageType[indexPath.item]
+        switch type {
+        case .roles:
+            return CGSize(width: collectionView.frame.width, height: 80)
+        case .heroes:
+            return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+        default:
+            return CGSize(width: 0, height: 0)
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withClass: HeroCell.self, for: indexPath)
-        guard let viewModel = viewModel else { return cell }
-        viewModel.$heroesResponse.sink(receiveValue: { heroStat in
-            let heroName: String? = heroStat[indexPath.item].localized_name
-            let img: String? = heroStat[indexPath.item].img
-           cell.configCell(with: HeroesCellVM(name: heroName, imageURL: img))
-        }).store(in: &bindings)
-        return cell
+        guard let viewModel = viewModel else { return UICollectionViewCell() }
+        let type = viewModel.heroesPageType[indexPath.item]
+        switch type {
+        case .roles:
+            let cell = collectionView.dequeueReusableCell(withClass: ListOfRolesCell.self, for: indexPath)
+            cell.configCell(with: viewModel)
+            return cell
+        case .heroes:
+            let cell = collectionView.dequeueReusableCell(withClass: ListOfHeroesCell.self, for: indexPath)
+            cell.configCell(with: viewModel)
+            return cell
+        }
     }
 
     //MARK: - Scroll View Delegate

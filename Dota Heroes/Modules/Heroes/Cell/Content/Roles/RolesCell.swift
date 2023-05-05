@@ -45,6 +45,7 @@ final class RolesCell: UICollectionViewCell {
 
     public func configure(with title: String, isSelected: Bool = false) {
         titleLabel.text = title
+        titleLabel.textColor = .white
         backgroundColor = isSelected ? .green : .darkGray
     }
 }
