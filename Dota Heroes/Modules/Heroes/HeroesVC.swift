@@ -104,7 +104,7 @@ class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
         let type = viewModel?.heroesPageType[indexPath.item]
         switch type {
         case .roles:
-            return CGSize(width: collectionView.frame.width, height: 80)
+            return CGSize(width: collectionView.frame.width, height: 56)
         case .heroes:
             return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
         default:

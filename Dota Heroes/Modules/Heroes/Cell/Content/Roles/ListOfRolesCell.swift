@@ -12,16 +12,14 @@ import SnapKit
 
 class ListOfRolesCell: UICollectionViewCell {
 
-    var cellWidth: CGFloat = 0
-    private var data = [String]()
-    var selectedCellIndexPath: IndexPath?
+    private var viewModel: HeroesVM?
 
     lazy private var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.dataSource = self
-//        collectionView.delegate = self
+        collectionView.delegate = self
         collectionView.register(RolesCell.self, forCellWithReuseIdentifier: String(describing: RolesCell.self))
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
@@ -38,17 +36,14 @@ class ListOfRolesCell: UICollectionViewCell {
     }
 
     private func initUI() {
-        cellWidth = self.frame.width / 4
         addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
-            make.leading.equalToSuperview().offset(8)
-            make.trailing.equalToSuperview().offset(-8)
+            make.top.bottom.leading.trailing.equalToSuperview()
         }
     }
 
     public func configCell(with viewModel: HeroesVM) {
-        self.data = viewModel.roles
+        self.viewModel = viewModel
         self.collectionView.reloadData()
     }
 }
@@ -56,14 +51,13 @@ class ListOfRolesCell: UICollectionViewCell {
 // MARK: Data Source
 extension ListOfRolesCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
+        return viewModel?.roles.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: RolesCell.self), for: indexPath) as? RolesCell else { return UICollectionViewCell() }
-
-        cell.backgroundColor = indexPath.item % 2 == 0 ? .blue : .red
-        cell.configure(with: data[indexPath.row])
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: RolesCell.self), for: indexPath) as? RolesCell, let viewModel = viewModel else { return UICollectionViewCell() }
+        let data = viewModel.roles[indexPath.item]
+        cell.configure(with: data.role ?? "", isSelected: data.isSelect)
         return cell
     }
 }
@@ -72,18 +66,16 @@ extension ListOfRolesCell: UICollectionViewDataSource {
 extension ListOfRolesCell: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let inset = self.frame.width / 2 - (cellWidth / 2)
-        return UIEdgeInsets(
-            top: 0,
-            left: inset,
-            bottom: 0,
-            right: inset
+        return UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8
         )
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let item = viewModel?.roles[indexPath.row].role ?? ""
+        return CGSize(width: item.size(withAttributes: [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .heavy)
+        ]).width + 24, height: 44)
 
-        return CGSize(width: cellWidth, height: cellWidth - 1)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -91,18 +83,22 @@ extension ListOfRolesCell: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        0
+        8
+    }
+}
+
+extension ListOfRolesCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        select(row: indexPath.row)
     }
 
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        /// if decelerate doesnt occur, scrollToCell
-        if !decelerate {
-//            scrollToCell()
-        } /// else wait until decleration ends to scrollToCell
-    }
-
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        /// scroll to cell
-//        scrollToCell()
+    private func select(row: Int, in section: Int = 0, animated: Bool = true) {
+        guard let viewModel = viewModel, row < viewModel.roles.count else { return }
+        viewModel.removedSelectedRoles()
+        let indexPath = IndexPath(row: row, section: section)
+        viewModel.updateSelectedRoles(indexPath.item)
+        collectionView.reloadData {
+            self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }
     }
 }

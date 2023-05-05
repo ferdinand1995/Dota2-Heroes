@@ -14,11 +14,14 @@ final class RolesCell: UICollectionViewCell {
     /// Title label
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
+        label.numberOfLines = 1
+        label.minimumScaleFactor = 0.8
         label.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
         label.textAlignment = .center
         return label
     }()
+
+    private let roundedView = UIView()
 
     // MARK: - Init
     override init(frame: CGRect) {
@@ -36,7 +39,13 @@ final class RolesCell: UICollectionViewCell {
     }
 
     private func initUI() {
-        addSubview(titleLabel)
+        addSubview(roundedView)
+        roundedView.layer.cornerRadius = 8
+        roundedView.layer.masksToBounds = true
+        roundedView.snp.makeConstraints { make in
+            make.top.leading.bottom.trailing.equalToSuperview()
+        }
+        roundedView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.top.leading.equalToSuperview().offset(8)
             make.bottom.trailing.equalToSuperview().offset(-8)
@@ -46,6 +55,7 @@ final class RolesCell: UICollectionViewCell {
     public func configure(with title: String, isSelected: Bool = false) {
         titleLabel.text = title
         titleLabel.textColor = .white
-        backgroundColor = isSelected ? .green : .darkGray
+        titleLabel.preferredMaxLayoutWidth = 56
+        roundedView.backgroundColor = isSelected ? .MAIN_RED_COLOR: .black
     }
 }

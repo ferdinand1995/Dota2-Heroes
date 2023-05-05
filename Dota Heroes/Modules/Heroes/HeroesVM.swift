@@ -23,30 +23,50 @@ class HeroesCellVM {
     }
 }
 
-public enum HeroesPageType {
-    case roles
-    case heroes
-}
-
 public class HeroesVM: BaseViewModel {
 
     private let networkLayer = Networking()
     let heroesPageType: [HeroesPageType] = [.roles, .heroes]
 
     // MARK: Binding View
-    private(set) var roles = [String]()
+    private(set) var roles = [HeroesRole]()
     @Published private(set) var heroesResponse = [HeroesResponse]()
 
     func fetchHeroesAPI() {
         self.isLoadingStated(true)
         networkLayer.getRequestData(urlRequest: ApiConstant.API_HERO_STATS, headers: nil, parameters: nil, successHandler: { (heroes: [HeroesResponse]) in
             self.isLoadingStated(false)
-            self.roles = Array(Set(heroes.compactMap({ $0.roles?.first })))
-            self.roles.insert("All", at: 0)
+            self.roles = self.sortRoles(heroes)
             self.heroesResponse = heroes
         }) { error in
             self.isLoadingStated(false)
             self.onErrorBlock?(error)
+        }
+    }
+
+    private func sortRoles(_ heroes: [HeroesResponse]) -> [HeroesRole] {
+        var result = [HeroesRole]()
+        let arrayRoles: [[String]] = heroes.compactMap({ $0.roles })
+        let roles: [String] = Array(Set(arrayRoles.flatMap({ $0 })))
+        for item in roles {
+            result.append(HeroesRole(role: item))
+        }
+        result.insert(HeroesRole(role: "All", isSelect: true), at: 0)
+        return result
+    }
+
+    func updateSelectedRoles(_ item: Int) {
+        self.roles[item].isSelect = true
+        guard let filteredRole: String = self.roles[item].role else { return }
+        self.heroesResponse = self.heroesResponse.filter({ hero in
+            guard let heroRole = hero.roles else { return false }
+            return heroRole.contains(filteredRole)
+        })
+    }
+
+    func removedSelectedRoles() {
+        for index in roles.indices {
+            roles[index].isSelect = false
         }
     }
 

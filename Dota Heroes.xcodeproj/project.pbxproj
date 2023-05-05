@@ -63,6 +63,7 @@
 		E497D2382A03CC7E001A113F /* ListOfRolesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E497D2372A03CC7E001A113F /* ListOfRolesCell.swift */; };
 		E497D2392A03D20A001A113F /* ListOfHeroesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD5524D9A28100ACD47A /* ListOfHeroesCell.swift */; };
 		E497D23A2A03D20A001A113F /* ListOfHeroesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1FEBD5624D9A28100ACD47A /* ListOfHeroesCell.xib */; };
+		E497D23C2A052247001A113F /* HeroesRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = E497D23B2A052247001A113F /* HeroesRole.swift */; };
 		E4CF81B729FD6436007EA1D5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CF81B629FD6436007EA1D5 /* AppCoordinator.swift */; };
 		E4CF81B929FD6520007EA1D5 /* HeroesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CF81B829FD6520007EA1D5 /* HeroesCoordinator.swift */; };
 		E4CF81C32A025E90007EA1D5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CF81C22A025E90007EA1D5 /* BaseViewController.swift */; };
@@ -138,6 +139,7 @@
 		B1FEBD5624D9A28100ACD47A /* ListOfHeroesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListOfHeroesCell.xib; sourceTree = "<group>"; };
 		E497D2312A03A2F8001A113F /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		E497D2372A03CC7E001A113F /* ListOfRolesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfRolesCell.swift; sourceTree = "<group>"; };
+		E497D23B2A052247001A113F /* HeroesRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesRole.swift; sourceTree = "<group>"; };
 		E4BA4B772A038BBC004501BB /* HeroesDetail */ = {isa = PBXFileReference; lastKnownFileType = text; path = HeroesDetail; sourceTree = SOURCE_ROOT; };
 		E4CF81B629FD6436007EA1D5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E4CF81B829FD6520007EA1D5 /* HeroesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCoordinator.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				B15457D924D5B6450047214B /* HeroesResponse.swift */,
+				E497D23B2A052247001A113F /* HeroesRole.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,7 +282,6 @@
 				E497D22F2A03A0DC001A113F /* Data */,
 				E4CF81C22A025E90007EA1D5 /* BaseViewController.swift */,
 				E4CF81C12A025884007EA1D5 /* Components */,
-				B17FFB7B24D461870028EC3C /* Dota_Heroes.xcdatamodeld */,
 				B1FEBD4924D9976B00ACD47A /* Ext */,
 			);
 			path = Helpers;
@@ -415,6 +417,7 @@
 		E497D22F2A03A0DC001A113F /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B17FFB7B24D461870028EC3C /* Dota_Heroes.xcdatamodeld */,
 				E497D2312A03A2F8001A113F /* Repository.swift */,
 			);
 			path = Data;
@@ -597,6 +600,7 @@
 				B1A1DF66272BA81100A4AB5C /* MenuTableView.swift in Sources */,
 				B1A1DF99272BAA6800A4AB5C /* UIView+Toast.swift in Sources */,
 				B1FEBD3C24D95C2E00ACD47A /* DialogTransitioningDelegate.swift in Sources */,
+				E497D23C2A052247001A113F /* HeroesRole.swift in Sources */,
 				B17FFBA024D46F570028EC3C /* Networking.swift in Sources */,
 				B1A1DF9B272BAA6800A4AB5C /* UIColor+Utility.swift in Sources */,
 				B15457DA24D5B6450047214B /* HeroesResponse.swift in Sources */,
