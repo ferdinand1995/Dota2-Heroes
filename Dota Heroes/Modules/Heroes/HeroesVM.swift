@@ -27,15 +27,17 @@ public class HeroesVM: BaseViewModel {
 
     private let networkLayer = Networking()
     let heroesPageType: [HeroesPageType] = [.roles, .heroes]
+    private let context = CoreDataContextProvider()
 
     // MARK: Binding View
     private(set) var roles = [HeroesRole]()
     @Published private(set) var heroesResponse = [HeroesResponse](repeating: HeroesResponse(), count: 16)
 
-    func fetchHeroesAPI() {
+    private func fetchHeroesAPI() {
         self.isLoadingStated(true)
         networkLayer.getRequestData(urlRequest: ApiConstant.API_HERO_STATS, headers: nil, parameters: nil, successHandler: { (heroes: [HeroesResponse]) in
             self.isLoadingStated(false)
+            self.cacheResponse(heroes)
             self.roles = self.sortRoles(heroes)
             self.heroesResponse = heroes
         }) { error in
@@ -58,10 +60,14 @@ public class HeroesVM: BaseViewModel {
     func updateSelectedRoles(_ item: Int) {
         self.roles[item].isSelect = true
         guard let filteredRole: String = self.roles[item].role else { return }
-        self.heroesResponse = self.heroesResponse.filter({ hero in
-            guard let heroRole = hero.roles else { return false }
-            return heroRole.contains(filteredRole)
-        })
+        if filteredRole.lowercased() == "all" {
+            self.heroesResponse = fetchHeroesData()
+        } else {
+            self.heroesResponse = fetchHeroesData().filter({ hero in
+                guard let heroRole = hero.roles else { return false }
+                return heroRole.contains(filteredRole)
+            })
+        }
     }
 
     func removedSelectedRoles() {
@@ -74,101 +80,45 @@ public class HeroesVM: BaseViewModel {
         return heroesResponse.count
     }
 
-    func addResponseToCoreData(_ managedContext: NSManagedObjectContext) {
-
+    func cacheResponse(_ heroesResponse: [HeroesResponse]) {
+        let heroesRepository = HeroesRepository(context: context.viewContext)
+        heroesRepository.deleteAllHeroes()
+        for response in heroesResponse {
+            heroesRepository.create(response)
+        }
         do {
-            let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Hero")
-            let deleteALL = NSBatchDeleteRequest(fetchRequest: deleteFetch)
-
-            try managedContext.execute(deleteALL)
-
-            do {
-                try managedContext.save()
-                print("Success")
-            } catch let error as NSError {
-                print("Could not save. \(error), \(error.userInfo)")
-            }
+            try context.viewContext.save()
         } catch {
-            print ("There is an error in deleting records")
-        }
-
-        for hero in heroesResponse {
-            let entity = NSEntityDescription.entity(forEntityName: "Hero", in: managedContext)
-            let newHeroes = NSManagedObject(entity: entity!, insertInto: managedContext)
-
-            guard let heroId = hero.hero_id else { return }
-            newHeroes.setValue(String(heroId), forKey: "hero_id")
-            newHeroes.setValue(hero.name, forKey: "name")
-            newHeroes.setValue(hero.localized_name, forKey: "localized_name")
-            newHeroes.setValue(hero.primary_attr, forKey: "primary_attr")
-            newHeroes.setValue(hero.attack_type, forKey: "attack_type")
-            newHeroes.setValue(hero.roles?.description, forKey: "roles")
-            newHeroes.setValue(hero.img?.description, forKey: "img")
-            newHeroes.setValue(hero.icon?.description, forKey: "icon")
-            guard let baseHealth = hero.base_health else { return }
-            newHeroes.setValue(String(baseHealth), forKey: "base_health")
-            guard let baseAttackMax = hero.base_attack_max else { return }
-            newHeroes.setValue(String(baseAttackMax), forKey: "base_attack_max")
-            guard let moveSpeed = hero.move_speed else { return }
-            newHeroes.setValue(String(moveSpeed), forKey: "move_speed")
-        }
-
-        do {
-            try managedContext.save()
-            print("Success")
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+            context.viewContext.rollback()
         }
     }
 
 
-    func fetchCoreData(_ managedContext: NSManagedObjectContext, completion: @escaping (() -> Void)) {
-
-        let all = NSFetchRequest<Hero>(entityName: "Hero")
-        var listOfHeroes = [Hero]()
-
-        do {
-            let fetched = try managedContext.fetch(all)
-            listOfHeroes = fetched
-        } catch {
-            let nserror = error as NSError
-            //TODO: Handle Error
-            print(nserror.description)
+    func fetchHeroesData() -> Void {
+        let heroesRepository = HeroesRepository(context: context.viewContext)
+        let result = heroesRepository.getHeroes(predicate: nil)
+        switch result {
+        case .success(let heroes):
+            if heroes.count > 0 {
+                self.roles = self.sortRoles(heroes)
+                self.heroesResponse = heroes
+            } else {
+                fetchHeroesAPI()
+            }
+        case .failure(let error):
+            self.onErrorBlock?((code: 500, msg: error.localizedDescription))
         }
-
-        var tempHeroesResponse = [HeroesResponse]()
-        for obj in listOfHeroes {
-
-//            let stringAsData = obj.roles?.data(using: String.Encoding.utf16)
-//            let arrayRole: [String] = try! JSONDecoder().decode([String].self, from: stringAsData!)
-
-//            let id: Int? = Int(obj.hero_id ?? "")
-            let health: Int? = Int(obj.base_health ?? "")
-            let attack: Int? = Int(obj.base_attack_max ?? "")
-            let speed: Int? = Int(obj.move_speed ?? "")
-
-//            let hero = HeroesResponse(hero_id: id, name: obj.name, localized_name: obj.localized_name, primary_attr: obj.primary_attr, attack_type: obj.attack_type, roles: arrayRole, img: obj.img, icon: obj.icon, base_health: health, base_attack_max: attack, move_speed: speed)
-
-//            tempHeroesResponse.append(hero)
-        }
-
-//        self.sortRoles(tempHeroesResponse)
-        completion()
     }
 
-    func convertToJSONArray(moArray: [NSManagedObject]) -> Any {
-        var jsonArray: [[String: Any]] = []
-        for item in moArray {
-            var dict: [String: Any] = [:]
-            for attribute in item.entity.attributesByName {
-                //check if value is present, then add key to dictionary so as to avoid the nil value crash
-                if let value = item.value(forKey: attribute.key) {
-                    dict[attribute.key] = value
-                }
-            }
-            jsonArray.append(dict)
+    func fetchHeroesData() -> [HeroesResponse] {
+        let heroesRepository = HeroesRepository(context: context.viewContext)
+        let result = heroesRepository.getHeroes(predicate: nil)
+        switch result {
+        case .success(let heroes):
+            return heroes
+        case .failure(_):
+            return [HeroesResponse]()
         }
-        return jsonArray
     }
 
 }

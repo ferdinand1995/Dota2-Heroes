@@ -8,8 +8,6 @@
         <attribute name="localized_name" optional="YES" attributeType="String"/>
         <attribute name="move_speed" optional="YES" attributeType="String"/>
         <attribute name="primary_attr" optional="YES" attributeType="String"/>
-    </entity>
-    <entity name="HeroRole" representedClassName="HeroRole" syncable="YES" codeGenerationType="class">
-        <attribute name="roles" optional="YES" attributeType="Transformable"/>
+        <attribute name="roles" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
     </entity>
 </model>

@@ -9,7 +9,7 @@
 import Foundation
 
 struct HeroesResponse: Codable {
-    
+
     var hero_id: Int?
     var name: String?
     var localized_name: String?
@@ -21,7 +21,7 @@ struct HeroesResponse: Codable {
     var base_health: Int?
     var base_attack_max: Int?
     var move_speed: Int?
-    
+
     enum CodingKeys: String, CodingKey {
         case hero_id = "id"
         case name

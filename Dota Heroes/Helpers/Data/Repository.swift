@@ -12,6 +12,18 @@ protocol Repository {
     associatedtype Entity
 
     func get(predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?) -> Result<[Entity], Error>
-    func create() -> Result<Any, Error>
-    func delete(entity: Entity) -> Result<Any, Error>
+    func create() -> Result<Entity, Error>
+    func delete(entity: Entity) -> Result<Bool, Error>
+    func deleteAllRecords() -> Result<Bool, Error>
 }
+
+protocol DomainModel {
+    associatedtype DomainModelType
+    func toDomainModel() -> DomainModelType
+}
+
+protocol DomainManageObject {
+    associatedtype ManagedObject
+    func toManagedObject() -> ManagedObject
+}
+

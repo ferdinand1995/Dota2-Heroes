@@ -81,7 +81,7 @@ class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
             self?.collectionView.reloadData()
         }.store(in: &bindings)
 
-        viewModel.fetchHeroesAPI()
+        viewModel.fetchHeroesData()
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
