@@ -86,6 +86,7 @@ extension ListOfRolesCell: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: Delegate
 extension ListOfRolesCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         select(row: indexPath.row)

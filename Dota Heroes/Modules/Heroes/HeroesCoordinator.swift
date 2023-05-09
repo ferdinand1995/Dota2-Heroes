@@ -20,23 +20,29 @@ class HeroesCoordinator: BaseCoordinator {
 
     override func start() {
 
-        let heroesVC = HeroesVC()
         let viewModel = HeroesVM()
-        heroesVC.viewModel = viewModel
+        let heroesVC = HeroesVC(viewModel)
 
         viewModel.didSelect = { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.showDetail(strongSelf.router)
+            strongSelf.showDetail(strongSelf.router, viewModel)
         }
 
         viewModel.didTapBack = { [weak self] in
-            self?.isCompleted?()
+            guard let strongSelf = self else { return }
+            strongSelf.isCompleted?()
         }
         router.push(heroesVC, isAnimated: true, onNavigateBack: isCompleted)
     }
 
-    func showDetail(_ router: RouterProtocol) {
-        let heroDetailCoordinator = HeroDetailCoordinator(router)
-        self.start(coordinator: heroDetailCoordinator)
+    func showDetail(_ router: RouterProtocol, _ data: AnyObject) {
+        guard let heroesVM = data as? HeroesVM else { return }
+        do {
+            let jsonData = try JSONEncoder().encode(heroesVM.selectedHero)
+            let heroDetailCoordinator = HeroDetailCoordinator(router, jsonData)
+            self.start(coordinator: heroDetailCoordinator)
+        } catch {
+            print("Error: ", error)
+        }
     }
 }

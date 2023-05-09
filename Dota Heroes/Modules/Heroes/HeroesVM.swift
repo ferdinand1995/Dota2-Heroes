@@ -28,6 +28,7 @@ public class HeroesVM: BaseViewModel {
     private let networkLayer = Networking()
     let heroesPageType: [HeroesPageType] = [.roles, .heroes]
     private let context = CoreDataContextProvider()
+    private(set) var selectedHero = HeroesResponse()
 
     // MARK: Binding View
     private(set) var roles = [HeroesRole]()
@@ -57,9 +58,9 @@ public class HeroesVM: BaseViewModel {
         return result
     }
 
-    func updateSelectedRoles(_ item: Int) {
-        self.roles[item].isSelect = true
-        guard let filteredRole: String = self.roles[item].role, let heroes = fetchHeroesData() else { return }
+    func updateSelectedRoles(_ index: Int) {
+        self.roles[index].isSelect = true
+        guard let filteredRole: String = self.roles[index].role, let heroes = fetchHeroesData() else { return }
         if filteredRole.lowercased() == "all" {
             self.heroesResponse = heroes
         } else {
@@ -68,6 +69,21 @@ public class HeroesVM: BaseViewModel {
                 return heroRole.contains(filteredRole)
             })
         }
+    }
+
+    func selectHero(_ index: Int) {
+        var similarHero = [HeroesResponse]()
+        if let primary_attr = self.heroesResponse[index].primary_attr, primary_attr.lowercased() == "agi" {
+            similarHero = self.heroesResponse.sorted(by: { $0.move_speed ?? 0 > $1.move_speed ?? 0 })
+        } else if let primary_attr = self.heroesResponse[index].primary_attr, primary_attr.lowercased() == "str" {
+            similarHero = self.heroesResponse.sorted(by: { $0.base_attack_max ?? 0 > $1.base_attack_max ?? 0 })
+        } else if let primary_attr = self.heroesResponse[index].primary_attr, primary_attr.lowercased() == "int" {
+            similarHero = self.heroesResponse.sorted(by: { $0.base_mana ?? 0 > $1.base_mana ?? 0 })
+        }
+        let slice = similarHero.prefix(3)
+        self.selectedHero = self.heroesResponse[index]
+        self.selectedHero.similar_hero = Array(slice)
+        didSelect?()
     }
 
     func removedSelectedRoles() {
@@ -80,7 +96,7 @@ public class HeroesVM: BaseViewModel {
         return heroesResponse.count
     }
 
-    func cacheResponse(_ heroesResponse: [HeroesResponse]) {
+    private func cacheResponse(_ heroesResponse: [HeroesResponse]) {
         let heroesRepository = HeroesRepository(context: context.viewContext)
         heroesRepository.deleteAllHeroes()
         for response in heroesResponse {

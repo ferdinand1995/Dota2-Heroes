@@ -1,14 +1,14 @@
 //
-//  Hero.swift
-//  Dota Heroes
+//  HeroDetail.swift
 //
-//  Created by Ferdinand on 01/08/20.
-//  Copyright © 2020 Tiket.com. All rights reserved.
+//
+//  Created by Tedjakusuma, Ferdinand on 09/05/23.
 //
 
 import Foundation
 
-struct HeroesResponse: Codable {
+// MARK: - HeroDetail
+struct HeroDetail: Codable {
 
     var hero_id: Int?
     var name: String?
@@ -22,7 +22,7 @@ struct HeroesResponse: Codable {
     var base_attack_max: Int?
     var move_speed: Int?
     var base_mana: Int?
-    var similar_hero: [HeroesResponse]?
+    var similar_hero: [HeroDetail]?
 
     enum CodingKeys: String, CodingKey {
         case hero_id = "id"

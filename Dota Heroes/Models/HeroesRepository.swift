@@ -57,6 +57,9 @@ extension HeroesRepository: HeroesRepositoryInterface {
             if let move_speed = response.move_speed {
                 hero.move_speed = String(move_speed)
             }
+            if let base_mana = response.base_mana {
+                hero.base_mana = String(base_mana)
+            }
             hero.primary_attr = response.primary_attr
             hero.roles = response.roles
             return .success(true)
@@ -81,6 +84,9 @@ extension Hero: DomainModel {
         heroesResponse.localized_name = self.localized_name
         if let move_speed = self.move_speed {
             heroesResponse.move_speed = Int(move_speed)
+        }
+        if let base_mana = self.base_mana {
+            heroesResponse.base_mana = Int(base_mana)
         }
         heroesResponse.primary_attr = self.primary_attr
         heroesResponse.roles = self.roles

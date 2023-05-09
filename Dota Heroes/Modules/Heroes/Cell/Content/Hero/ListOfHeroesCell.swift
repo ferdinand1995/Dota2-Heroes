@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListOfHeroesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ListOfHeroesCell: UICollectionViewCell {
 
     private var viewModel: HeroesVM?
     let spacingOfItemPerRow: CGFloat = 0
@@ -28,7 +28,10 @@ class ListOfHeroesCell: UICollectionViewCell, UICollectionViewDelegate, UICollec
         self.viewModel = viewModel
         self.collectionView.reloadData()
     }
+}
 
+// MARK: Data Source
+extension ListOfHeroesCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let viewModel = viewModel else { return 0 }
         return viewModel.itemInHeroesCount()
@@ -43,7 +46,10 @@ class ListOfHeroesCell: UICollectionViewCell, UICollectionViewDelegate, UICollec
         cell.configCell(with: HeroesCellVM(name: heroName, imageURL: img))
         return cell
     }
+}
 
+// MARK: Flow Layout
+extension ListOfHeroesCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let screenRect = self.collectionView.safeAreaLayoutGuide.layoutFrame
@@ -65,5 +71,12 @@ class ListOfHeroesCell: UICollectionViewCell, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return spacingOfItemPerRow
     }
+}
 
+// MARK: Delegate
+extension ListOfHeroesCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let viewModel = viewModel else { return }
+        viewModel.selectHero(indexPath.item)
+    }
 }

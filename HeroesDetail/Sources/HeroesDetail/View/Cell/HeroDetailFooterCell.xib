@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="213" id="KGk-i7-Jjw" customClass="HeroDetailFooterCell" customModule="HeroesDetail">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Similar Heroes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nZ-TJ-fGp">
+                        <rect key="frame" x="8" y="7.9999999999999982" width="304" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="IAE-pc-2zA">
+                        <rect key="frame" x="8" y="36.333333333333329" width="304" height="168.66666666666669"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rRk-Hy-9ht">
+                                <rect key="frame" x="0.0" y="34.999999999999993" width="98.666666666666671" height="98.666666666666657"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rRk-Hy-9ht" secondAttribute="height" multiplier="1:1" id="FRd-qt-DRi"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uf9-QY-hWO">
+                                <rect key="frame" x="102.66666666666666" y="34.999999999999993" width="98.666666666666657" height="98.666666666666657"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uf9-QY-hWO" secondAttribute="height" multiplier="1:1" id="FhF-lb-6ib"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RK6-ks-kSW">
+                                <rect key="frame" x="205.33333333333334" y="34.999999999999993" width="98.666666666666657" height="98.666666666666657"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RK6-ks-kSW" secondAttribute="height" multiplier="1:1" id="DoC-ga-cTz"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="IAE-pc-2zA" secondAttribute="trailing" constant="8" id="0Rz-UC-eVk"/>
+                    <constraint firstItem="IAE-pc-2zA" firstAttribute="top" secondItem="3nZ-TJ-fGp" secondAttribute="bottom" constant="8" id="6Tu-2B-pvA"/>
+                    <constraint firstAttribute="bottom" secondItem="IAE-pc-2zA" secondAttribute="bottom" constant="8" id="8am-R9-Ump"/>
+                    <constraint firstItem="3nZ-TJ-fGp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="N0g-Vj-ly0"/>
+                    <constraint firstItem="IAE-pc-2zA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="X2L-fv-HKo"/>
+                    <constraint firstItem="3nZ-TJ-fGp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="k6t-N8-1b3"/>
+                    <constraint firstAttribute="trailing" secondItem="3nZ-TJ-fGp" secondAttribute="trailing" constant="8" id="qba-xZ-8Ro"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="similarHero1" destination="rRk-Hy-9ht" id="xgW-Rh-uEy"/>
+                <outlet property="similarHero2" destination="uf9-QY-hWO" id="doe-O0-MmO"/>
+                <outlet property="similarHero3" destination="RK6-ks-kSW" id="TXb-bK-hMu"/>
+            </connections>
+            <point key="canvasLocation" x="1.5267175572519083" y="79.225352112676063"/>
+        </tableViewCell>
+    </objects>
+</document>

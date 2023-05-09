@@ -12,12 +12,13 @@ import Combine
 
 class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
-    var viewModel: HeroesVM?
+    private let viewModel: HeroesVM
     private var previousStatusBarHidden: Bool = false
     private var bindings = Set<AnyCancellable>()
 
     // MARK: initialized
-    init() {
+    init(_ viewModel: HeroesVM) {
+        self.viewModel = viewModel
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
     required init?(coder: NSCoder) {
@@ -55,7 +56,6 @@ class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     }
 
     func initViewModel() {
-        guard let viewModel = viewModel else { return }
         viewModel.isLoadingStated = { isLoading in
             DispatchQueue.main.async {
                 if isLoading {
@@ -84,7 +84,6 @@ class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let viewModel = viewModel else { return 0 }
         return viewModel.heroesPageType.count
     }
 
@@ -100,20 +99,17 @@ class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     /// - NOTE: Content Size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        let type = viewModel?.heroesPageType[indexPath.item]
+        let type = viewModel.heroesPageType[indexPath.item]
         switch type {
         case .roles:
             return CGSize(width: collectionView.frame.width, height: 56)
         case .heroes:
             return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
-        default:
-            return CGSize(width: 0, height: 0)
         }
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        guard let viewModel = viewModel else { return UICollectionViewCell() }
         let type = viewModel.heroesPageType[indexPath.item]
         switch type {
         case .roles:
