@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Hero" representedClassName="Hero" syncable="YES" codeGenerationType="class">
+        <attribute name="attack_type" optional="YES" attributeType="String"/>
+        <attribute name="base_attack_max" optional="YES" attributeType="String"/>
+        <attribute name="base_health" optional="YES" attributeType="String"/>
+        <attribute name="base_mana" optional="YES" attributeType="String"/>
+        <attribute name="img" optional="YES" attributeType="String"/>
+        <attribute name="localized_name" optional="YES" attributeType="String"/>
+        <attribute name="move_speed" optional="YES" attributeType="String"/>
+        <attribute name="primary_attr" optional="YES" attributeType="String"/>
+        <attribute name="roles" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
+    </entity>
+    <entity name="SignatureManagedObject" representedClassName="SignatureManagedObject" syncable="YES" codeGenerationType="class">
+        <attribute name="date_created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="date_modified" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+</model>

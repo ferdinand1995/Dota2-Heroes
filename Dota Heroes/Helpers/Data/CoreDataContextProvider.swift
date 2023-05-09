@@ -23,7 +23,42 @@ class CoreDataContextProvider {
             completionClosure?(error)
         }
     }
+
     func newBackgroundContext() -> NSManagedObjectContext {
         return persistentContainer.newBackgroundContext()
+    }
+
+    func saveContent() {
+        if viewContext.hasChanges {
+            do {
+                for object in viewContext.updatedObjects {
+                    if let signatureObject = object as? SignatureManagedObject {
+                        signatureObject.sign()
+                    }
+                }
+
+                for object in viewContext.insertedObjects {
+                    if let signatureObject = object as? SignatureManagedObject {
+                        signatureObject.sign()
+                    }
+                }
+                try viewContext.save()
+            } catch {
+                viewContext.rollback()
+                let error = error as NSError
+                fatalError("Unresolved error: \(error), \(error.userInfo)")
+            }
+        }
+    }
+}
+
+
+extension SignatureManagedObject {
+    func sign() {
+        let now = Date()
+        if date_created == .none {
+            date_created = now
+        }
+        date_modified = now
     }
 }

@@ -143,6 +143,7 @@
 		E4917DBE2A08FDDA008C303E /* Dota_Heroes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dota_Heroes.xcdatamodel; sourceTree = "<group>"; };
 		E4917DC02A0A2257008C303E /* UIImageView+Kingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Kingfisher.swift"; sourceTree = "<group>"; };
 		E4917DC22A0A37F8008C303E /* Dota_Heroes 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Dota_Heroes 2.xcdatamodel"; sourceTree = "<group>"; };
+		E4917DC32A0A557C008C303E /* Dota_Heroes 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Dota_Heroes 3.xcdatamodel"; sourceTree = "<group>"; };
 		E497D2312A03A2F8001A113F /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		E497D2372A03CC7E001A113F /* ListOfRolesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfRolesCell.swift; sourceTree = "<group>"; };
 		E497D23B2A052247001A113F /* HeroesRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesRole.swift; sourceTree = "<group>"; };
@@ -959,10 +960,11 @@
 		E4917DBD2A08FDDA008C303E /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				E4917DC32A0A557C008C303E /* Dota_Heroes 3.xcdatamodel */,
 				E4917DC22A0A37F8008C303E /* Dota_Heroes 2.xcdatamodel */,
 				E4917DBE2A08FDDA008C303E /* Dota_Heroes.xcdatamodel */,
 			);
-			currentVersion = E4917DC22A0A37F8008C303E /* Dota_Heroes 2.xcdatamodel */;
+			currentVersion = E4917DC32A0A557C008C303E /* Dota_Heroes 3.xcdatamodel */;
 			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

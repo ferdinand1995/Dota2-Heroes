@@ -102,11 +102,7 @@ public class HeroesVM: BaseViewModel {
         for response in heroesResponse {
             heroesRepository.create(response)
         }
-        do {
-            try context.viewContext.save()
-        } catch {
-            context.viewContext.rollback()
-        }
+        context.saveContent()
     }
 
     func fetchData() {

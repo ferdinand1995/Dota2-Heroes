@@ -1,6 +1,6 @@
 //
 //  HeroDetailHeaderCell.swift
-//  
+//
 //
 //  Created by Tedjakusuma, Ferdinand on 09/05/23.
 //
@@ -12,13 +12,11 @@ class HeroDetailHeaderCell: UITableViewCell {
     @IBOutlet weak var rolesLabel: UILabel!
     @IBOutlet weak var heroNameLabel: UILabel!
     @IBOutlet weak var heroIconImageView: UIImageView!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
+
     func confiCell(_ viewModel: HeroDetailHeaderVM) {
-//        heroNameLabel.text
+        heroNameLabel.text = viewModel.name
+        rolesLabel.text = viewModel.roles
+        heroIconImageView.setImage(url: viewModel.imgUrl, placeholderImage: nil) { _ in }
     }
-    
+
 }

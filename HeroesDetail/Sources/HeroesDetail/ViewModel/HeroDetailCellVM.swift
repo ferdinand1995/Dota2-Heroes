@@ -8,7 +8,24 @@
 import Foundation
 
 class HeroDetailHeaderVM {
-    
+    let imgUrl: String
+    let name: String
+    let roles: String
+    let attackTypeIsRange: Bool
+    init(_ heroDetail: HeroDetail) {
+        self.imgUrl = "https://api.opendota.com" + (heroDetail.img ?? "")
+        self.name = heroDetail.localized_name ?? ""
+        if let roles = heroDetail.roles {
+            self.roles = roles.joined(separator: ", ")
+        } else {
+            self.roles = ""
+        }
+        if let attackType = heroDetail.attack_type {
+            self.attackTypeIsRange = (attackType.lowercased() == "range") ? true : false
+        } else {
+            self.attackTypeIsRange = false
+        }
+    }
 }
 
 class HeroDetailContentVM {
