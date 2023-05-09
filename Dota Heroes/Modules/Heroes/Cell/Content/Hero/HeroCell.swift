@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class HeroCell: UICollectionViewCell {
 
@@ -45,14 +44,8 @@ class HeroCell: UICollectionViewCell {
     }
 
     public func configCell(with viewModel: HeroesCellVM) {
-        heroImageView.kf.indicatorType = .activity
         heroNameLabel.text = viewModel.name
-        heroImageView.kf.setImage(with: viewModel.imageURL, options: [
-                .transition(.fade(0.3)),
-                .processor(DownsamplingImageProcessor(size: heroImageView.bounds.size)),
-                .scaleFactor(UIScreen.main.scale),
-                .cacheOriginalImage
-        ]) { _ in
+        heroImageView.setImage(viewModel.imageURL) {
             self.heroNameLabel.fadeIn()
         }
     }

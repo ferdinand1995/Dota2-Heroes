@@ -59,11 +59,11 @@ public class HeroesVM: BaseViewModel {
 
     func updateSelectedRoles(_ item: Int) {
         self.roles[item].isSelect = true
-        guard let filteredRole: String = self.roles[item].role else { return }
+        guard let filteredRole: String = self.roles[item].role, let heroes = fetchHeroesData() else { return }
         if filteredRole.lowercased() == "all" {
-            self.heroesResponse = fetchHeroesData()
+            self.heroesResponse = heroes
         } else {
-            self.heroesResponse = fetchHeroesData().filter({ hero in
+            self.heroesResponse = heroes.filter({ hero in
                 guard let heroRole = hero.roles else { return false }
                 return heroRole.contains(filteredRole)
             })
@@ -93,31 +93,27 @@ public class HeroesVM: BaseViewModel {
         }
     }
 
+    func fetchData() {
+        if let heroes = fetchHeroesData() {
+            self.roles = self.sortRoles(heroes)
+            self.heroesResponse = heroes
+        } else {
+            self.fetchHeroesAPI()
+        }
+    }
 
-    func fetchHeroesData() -> Void {
+    private func fetchHeroesData() -> [HeroesResponse]? {
         let heroesRepository = HeroesRepository(context: context.viewContext)
         let result = heroesRepository.getHeroes(predicate: nil)
         switch result {
         case .success(let heroes):
             if heroes.count > 0 {
-                self.roles = self.sortRoles(heroes)
-                self.heroesResponse = heroes
+                return heroes
             } else {
-                fetchHeroesAPI()
+                return nil
             }
-        case .failure(let error):
-            self.onErrorBlock?((code: 500, msg: error.localizedDescription))
-        }
-    }
-
-    func fetchHeroesData() -> [HeroesResponse] {
-        let heroesRepository = HeroesRepository(context: context.viewContext)
-        let result = heroesRepository.getHeroes(predicate: nil)
-        switch result {
-        case .success(let heroes):
-            return heroes
         case .failure(_):
-            return [HeroesResponse]()
+            return nil
         }
     }
 

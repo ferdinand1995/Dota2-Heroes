@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class ListOfHeroesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 

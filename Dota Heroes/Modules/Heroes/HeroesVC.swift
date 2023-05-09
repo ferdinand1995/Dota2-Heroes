@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 import Combine
-import Kingfisher
 
 class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
@@ -81,7 +80,7 @@ class HeroesVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
             self?.collectionView.reloadData()
         }.store(in: &bindings)
 
-        viewModel.fetchHeroesData()
+        viewModel.fetchData()
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

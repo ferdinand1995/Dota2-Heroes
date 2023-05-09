@@ -59,6 +59,7 @@
 		B1FEBD4524D986DC00ACD47A /* InformationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD4324D986DC00ACD47A /* InformationDialog.swift */; };
 		B1FEBD4624D986DC00ACD47A /* InformationDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1FEBD4424D986DC00ACD47A /* InformationDialog.xib */; };
 		E4917DBF2A08FDDA008C303E /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4917DBD2A08FDDA008C303E /* DataModel.xcdatamodeld */; };
+		E4917DC12A0A2257008C303E /* UIImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4917DC02A0A2257008C303E /* UIImageView+Kingfisher.swift */; };
 		E497D2322A03A2F8001A113F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E497D2312A03A2F8001A113F /* Repository.swift */; };
 		E497D2382A03CC7E001A113F /* ListOfRolesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E497D2372A03CC7E001A113F /* ListOfRolesCell.swift */; };
 		E497D2392A03D20A001A113F /* ListOfHeroesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD5524D9A28100ACD47A /* ListOfHeroesCell.swift */; };
@@ -140,6 +141,7 @@
 		B1FEBD5524D9A28100ACD47A /* ListOfHeroesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfHeroesCell.swift; sourceTree = "<group>"; };
 		B1FEBD5624D9A28100ACD47A /* ListOfHeroesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListOfHeroesCell.xib; sourceTree = "<group>"; };
 		E4917DBE2A08FDDA008C303E /* Dota_Heroes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dota_Heroes.xcdatamodel; sourceTree = "<group>"; };
+		E4917DC02A0A2257008C303E /* UIImageView+Kingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Kingfisher.swift"; sourceTree = "<group>"; };
 		E497D2312A03A2F8001A113F /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		E497D2372A03CC7E001A113F /* ListOfRolesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfRolesCell.swift; sourceTree = "<group>"; };
 		E497D23B2A052247001A113F /* HeroesRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesRole.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 				B1A1DF92272BAA6700A4AB5C /* UILabel+Utility.swift */,
 				B1A1DF93272BAA6700A4AB5C /* UITextField+Utility.swift */,
 				B1A1DF94272BAA6700A4AB5C /* UIViewController+Utility.swift */,
+				E4917DC02A0A2257008C303E /* UIImageView+Kingfisher.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				B1A1DF66272BA81100A4AB5C /* MenuTableView.swift in Sources */,
 				B1A1DF99272BAA6800A4AB5C /* UIView+Toast.swift in Sources */,
 				B1FEBD3C24D95C2E00ACD47A /* DialogTransitioningDelegate.swift in Sources */,
+				E4917DC12A0A2257008C303E /* UIImageView+Kingfisher.swift in Sources */,
 				E497D23C2A052247001A113F /* HeroesRole.swift in Sources */,
 				B17FFBA024D46F570028EC3C /* Networking.swift in Sources */,
 				B1A1DF9B272BAA6800A4AB5C /* UIColor+Utility.swift in Sources */,
