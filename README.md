@@ -40,7 +40,7 @@ Developer has an expectation with the [Swift Package Manager](https://swift.org/
 
  * [x] [MVVM](https://benoitpasquier.com/ios-swift-mvvm-pattern/)
  * [ ] [Unit Testing](https://benoitpasquier.com/unit-test-swift-mvvm-pattern/)
- * [ ] [Error Handling](https://benoitpasquier.com/error-handling-swift-mvvm/)
- * [ ] [Coordinator Pattern](https://benoitpasquier.com/coordinator-pattern-swift/)
+ * [x] [Error Handling](https://benoitpasquier.com/error-handling-swift-mvvm/)
+ * [x] [Coordinator Pattern](https://benoitpasquier.com/coordinator-pattern-swift/)
  * [ ] Protocol-Oriented Programming
  
