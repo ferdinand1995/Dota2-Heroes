@@ -1,6 +1,6 @@
 //
 //  HeroDetailContentCell.swift
-//  
+//
 //
 //  Created by Tedjakusuma, Ferdinand on 09/05/23.
 //
@@ -9,15 +9,19 @@ import UIKit
 
 class HeroDetailContentCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet private weak var baseAttackLabel: UILabel!
+    @IBOutlet private weak var attrLabel: UILabel!
+    @IBOutlet private weak var defenseLabel: UILabel!
+    @IBOutlet private weak var moveSpeedLabel: UILabel!
+    @IBOutlet private weak var manaLabel: UILabel!
+    @IBOutlet private weak var healthLabel: UILabel!
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configCell(_ viewModel: HeroDetailContentVM) {
+        baseAttackLabel.text = viewModel.baseAttack
+        attrLabel.text = viewModel.primaryAttr
+        defenseLabel.text = viewModel.armor
+        moveSpeedLabel.text = viewModel.moveSpeed
+        manaLabel.text = viewModel.baseMana
+        healthLabel.text = viewModel.health
     }
-    
 }

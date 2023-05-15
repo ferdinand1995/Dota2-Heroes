@@ -27,6 +27,10 @@ class HeroDetailVM: BaseViewModel {
         return HeroDetailHeaderVM(selectedHero ?? HeroDetail())
     }
     
+    func setContent() -> HeroDetailContentVM {
+        return HeroDetailContentVM(selectedHero ?? HeroDetail())
+    }
+    
     func setFooter() -> HeroDetailFooterVM {
         return HeroDetailFooterVM(selectedHero?.similar_hero ?? [HeroDetail]())
     }

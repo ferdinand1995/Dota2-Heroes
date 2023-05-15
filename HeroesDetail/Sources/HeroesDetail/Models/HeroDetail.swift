@@ -22,6 +22,7 @@ struct HeroDetail: Codable {
     var base_attack_max: Int?
     var move_speed: Int?
     var base_mana: Int?
+    var base_armor: Int?
     var similar_hero: [HeroDetail]?
 
     enum CodingKeys: String, CodingKey {
@@ -37,6 +38,7 @@ struct HeroDetail: Codable {
         case base_attack_max
         case move_speed
         case base_mana
+        case base_armor
         case similar_hero
     }
 }

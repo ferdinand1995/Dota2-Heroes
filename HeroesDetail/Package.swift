@@ -10,9 +10,7 @@ let package = Package(
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(
-            name: "HeroesDetail",
-            targets: ["HeroesDetail"]),
+        .library(name: "HeroesDetail", targets: ["HeroesDetail"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.

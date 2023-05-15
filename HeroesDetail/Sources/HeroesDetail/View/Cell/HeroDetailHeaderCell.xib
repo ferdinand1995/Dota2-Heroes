@@ -5,12 +5,13 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="291" id="KGk-i7-Jjw" customClass="HeroDetailHeaderCell" customModule="HeroesDetail">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="291" id="KGk-i7-Jjw" customClass="HeroDetailHeaderCell" customModule="HeroesDetail">
             <rect key="frame" x="0.0" y="0.0" width="320" height="291"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -26,14 +27,36 @@
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="GQd-kN-PLq">
                         <rect key="frame" x="8" y="187" width="304" height="96"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SlP-i1-EGS">
-                                <rect key="frame" x="0.0" y="0.0" width="304" height="20.333333333333332"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VzH-jI-yAn">
+                                <rect key="frame" x="0.0" y="0.0" width="304" height="48"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qkm-uw-1hp">
+                                        <rect key="frame" x="91.333333333333329" y="12" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="Pw3-JN-Plj"/>
+                                            <constraint firstAttribute="height" constant="24" id="nwn-qm-Ymg"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SlP-i1-EGS">
+                                        <rect key="frame" x="131.33333333333334" y="0.0" width="41.333333333333343" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Qkm-uw-1hp" firstAttribute="centerY" secondItem="VzH-jI-yAn" secondAttribute="centerY" id="JSi-Rt-rnP"/>
+                                    <constraint firstAttribute="bottom" secondItem="SlP-i1-EGS" secondAttribute="bottom" id="Lq6-DJ-hNU"/>
+                                    <constraint firstItem="SlP-i1-EGS" firstAttribute="top" secondItem="VzH-jI-yAn" secondAttribute="top" id="Tch-tE-1Sp"/>
+                                    <constraint firstItem="SlP-i1-EGS" firstAttribute="centerX" secondItem="VzH-jI-yAn" secondAttribute="centerX" id="XWg-fW-CGT"/>
+                                    <constraint firstItem="SlP-i1-EGS" firstAttribute="leading" secondItem="Qkm-uw-1hp" secondAttribute="trailing" constant="16" id="bka-bL-uW9"/>
+                                    <constraint firstItem="SlP-i1-EGS" firstAttribute="centerY" secondItem="VzH-jI-yAn" secondAttribute="centerY" id="jf4-4x-RMW"/>
+                                    <constraint firstAttribute="height" constant="48" id="oMf-tm-mGQ"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGl-6m-EFh">
-                                <rect key="frame" x="0.0" y="36.333333333333343" width="304" height="59.666666666666657"/>
+                                <rect key="frame" x="0.0" y="64" width="304" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -53,6 +76,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="attackType" destination="Qkm-uw-1hp" id="jtZ-1X-jZA"/>
                 <outlet property="heroIconImageView" destination="SKw-wl-SOH" id="luM-Xs-TL1"/>
                 <outlet property="heroNameLabel" destination="SlP-i1-EGS" id="TQE-m2-5se"/>
                 <outlet property="rolesLabel" destination="vGl-6m-EFh" id="o69-xa-xna"/>
@@ -60,4 +84,9 @@
             <point key="canvasLocation" x="1.5267175572519083" y="4.5774647887323949"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -116,16 +116,21 @@ public class HeroesVM: BaseViewModel {
 
     private func fetchHeroesData() -> [HeroesResponse]? {
         let heroesRepository = HeroesRepository(context: context.viewContext)
-        let result = heroesRepository.getHeroes(predicate: nil)
-        switch result {
-        case .success(let heroes):
-            if heroes.count > 0 {
-                return heroes
-            } else {
+        if Calendar.current.isDateInYesterday(UserDefaults.coreDataCreatedAt) {
+            heroesRepository.deleteAllHeroes()
+            return nil
+        } else {
+            let result = heroesRepository.getHeroes(predicate: nil)
+            switch result {
+            case .success(let heroes):
+                if heroes.count > 0 {
+                    return heroes
+                } else {
+                    return nil
+                }
+            case .failure(_):
                 return nil
             }
-        case .failure(_):
-            return nil
         }
     }
 

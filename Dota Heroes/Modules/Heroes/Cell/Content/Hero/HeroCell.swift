@@ -40,12 +40,15 @@ class HeroCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        heroImageView.kf.cancelDownloadTask()
+//        heroImageView.kf.cancelDownloadTask()
     }
 
     public func configCell(with viewModel: HeroesCellVM) {
         heroNameLabel.text = viewModel.name
-        heroImageView.setImage(viewModel.imageURL) {
+        guard let url = viewModel.imageURL else { return }
+        heroImageView.setImage(url) { image in
+            self.heroImageView.image = image
+            self.layoutSubviews()
             self.heroNameLabel.fadeIn()
         }
     }

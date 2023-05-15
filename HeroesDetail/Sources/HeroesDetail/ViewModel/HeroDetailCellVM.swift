@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Tedjakusuma, Ferdinand on 09/05/23.
 //
@@ -21,7 +21,7 @@ class HeroDetailHeaderVM {
             self.roles = ""
         }
         if let attackType = heroDetail.attack_type {
-            self.attackTypeIsRange = (attackType.lowercased() == "range") ? true : false
+            self.attackTypeIsRange = (attackType.lowercased().contains("range")) ? true : false
         } else {
             self.attackTypeIsRange = false
         }
@@ -29,7 +29,45 @@ class HeroDetailHeaderVM {
 }
 
 class HeroDetailContentVM {
-    
+
+    let health: String
+    let baseAttack: String
+    let moveSpeed: String
+    let baseMana: String
+    let primaryAttr: String
+    let armor: String
+    init(_ heroDetail: HeroDetail) {
+        if let baseAttack = heroDetail.base_attack_max {
+            self.baseAttack = String(baseAttack)
+        } else {
+            self.baseAttack = ""
+        }
+        if let health = heroDetail.base_health {
+            self.health = String(health)
+        } else {
+            self.health = ""
+        }
+        if let moveSpeed = heroDetail.move_speed {
+            self.moveSpeed = String(moveSpeed)
+        } else {
+            self.moveSpeed = ""
+        }
+        if let baseMana = heroDetail.base_mana {
+            self.baseMana = String(baseMana)
+        } else {
+            self.baseMana = ""
+        }
+        if let primaryAttr = heroDetail.primary_attr {
+            self.primaryAttr = String(primaryAttr)
+        } else {
+            self.primaryAttr = ""
+        }
+        if let armor = heroDetail.base_armor {
+            self.armor = String(armor)
+        } else {
+            self.armor = ""
+        }
+    }
 }
 
 class HeroDetailFooterVM {

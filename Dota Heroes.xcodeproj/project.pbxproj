@@ -53,13 +53,11 @@
 		B1A1DFA7272BAA6800A4AB5C /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1DF94272BAA6700A4AB5C /* UIViewController+Utility.swift */; };
 		B1A1DFA8272BAA6800A4AB5C /* Date+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1DF96272BAA6800A4AB5C /* Date+Utility.swift */; };
 		B1A1DFB0272BF68200A4AB5C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B1A1DFAF272BF68200A4AB5C /* Alamofire */; };
-		B1C7342E24D6035F0043ECE8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B1C7342D24D6035F0043ECE8 /* Kingfisher */; };
 		B1C7343024D60D2E0043ECE8 /* Array+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C7342F24D60D2E0043ECE8 /* Array+Utility.swift */; };
 		B1FEBD3C24D95C2E00ACD47A /* DialogTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD3B24D95C2E00ACD47A /* DialogTransitioningDelegate.swift */; };
 		B1FEBD4524D986DC00ACD47A /* InformationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD4324D986DC00ACD47A /* InformationDialog.swift */; };
 		B1FEBD4624D986DC00ACD47A /* InformationDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1FEBD4424D986DC00ACD47A /* InformationDialog.xib */; };
 		E4917DBF2A08FDDA008C303E /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4917DBD2A08FDDA008C303E /* DataModel.xcdatamodeld */; };
-		E4917DC12A0A2257008C303E /* UIImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4917DC02A0A2257008C303E /* UIImageView+Kingfisher.swift */; };
 		E497D2322A03A2F8001A113F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E497D2312A03A2F8001A113F /* Repository.swift */; };
 		E497D2382A03CC7E001A113F /* ListOfRolesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E497D2372A03CC7E001A113F /* ListOfRolesCell.swift */; };
 		E497D2392A03D20A001A113F /* ListOfHeroesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FEBD5524D9A28100ACD47A /* ListOfHeroesCell.swift */; };
@@ -73,6 +71,9 @@
 		E4CF81C32A025E90007EA1D5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CF81C22A025E90007EA1D5 /* BaseViewController.swift */; };
 		E4CF81CC2A02859D007EA1D5 /* NavigationKit in Frameworks */ = {isa = PBXBuildFile; productRef = E4CF81CB2A02859D007EA1D5 /* NavigationKit */; };
 		E4CF81CE2A0285A2007EA1D5 /* HeroesDetail in Frameworks */ = {isa = PBXBuildFile; productRef = E4CF81CD2A0285A2007EA1D5 /* HeroesDetail */; };
+		E4D761DC2A0E373F0080C486 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = E4D761DB2A0E373F0080C486 /* SDWebImage */; };
+		E4D761DE2A0E37590080C486 /* UIImageView+SDWebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D761DD2A0E37590080C486 /* UIImageView+SDWebImage.swift */; };
+		E4D761E32A124AF50080C486 /* UserDefaults+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D761E22A124AF50080C486 /* UserDefaults+Utility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,9 @@
 		E4CF81B829FD6520007EA1D5 /* HeroesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCoordinator.swift; sourceTree = "<group>"; };
 		E4CF81BA2A0134AF007EA1D5 /* NavigationKit */ = {isa = PBXFileReference; lastKnownFileType = text; path = NavigationKit; sourceTree = SOURCE_ROOT; };
 		E4CF81C22A025E90007EA1D5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E4D761DD2A0E37590080C486 /* UIImageView+SDWebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+SDWebImage.swift"; sourceTree = "<group>"; };
+		E4D761E12A1248ED0080C486 /* Dota_Heroes 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Dota_Heroes 4.xcdatamodel"; sourceTree = "<group>"; };
+		E4D761E22A124AF50080C486 /* UserDefaults+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Utility.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,8 +169,8 @@
 				B1A1DFB0272BF68200A4AB5C /* Alamofire in Frameworks */,
 				E4CF81CC2A02859D007EA1D5 /* NavigationKit in Frameworks */,
 				E4CF81CE2A0285A2007EA1D5 /* HeroesDetail in Frameworks */,
-				B1C7342E24D6035F0043ECE8 /* Kingfisher in Frameworks */,
 				B1A1DF21272ABB1000A4AB5C /* Hyperconnectivity in Frameworks */,
+				E4D761DC2A0E373F0080C486 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +377,7 @@
 				B1A1DF93272BAA6700A4AB5C /* UITextField+Utility.swift */,
 				B1A1DF94272BAA6700A4AB5C /* UIViewController+Utility.swift */,
 				E4917DC02A0A2257008C303E /* UIImageView+Kingfisher.swift */,
+				E4D761DD2A0E37590080C486 /* UIImageView+SDWebImage.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -381,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				B1A1DF96272BAA6800A4AB5C /* Date+Utility.swift */,
+				E4D761E22A124AF50080C486 /* UserDefaults+Utility.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -486,11 +492,11 @@
 			);
 			name = "Dota Heroes";
 			packageProductDependencies = (
-				B1C7342D24D6035F0043ECE8 /* Kingfisher */,
 				B1A1DF20272ABB1000A4AB5C /* Hyperconnectivity */,
 				B1A1DFAF272BF68200A4AB5C /* Alamofire */,
 				E4CF81CB2A02859D007EA1D5 /* NavigationKit */,
 				E4CF81CD2A0285A2007EA1D5 /* HeroesDetail */,
+				E4D761DB2A0E373F0080C486 /* SDWebImage */,
 			);
 			productName = "Dota Heroes";
 			productReference = B17FFB6F24D461870028EC3C /* Dota Heroes.app */;
@@ -544,9 +550,9 @@
 			);
 			mainGroup = B17FFB6624D461870028EC3C;
 			packageReferences = (
-				B1C7342C24D6035F0043ECE8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				B1A1DF1F272ABB1000A4AB5C /* XCRemoteSwiftPackageReference "hyperconnectivity" */,
 				B1A1DFAE272BF68100A4AB5C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E4D761DA2A0E373F0080C486 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = B17FFB7024D461870028EC3C /* Products */;
 			projectDirPath = "";
@@ -618,7 +624,6 @@
 				B1A1DF66272BA81100A4AB5C /* MenuTableView.swift in Sources */,
 				B1A1DF99272BAA6800A4AB5C /* UIView+Toast.swift in Sources */,
 				B1FEBD3C24D95C2E00ACD47A /* DialogTransitioningDelegate.swift in Sources */,
-				E4917DC12A0A2257008C303E /* UIImageView+Kingfisher.swift in Sources */,
 				E497D23C2A052247001A113F /* HeroesRole.swift in Sources */,
 				B17FFBA024D46F570028EC3C /* Networking.swift in Sources */,
 				B1A1DF9B272BAA6800A4AB5C /* UIColor+Utility.swift in Sources */,
@@ -631,10 +636,12 @@
 				B1A1DFA1272BAA6800A4AB5C /* UIFont+Utility.swift in Sources */,
 				E4CF81B929FD6520007EA1D5 /* HeroesCoordinator.swift in Sources */,
 				B1A1DFA6272BAA6800A4AB5C /* UITextField+Utility.swift in Sources */,
+				E4D761E32A124AF50080C486 /* UserDefaults+Utility.swift in Sources */,
 				B147E8E624D6CDB500B83617 /* RolesCell.swift in Sources */,
 				B17FFB7324D461870028EC3C /* AppDelegate.swift in Sources */,
 				E497D2322A03A2F8001A113F /* Repository.swift in Sources */,
 				B1FEBD4524D986DC00ACD47A /* InformationDialog.swift in Sources */,
+				E4D761DE2A0E37590080C486 /* UIImageView+SDWebImage.swift in Sources */,
 				B1A1DFA0272BAA6800A4AB5C /* UITableView+Utility.swift in Sources */,
 				B17FFB7524D461870028EC3C /* SceneDelegate.swift in Sources */,
 				B1A1DF9F272BAA6800A4AB5C /* UIView+Utility.swift in Sources */,
@@ -920,12 +927,12 @@
 				minimumVersion = 5.4.4;
 			};
 		};
-		B1C7342C24D6035F0043ECE8 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		E4D761DA2A0E373F0080C486 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
+				minimumVersion = 5.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -941,11 +948,6 @@
 			package = B1A1DFAE272BF68100A4AB5C /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		B1C7342D24D6035F0043ECE8 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B1C7342C24D6035F0043ECE8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
 		E4CF81CB2A02859D007EA1D5 /* NavigationKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NavigationKit;
@@ -954,17 +956,23 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = HeroesDetail;
 		};
+		E4D761DB2A0E373F0080C486 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4D761DA2A0E373F0080C486 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E4917DBD2A08FDDA008C303E /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				E4D761E12A1248ED0080C486 /* Dota_Heroes 4.xcdatamodel */,
 				E4917DC32A0A557C008C303E /* Dota_Heroes 3.xcdatamodel */,
 				E4917DC22A0A37F8008C303E /* Dota_Heroes 2.xcdatamodel */,
 				E4917DBE2A08FDDA008C303E /* Dota_Heroes.xcdatamodel */,
 			);
-			currentVersion = E4917DC32A0A557C008C303E /* Dota_Heroes 3.xcdatamodel */;
+			currentVersion = E4D761E12A1248ED0080C486 /* Dota_Heroes 4.xcdatamodel */;
 			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

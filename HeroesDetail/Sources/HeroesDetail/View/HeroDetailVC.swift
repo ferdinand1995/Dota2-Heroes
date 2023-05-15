@@ -55,7 +55,8 @@ extension HeroDetailVC: UITableViewDataSource {
             cell.confiCell(viewModel.setHeader())
             return cell
         case .content:
-            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeroDetailContentCell.self), for: indexPath)
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeroDetailContentCell.self), for: indexPath) as? HeroDetailContentCell else { return UITableViewCell() }
+            cell.configCell(viewModel.setContent())
             return cell
         case .footer:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeroDetailFooterCell.self), for: indexPath) as? HeroDetailFooterCell else { return UITableViewCell() }
